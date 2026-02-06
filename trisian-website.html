@@ -1,0 +1,2522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Trisian — Three Pillars, One Unbreakable Safe Workspace | Managed Cloud Desktop Security & Compliance</title>
+    <meta name="description" content="Trisian delivers Safe Workspace — a secure, scalable, compliance-ready cloud desktop for regulated industries. 28 years of expertise in security, performance, and compliance. HIPAA, SOC 2, PCI-DSS, GDPR, DORA ready.">
+    <meta name="keywords" content="Safe Workspace, managed cloud desktop, DaaS, Azure Virtual Desktop, HIPAA compliance, SOC 2, PCI-DSS, GDPR, DORA, cybersecurity, managed IT, virtual desktop infrastructure, compliance automation, zero trust">
+    <meta name="author" content="Trisian">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.trisian.com/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.trisian.com/">
+    <meta property="og:title" content="Trisian — Three Pillars, One Unbreakable Safe Workspace">
+    <meta property="og:description" content="The only company that transforms compliance into competitive advantage. Secure, scalable, compliance-ready cloud desktops for regulated industries.">
+    <meta property="og:image" content="https://www.trisian.com/og-image.jpg">
+    <meta property="og:site_name" content="Trisian">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trisian — Safe Workspace for Regulated Industries">
+    <meta name="twitter:description" content="Security that Anticipates. Performance that Scales. Compliance that Facilitates. 28 years of operational peace of mind.">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Trisian",
+        "legalName": "All IT Host Inc",
+        "url": "https://www.trisian.com",
+        "logo": "https://www.trisian.com/logo.png",
+        "foundingDate": "1998",
+        "description": "Trisian delivers Safe Workspace — a secure, scalable, compliance-ready cloud desktop environment for regulated industries. Strategic partner for security, performance, and compliance.",
+        "email": "contact@trisian.com",
+        "sameAs": [],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+        },
+        "areaServed": ["US", "ES"],
+        "knowsAbout": ["Cloud Desktop Security", "HIPAA Compliance", "Azure Virtual Desktop", "Compliance Automation", "Zero Trust Architecture", "DaaS"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Safe Workspace Tiers",
+            "itemListElement": [
+                {"@type": "Offer", "name": "Core", "description": "Foundation for secure cloud desktops for up to 250 users"},
+                {"@type": "Offer", "name": "Advanced", "description": "Enhanced security and full traceability with 24/7 support"},
+                {"@type": "Offer", "name": "Enterprise", "description": "Built for regulated industries with dedicated team and compliance automation"}
+            ]
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Safe Workspace?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Safe Workspace is a future-ready digital work environment built on Azure Virtual Desktop or Citrix Cloud. It unifies infrastructure, governance, automation, and security in a single operational experience that is secure, scalable, and built for compliance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What compliance frameworks does Trisian support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Trisian supports HIPAA, SOC 2 Type II, PCI-DSS, GDPR, SOX, DORA, CMMC 2.0, GLBA, and FERPA through tiered security controls, automated compliance monitoring, and pre-built compliance frameworks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is Trisian different from traditional MSPs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Trisian is a strategic partner, not a vendor. We assume total responsibility for your digital environment — implementing solutions and maintaining ongoing operational accountability for performance, security, and compliance outcomes rather than just delivering reports or tools."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ═══════════════════════════════════════════
+           CSS CUSTOM PROPERTIES
+        ═══════════════════════════════════════════ */
+        :root {
+            /* Brand Colors */
+            --cobalt: #004AAD;
+            --cornflower: #5170FF;
+            --indigo: #1800AD;
+            
+            /* Extended Palette */
+            --cobalt-dark: #003380;
+            --cobalt-glow: #0062e6;
+            --cornflower-light: #7b93ff;
+            --indigo-light: #3a1de0;
+            
+            /* Neutrals */
+            --void: #05070f;
+            --deep: #0a0e1a;
+            --surface: #111627;
+            --surface-2: #1a2035;
+            --border: rgba(81, 112, 255, 0.12);
+            --border-hover: rgba(81, 112, 255, 0.3);
+            
+            /* Text */
+            --text-primary: #f0f2f8;
+            --text-secondary: #8b92a8;
+            --text-muted: #5a6178;
+            
+            /* Gradients */
+            --grad-brand: linear-gradient(135deg, var(--cobalt) 0%, var(--cornflower) 50%, var(--indigo) 100%);
+            --grad-glow: linear-gradient(135deg, var(--cornflower) 0%, var(--indigo) 100%);
+            --grad-surface: linear-gradient(180deg, var(--deep) 0%, var(--void) 100%);
+            
+            /* Spacing */
+            --section-pad: clamp(80px, 10vw, 140px);
+            --container: 1280px;
+            
+            /* Typography */
+            --font-display: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        /* ═══════════════════════════════════════════
+           RESET & BASE
+        ═══════════════════════════════════════════ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { 
+            scroll-behavior: smooth; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--void);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        ::selection {
+            background: var(--cornflower);
+            color: var(--void);
+        }
+
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+        
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 60px);
+        }
+
+        /* ═══════════════════════════════════════════
+           GLOBAL ANIMATIONS
+        ═══════════════════════════════════════════ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideRight {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes draw-line {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes count-up {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* ═══════════════════════════════════════════
+           NOISE TEXTURE OVERLAY
+        ═══════════════════════════════════════════ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ═══════════════════════════════════════════
+           NAVIGATION
+        ═══════════════════════════════════════════ */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(5, 7, 15, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .nav-logo svg {
+            width: 38px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cornflower);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 28px;
+            background: var(--cornflower);
+            color: white;
+            border: none;
+            cursor: pointer;
+            clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--cornflower-light);
+            transform: translateY(-2px);
+        }
+
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-mobile-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* ═══════════════════════════════════════════
+           HERO SECTION
+        ═══════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        /* Geometric grid */
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(81, 112, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(81, 112, 255, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 70%);
+        }
+
+        /* Triangular glows */
+        .hero-glow-1 {
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(81, 112, 255, 0.12) 0%, transparent 60%);
+            animation: pulse-glow 8s ease-in-out infinite;
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 74, 173, 0.1) 0%, transparent 60%);
+            animation: pulse-glow 10s ease-in-out infinite 2s;
+        }
+
+        .hero-glow-3 {
+            position: absolute;
+            top: 30%;
+            left: 40%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(24, 0, 173, 0.08) 0%, transparent 60%);
+            animation: pulse-glow 12s ease-in-out infinite 4s;
+        }
+
+        /* Triangle SVG decoration */
+        .hero-triangle {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 550px;
+            height: 550px;
+            opacity: 0.06;
+        }
+
+        .hero-triangle svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--cornflower);
+            margin-bottom: 28px;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--cornflower);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 28px;
+            animation: fadeUp 0.8s ease 0.15s forwards;
+            opacity: 0;
+        }
+
+        .hero-title .gradient-text {
+            background: var(--grad-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 48px;
+            animation: fadeUp 0.8s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            animation: fadeUp 0.8s ease 0.45s forwards;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 18px 40px;
+            background: var(--cornflower);
+            color: white;
+            border: none;
+            cursor: pointer;
+            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 100%, 14px 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            background: var(--cornflower-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(81, 112, 255, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 17px 36px;
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-hover);
+            cursor: pointer;
+            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 100%, 14px 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--cornflower);
+            background: rgba(81, 112, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 60px;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            animation: fadeUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            background: var(--grad-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ═══════════════════════════════════════════
+           TRUST BAR
+        ═══════════════════════════════════════════ */
+        .trust-bar {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-label {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .trust-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(30px, 5vw, 72px);
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .trust-badge:hover {
+            color: var(--text-secondary);
+        }
+
+        .trust-badge svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+        }
+
+        /* ═══════════════════════════════════════════
+           SECTION HEADERS
+        ═══════════════════════════════════════════ */
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 72px;
+        }
+
+        .section-header.centered {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--cornflower);
+            margin-bottom: 20px;
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--cornflower);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* ═══════════════════════════════════════════
+           THE PROBLEM SECTION
+        ═══════════════════════════════════════════ */
+        .problem {
+            padding: var(--section-pad) 0;
+            position: relative;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .problem-card {
+            background: var(--surface);
+            padding: 48px 36px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--grad-brand);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .problem-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .problem-card:hover {
+            background: var(--surface-2);
+        }
+
+        .problem-number {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 3.5rem;
+            background: var(--grad-glow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.2;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .problem-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .problem-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════
+           THREE PILLARS SECTION
+        ═══════════════════════════════════════════ */
+        .pillars {
+            padding: var(--section-pad) 0;
+            position: relative;
+            background: var(--deep);
+        }
+
+        .pillars::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--cornflower) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .pillar-card {
+            padding: 56px 40px;
+            position: relative;
+            border: 1px solid var(--border);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .pillar-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .pillar-card:hover::after {
+            opacity: 1;
+        }
+
+        .pillar-card:nth-child(1)::after {
+            background: linear-gradient(to top, rgba(0, 74, 173, 0.08) 0%, transparent 100%);
+        }
+        .pillar-card:nth-child(2)::after {
+            background: linear-gradient(to top, rgba(81, 112, 255, 0.08) 0%, transparent 100%);
+        }
+        .pillar-card:nth-child(3)::after {
+            background: linear-gradient(to top, rgba(24, 0, 173, 0.08) 0%, transparent 100%);
+        }
+
+        .pillar-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+        }
+
+        .pillar-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .pillar-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pillar-label {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .pillar-card:nth-child(1) .pillar-label { color: var(--cobalt-glow); }
+        .pillar-card:nth-child(2) .pillar-label { color: var(--cornflower); }
+        .pillar-card:nth-child(3) .pillar-label { color: var(--indigo-light); }
+
+        .pillar-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.6rem;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .pillar-tagline {
+            font-family: var(--font-display);
+            font-weight: 300;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .pillar-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .pillar-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .pillar-features li::before {
+            content: '▸';
+            color: var(--cornflower);
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ═══════════════════════════════════════════
+           SAFE WORKSPACE / PRODUCT SECTION
+        ═══════════════════════════════════════════ */
+        .product {
+            padding: var(--section-pad) 0;
+            position: relative;
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .product-visual {
+            position: relative;
+            aspect-ratio: 1;
+        }
+
+        .product-hex-grid {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-center-badge {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 2px solid var(--border-hover);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-center-badge::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        .product-center-badge::after {
+            content: '';
+            position: absolute;
+            inset: -40px;
+            border-radius: 50%;
+            border: 1px solid rgba(81, 112, 255, 0.05);
+            animation: pulse-glow 4s ease-in-out infinite 1s;
+        }
+
+        .pcb-label {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cornflower);
+            margin-bottom: 4px;
+        }
+
+        .pcb-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .orbit-items {
+            position: absolute;
+            inset: 0;
+        }
+
+        .orbit-item {
+            position: absolute;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .orbit-item:hover {
+            border-color: var(--cornflower);
+            transform: scale(1.05);
+        }
+
+        .orbit-item:nth-child(1) { top: 5%; left: 50%; transform: translateX(-50%); }
+        .orbit-item:nth-child(2) { top: 20%; right: 0; }
+        .orbit-item:nth-child(3) { top: 50%; right: -5%; transform: translateY(-50%); }
+        .orbit-item:nth-child(4) { bottom: 20%; right: 5%; }
+        .orbit-item:nth-child(5) { bottom: 5%; left: 50%; transform: translateX(-50%); }
+        .orbit-item:nth-child(6) { bottom: 20%; left: 0; }
+        .orbit-item:nth-child(7) { top: 50%; left: -5%; transform: translateY(-50%); }
+        .orbit-item:nth-child(8) { top: 20%; left: 5%; }
+
+        .product-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-features {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .product-feature {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .product-feature:hover {
+            border-color: var(--border-hover);
+            background: var(--surface-2);
+        }
+
+        .pf-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(81, 112, 255, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        .pf-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--cornflower);
+        }
+
+        .pf-text h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .pf-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════
+           TIERS / PRICING SECTION
+        ═══════════════════════════════════════════ */
+        .tiers {
+            padding: var(--section-pad) 0;
+            background: var(--deep);
+            position: relative;
+        }
+
+        .tiers::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--cornflower) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .tier-card {
+            background: var(--surface);
+            padding: 52px 40px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s ease;
+        }
+
+        .tier-card.featured {
+            background: var(--surface-2);
+        }
+
+        .tier-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--grad-brand);
+        }
+
+        .tier-badge {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            background: rgba(81, 112, 255, 0.1);
+            color: var(--cornflower);
+            border: 1px solid rgba(81, 112, 255, 0.2);
+            margin-bottom: 24px;
+            align-self: flex-start;
+        }
+
+        .tier-name {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .tier-tagline {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .tier-for {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--cornflower);
+            margin-bottom: 16px;
+        }
+
+        .tier-audience {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tier-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex: 1;
+            margin-bottom: 36px;
+        }
+
+        .tier-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .tier-check {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .tier-check svg {
+            width: 14px;
+            height: 14px;
+            color: var(--cornflower);
+        }
+
+        .tier-sla {
+            padding: 20px;
+            background: rgba(81, 112, 255, 0.04);
+            border: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .tier-sla-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cornflower);
+            margin-bottom: 12px;
+        }
+
+        .tier-sla-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .tier-sla-row span:last-child {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .tier-cta {
+            display: block;
+            text-align: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 18px 32px;
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-hover);
+            cursor: pointer;
+            clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+            transition: all 0.3s ease;
+        }
+
+        .tier-card.featured .tier-cta {
+            background: var(--cornflower);
+            border-color: var(--cornflower);
+        }
+
+        .tier-cta:hover {
+            background: var(--cornflower);
+            border-color: var(--cornflower);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(81, 112, 255, 0.25);
+        }
+
+        /* ═══════════════════════════════════════════
+           INDUSTRIES SECTION
+        ═══════════════════════════════════════════ */
+        .industries {
+            padding: var(--section-pad) 0;
+            position: relative;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+        }
+
+        .industry-card {
+            background: var(--surface);
+            padding: 44px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to top, rgba(81, 112, 255, 0.06) 0%, transparent 100%);
+            transition: height 0.5s ease;
+        }
+
+        .industry-card:hover::before {
+            height: 100%;
+        }
+
+        .industry-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(81, 112, 255, 0.06);
+            border: 1px solid var(--border);
+        }
+
+        .industry-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--cornflower);
+        }
+
+        .industry-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .industry-frameworks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .framework-tag {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            padding: 4px 10px;
+            background: rgba(81, 112, 255, 0.08);
+            color: var(--cornflower);
+            border: 1px solid rgba(81, 112, 255, 0.15);
+        }
+
+        .industry-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════
+           HOW IT WORKS / PROCESS
+        ═══════════════════════════════════════════ */
+        .process {
+            padding: var(--section-pad) 0;
+            background: var(--deep);
+            position: relative;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--cornflower) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 44px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--surface);
+            border: 2px solid var(--border-hover);
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--cornflower);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .step-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .step-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════
+           DIFFERENTIATOR / WHY TRISIAN
+        ═══════════════════════════════════════════ */
+        .why {
+            padding: var(--section-pad) 0;
+            position: relative;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .why-card {
+            background: var(--surface);
+            padding: 48px 40px;
+            display: flex;
+            gap: 24px;
+            transition: all 0.4s ease;
+        }
+
+        .why-card:hover {
+            background: var(--surface-2);
+        }
+
+        .why-icon {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-hover);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: rgba(81, 112, 255, 0.06);
+        }
+
+        .why-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--cornflower);
+        }
+
+        .why-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .why-desc {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════
+           TESTIMONIAL / QUOTE
+        ═══════════════════════════════════════════ */
+        .manifesto {
+            padding: var(--section-pad) 0;
+            background: var(--deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifesto::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--cornflower) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .manifesto-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .manifesto-quote-mark {
+            font-family: var(--font-display);
+            font-size: 8rem;
+            line-height: 0.6;
+            background: var(--grad-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.15;
+            margin-bottom: 24px;
+        }
+
+        .manifesto-text {
+            font-family: var(--font-display);
+            font-weight: 300;
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            margin-bottom: 32px;
+        }
+
+        .manifesto-text strong {
+            font-weight: 700;
+            color: var(--cornflower);
+        }
+
+        .manifesto-tagline {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cornflower);
+        }
+
+        /* ═══════════════════════════════════════════
+           FAQ SECTION
+        ═══════════════════════════════════════════ */
+        .faq {
+            padding: var(--section-pad) 0;
+            position: relative;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            padding: 36px 32px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: var(--surface-2);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .faq-question h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .faq-toggle {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            color: var(--cornflower);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-top: 20px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            background: var(--cornflower);
+            border-color: var(--cornflower);
+            color: white;
+        }
+
+        .faq-answer p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════
+           CTA SECTION
+        ═══════════════════════════════════════════ */
+        .cta {
+            padding: var(--section-pad) 0;
+            background: var(--deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--cornflower) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(81, 112, 255, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 44px;
+            line-height: 1.7;
+        }
+
+        .cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════════════ */
+        .footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border);
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-top: 20px;
+            max-width: 320px;
+        }
+
+        .footer-col-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer-links a {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--cornflower);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-legal a {
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--text-secondary);
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .pillars-grid,
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-layout {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .product-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .process-steps::before { display: none; }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-mobile-toggle { display: block; }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .problem-grid,
+            .why-grid,
+            .faq-grid,
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-triangle { display: none; }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════════ -->
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo" aria-label="Trisian home">
+                <svg viewBox="0 0 100 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,0 100,88 0,88" fill="url(#navGrad)" opacity="0.9"/>
+                    <defs><linearGradient id="navGrad" x1="0" y1="0" x2="100" y2="88"><stop offset="0%" stop-color="#004AAD"/><stop offset="50%" stop-color="#5170FF"/><stop offset="100%" stop-color="#1800AD"/></linearGradient></defs>
+                </svg>
+                TRISIAN
+            </a>
+            <ul class="nav-links">
+                <li><a href="#pillars">Three Pillars</a></li>
+                <li><a href="#product">Safe Workspace</a></li>
+                <li><a href="#tiers">Solutions</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#why">Why Trisian</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#cta" class="nav-cta">Get Assessment</a>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
+            <div class="hero-glow-3"></div>
+        </div>
+        
+        <div class="hero-triangle" aria-hidden="true">
+            <svg viewBox="0 0 500 500" fill="none">
+                <polygon points="250,30 480,430 20,430" stroke="url(#triGrad)" stroke-width="1.5" fill="none" stroke-dasharray="6 6"/>
+                <polygon points="250,80 440,400 60,400" stroke="url(#triGrad)" stroke-width="0.8" fill="none" opacity="0.5"/>
+                <polygon points="250,130 400,370 100,370" stroke="url(#triGrad)" stroke-width="0.5" fill="none" opacity="0.3"/>
+                <defs><linearGradient id="triGrad" x1="0" y1="0" x2="500" y2="500"><stop offset="0%" stop-color="#004AAD"/><stop offset="50%" stop-color="#5170FF"/><stop offset="100%" stop-color="#1800AD"/></linearGradient></defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-eyebrow">28 Years of Operational Peace of Mind</div>
+                <h1 class="hero-title">
+                    Three Pillars.<br>
+                    One <span class="gradient-text">Unbreakable</span><br>
+                    Safe Workspace.
+                </h1>
+                <p class="hero-subtitle">
+                    The only company that transforms compliance into competitive advantage. We deliver secure, scalable, compliance-ready cloud desktops for leaders who refuse to let infrastructure stand between them and growth.
+                </p>
+                <div class="hero-actions">
+                    <a href="#cta" class="btn-primary">
+                        Schedule Assessment
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#product" class="btn-secondary">Explore Safe Workspace</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-number">28+</div>
+                        <div class="hero-stat-label">Years of Experience</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-number">9+</div>
+                        <div class="hero-stat-label">Compliance Frameworks</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-number">24/7</div>
+                        <div class="hero-stat-label">Platform Monitoring</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-number">30min</div>
+                        <div class="hero-stat-label">Fastest SLA Response</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         TRUST BAR
+    ═══════════════════════════════════════════ -->
+    <section class="trust-bar" aria-label="Compliance frameworks supported">
+        <div class="container">
+            <div class="trust-label">Compliance Frameworks We Build For</div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    HIPAA
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    SOC 2
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    PCI-DSS
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    GDPR
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    DORA
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    SOX
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    CMMC
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         THE PROBLEM
+    ═══════════════════════════════════════════ -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">The Reality</div>
+                <h2 class="section-title">Your Digital Environment Is a Liability — Until It Isn't</h2>
+                <p class="section-subtitle">Most companies are one audit failure, one breach, or one outage away from catastrophe. You deserve better than fragmented tools and reactive vendors.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card reveal reveal-delay-1">
+                    <div class="problem-number">01</div>
+                    <h3 class="problem-title">Fragmented Security</h3>
+                    <p class="problem-desc">Disconnected tools create blind spots. You're paying for protection that doesn't protect — gaps between systems are where breaches happen.</p>
+                </div>
+                <div class="problem-card reveal reveal-delay-2">
+                    <div class="problem-number">02</div>
+                    <h3 class="problem-title">Compliance Paralysis</h3>
+                    <p class="problem-desc">Your team spends weeks preparing for audits that should take hours. Regulatory frameworks multiply while your infrastructure stays static.</p>
+                </div>
+                <div class="problem-card reveal reveal-delay-3">
+                    <div class="problem-number">03</div>
+                    <h3 class="problem-title">Vendor, Not Partner</h3>
+                    <p class="problem-desc">Your IT provider delivers tools and walks away. When systems fail at 2 AM, you're left holding the bag — no accountability, no ownership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         THREE PILLARS
+    ═══════════════════════════════════════════ -->
+    <section class="pillars" id="pillars">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-eyebrow">The Continuity Triad</div>
+                <h2 class="section-title">Three Pillars. Zero Compromise.</h2>
+                <p class="section-subtitle">Each pillar isn't a standalone service — they're an interdependent structure. Like our logo's continuous unbroken line, they form one resilient system.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card reveal reveal-delay-1">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 56 56" fill="none">
+                            <path d="M28 4L4 16v16c0 12 24 20 24 20s24-8 24-20V16L28 4z" stroke="#004AAD" stroke-width="2" fill="rgba(0,74,173,0.08)"/>
+                            <path d="M20 28l6 6 10-12" stroke="#0062e6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="pillar-label">Pillar One — Security</div>
+                    <h3 class="pillar-title">Security that Anticipates</h3>
+                    <p class="pillar-tagline">"An immune system that learns and strengthens"</p>
+                    <ul class="pillar-features">
+                        <li>Predictive Threat Intelligence — AI identifies attack patterns before they materialize</li>
+                        <li>Zero-Trust Architecture — Continuous verification of every access point</li>
+                        <li>Adaptive Defense — Security that evolves with each new threat</li>
+                        <li>Instant Incident Response — Automated containment in seconds</li>
+                    </ul>
+                </div>
+                <div class="pillar-card reveal reveal-delay-2">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 56 56" fill="none">
+                            <path d="M8 40V28c0-11.046 8.954-20 20-20s20 8.954 20 20v12" stroke="#5170FF" stroke-width="2" fill="none"/>
+                            <rect x="4" y="36" width="16" height="12" rx="2" stroke="#5170FF" stroke-width="2" fill="rgba(81,112,255,0.08)"/>
+                            <rect x="36" y="36" width="16" height="12" rx="2" stroke="#5170FF" stroke-width="2" fill="rgba(81,112,255,0.08)"/>
+                            <circle cx="28" cy="28" r="4" fill="#5170FF" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <div class="pillar-label">Pillar Two — Performance</div>
+                    <h3 class="pillar-title">Performance that Scales</h3>
+                    <p class="pillar-tagline">"A cardiovascular system that adapts to any demand"</p>
+                    <ul class="pillar-features">
+                        <li>Elastic Auto-Scaling — Resources expand and contract with real demand</li>
+                        <li>Intelligent Load Balancing — Zero bottlenecks, maximum availability</li>
+                        <li>Predictive Capacity — Infrastructure prepared before demand arrives</li>
+                        <li>Global Optimization — Consistent experience regardless of location</li>
+                    </ul>
+                </div>
+                <div class="pillar-card reveal reveal-delay-3">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 56 56" fill="none">
+                            <rect x="8" y="8" width="40" height="40" rx="4" stroke="#1800AD" stroke-width="2" fill="rgba(24,0,173,0.06)"/>
+                            <path d="M18 28h20M28 18v20" stroke="#3a1de0" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="18" cy="18" r="3" fill="#3a1de0" opacity="0.4"/>
+                            <circle cx="38" cy="38" r="3" fill="#3a1de0" opacity="0.4"/>
+                            <circle cx="38" cy="18" r="3" fill="#3a1de0" opacity="0.4"/>
+                            <circle cx="18" cy="38" r="3" fill="#3a1de0" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <div class="pillar-label">Pillar Three — Compliance</div>
+                    <h3 class="pillar-title">Compliance that Facilitates</h3>
+                    <p class="pillar-tagline">"A nervous system that automates complex responses"</p>
+                    <ul class="pillar-features">
+                        <li>Automated Governance — Controls implement themselves as regulations require</li>
+                        <li>Continuous Auditing — Real-time compliance evidence, always audit-ready</li>
+                        <li>Regulatory Intelligence — Systems that track and adapt to normative changes</li>
+                        <li>Simplified Reporting — Complex data transformed into clear dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SAFE WORKSPACE / PRODUCT
+    ═══════════════════════════════════════════ -->
+    <section class="product" id="product">
+        <div class="container">
+            <div class="product-layout">
+                <div class="product-visual reveal">
+                    <div class="product-hex-grid">
+                        <div class="product-center-badge">
+                            <div class="pcb-label">Trisian</div>
+                            <div class="pcb-title">Safe<br>Workspace</div>
+                        </div>
+                    </div>
+                    <div class="orbit-items">
+                        <div class="orbit-item">Azure Virtual Desktop</div>
+                        <div class="orbit-item">Zero Trust</div>
+                        <div class="orbit-item">Threat Detection</div>
+                        <div class="orbit-item">Auto-Scaling</div>
+                        <div class="orbit-item">Compliance Engine</div>
+                        <div class="orbit-item">DLP Controls</div>
+                        <div class="orbit-item">24/7 Monitoring</div>
+                        <div class="orbit-item">Identity Mgmt</div>
+                    </div>
+                </div>
+                <div class="product-content reveal reveal-delay-2">
+                    <div class="section-eyebrow">Our Product</div>
+                    <h2 class="section-title">The Safe Workspace</h2>
+                    <p class="section-subtitle">A future-ready digital work environment where technology becomes invisible so business becomes visible. Built on Azure Virtual Desktop or Citrix Cloud — unified infrastructure, governance, automation, and security in one operational experience.</p>
+                    <div class="product-features">
+                        <div class="product-feature">
+                            <div class="pf-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            </div>
+                            <div class="pf-text">
+                                <h4>Cloud-Native Desktop</h4>
+                                <p>Windows 11 multi-session environments accessible from any device, anywhere — with non-persistent security and FSLogix profile persistence.</p>
+                            </div>
+                        </div>
+                        <div class="product-feature">
+                            <div class="pf-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="pf-text">
+                                <h4>Embedded Security Stack</h4>
+                                <p>From endpoint protection to SIEM/SOAR to DLP — security is built into every layer, not bolted on afterward.</p>
+                            </div>
+                        </div>
+                        <div class="product-feature">
+                            <div class="pf-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            </div>
+                            <div class="pf-text">
+                                <h4>Compliance Automation</h4>
+                                <p>Pre-built controls mapped to HIPAA, SOC 2, PCI-DSS, GDPR, DORA, and more. Audit-ready at all times, not just audit season.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         TIERS / SOLUTIONS
+    ═══════════════════════════════════════════ -->
+    <section class="tiers" id="tiers">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-eyebrow">Solutions</div>
+                <h2 class="section-title">Choose Your Tier. We Handle the Rest.</h2>
+                <p class="section-subtitle">Every tier includes automated platform management, 24/7 monitoring, and Microsoft 365 licensing. Each builds upon the last — more security, faster response, deeper compliance.</p>
+            </div>
+            <div class="tiers-grid">
+                <!-- CORE -->
+                <div class="tier-card reveal reveal-delay-1">
+                    <div class="tier-badge">Foundation</div>
+                    <h3 class="tier-name">Core</h3>
+                    <p class="tier-tagline">The foundation for secure cloud desktops</p>
+                    <div class="tier-for">Best For</div>
+                    <p class="tier-audience">Small to mid-sized businesses up to 250 users with standard security needs and no specific compliance requirements. The cost-effective starting point with a clear upgrade path.</p>
+                    <ul class="tier-features">
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Microsoft 365 Business Premium</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Windows 11 Multi-Session AVD</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Standard endpoint protection</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>MFA + Conditional Access</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>24/7 automated platform monitoring</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>OS & M365 patching included</li>
+                    </ul>
+                    <div class="tier-sla">
+                        <div class="tier-sla-title">Response SLA</div>
+                        <div class="tier-sla-row"><span>P1 Critical</span><span>1 hour</span></div>
+                        <div class="tier-sla-row"><span>P2 High</span><span>4 hours</span></div>
+                        <div class="tier-sla-row"><span>Support Window</span><span>Business Hours</span></div>
+                    </div>
+                    <a href="#cta" class="tier-cta">Get Started</a>
+                </div>
+                <!-- ADVANCED -->
+                <div class="tier-card featured reveal reveal-delay-2">
+                    <div class="tier-badge">Most Popular</div>
+                    <h3 class="tier-name">Advanced</h3>
+                    <p class="tier-tagline">Enhanced security and full traceability</p>
+                    <div class="tier-for">Best For</div>
+                    <p class="tier-audience">Mid-market companies with moderate compliance needs — HIPAA, GDPR, PCI-DSS, SOC 2. Professional services firms, healthcare practices, and growing organizations exceeding 300 users.</p>
+                    <ul class="tier-features">
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Core, plus:</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Microsoft 365 E3</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>CIS-Hardened workstation images</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Behavioral threat detection (P1)</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Advanced email threat protection</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>User experience & RMM monitoring</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Azure auto-scaling & cost optimization</li>
+                    </ul>
+                    <div class="tier-sla">
+                        <div class="tier-sla-title">Response SLA</div>
+                        <div class="tier-sla-row"><span>P1 Critical</span><span>1 hour</span></div>
+                        <div class="tier-sla-row"><span>P2 High</span><span>4 hours</span></div>
+                        <div class="tier-sla-row"><span>Support Window</span><span>24/7/365</span></div>
+                    </div>
+                    <a href="#cta" class="tier-cta">Get Started</a>
+                </div>
+                <!-- ENTERPRISE -->
+                <div class="tier-card reveal reveal-delay-3">
+                    <div class="tier-badge">Maximum Protection</div>
+                    <h3 class="tier-name">Enterprise</h3>
+                    <p class="tier-tagline">Built for regulated industries</p>
+                    <div class="tier-for">Best For</div>
+                    <p class="tier-audience">Highly regulated organizations — financial services, defense, pharma. 400+ users with complex environments requiring PIM, EDR, threat hunting, and strict compliance (SOX, DORA, CMMC).</p>
+                    <ul class="tier-features">
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Advanced, plus:</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Microsoft 365 E5</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>SIEM/SOAR + Zero Trust Architecture</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Full EDR + AI-driven threat hunting</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Privileged Identity Management</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Automated compliance suite + DLP</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Dedicated team + named TAM</li>
+                        <li><span class="tier-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>Multi-region infrastructure</li>
+                    </ul>
+                    <div class="tier-sla">
+                        <div class="tier-sla-title">Response SLA</div>
+                        <div class="tier-sla-row"><span>P1 Critical</span><span>30 minutes</span></div>
+                        <div class="tier-sla-row"><span>P2 High</span><span>2 hours</span></div>
+                        <div class="tier-sla-row"><span>Support Window</span><span>24/7/365 Priority</span></div>
+                    </div>
+                    <a href="#cta" class="tier-cta">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         INDUSTRIES
+    ═══════════════════════════════════════════ -->
+    <section class="industries" id="industries">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-eyebrow">Industries We Serve</div>
+                <h2 class="section-title">Purpose-Built for Regulated Sectors</h2>
+                <p class="section-subtitle">We don't offer one-size-fits-all. Every Safe Workspace is configured for your industry's specific regulatory landscape and operational requirements.</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card reveal reveal-delay-1">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3 class="industry-name">Healthcare</h3>
+                    <div class="industry-frameworks">
+                        <span class="framework-tag">HIPAA</span>
+                        <span class="framework-tag">HITECH</span>
+                    </div>
+                    <p class="industry-desc">PHI protection, audit trails with 6-7 year retention, encryption safeguards, and BAA-ready infrastructure for covered entities and business associates.</p>
+                </div>
+                <div class="industry-card reveal reveal-delay-2">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    </div>
+                    <h3 class="industry-name">Financial Services</h3>
+                    <div class="industry-frameworks">
+                        <span class="framework-tag">SOX</span>
+                        <span class="framework-tag">DORA</span>
+                        <span class="framework-tag">GLBA</span>
+                        <span class="framework-tag">PCI-DSS</span>
+                    </div>
+                    <p class="industry-desc">PIM for segregation of duties, 7-year record retention, ICT risk management, and trading-grade performance monitoring for latency-sensitive environments.</p>
+                </div>
+                <div class="industry-card reveal reveal-delay-3">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                    </div>
+                    <h3 class="industry-name">Legal Services</h3>
+                    <div class="industry-frameworks">
+                        <span class="framework-tag">SOC 2</span>
+                        <span class="framework-tag">GDPR</span>
+                    </div>
+                    <p class="industry-desc">Client matter segregation, premium eDiscovery, DLP for privileged communications, and enterprise-grade access controls trusted by AmLaw firms.</p>
+                </div>
+                <div class="industry-card reveal reveal-delay-4">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg>
+                    </div>
+                    <h3 class="industry-name">Defense &amp; Manufacturing</h3>
+                    <div class="industry-frameworks">
+                        <span class="framework-tag">CMMC</span>
+                        <span class="framework-tag">NIST 800-171</span>
+                    </div>
+                    <p class="industry-desc">NIST 800-171 mapped controls, ITAR-ready isolation, GxP validation support, and CUI protection for contractors and regulated manufacturers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         HOW IT WORKS
+    ═══════════════════════════════════════════ -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-eyebrow">How It Works</div>
+                <h2 class="section-title">From Assessment to Operational Peace of Mind</h2>
+                <p class="section-subtitle">Our proven engagement model ensures nothing is left to chance. Every Safe Workspace deployment follows four deliberate phases.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal reveal-delay-1">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Assess</h3>
+                    <p class="step-desc">We score your security, performance, and compliance maturity across our three-pillar framework. No guesswork — data-driven tier recommendation.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Architect</h3>
+                    <p class="step-desc">Your Safe Workspace is designed to your exact regulatory requirements, user count, application landscape, and growth trajectory.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-3">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Deploy</h3>
+                    <p class="step-desc">Phased migration with zero business disruption. User onboarding, training, and validation within a structured 90-day implementation plan.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-4">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Optimize</h3>
+                    <p class="step-desc">Continuous monitoring, proactive adjustments, quarterly business reviews, and compliance validation. We stay. We own it. We evolve with you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         WHY TRISIAN
+    ═══════════════════════════════════════════ -->
+    <section class="why" id="why">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-eyebrow">Why Trisian</div>
+                <h2 class="section-title">Not a Vendor. Your Strategic Partner.</h2>
+                <p class="section-subtitle">We assume total responsibility for your digital environment. That's not a marketing line — it's our operational model.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal reveal-delay-1">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="why-title">28 Years of Battle-Tested Experience</h3>
+                        <p class="why-desc">Founded in 1998, we've navigated every major shift in IT infrastructure — from on-premise to cloud to zero-trust. Our clients get wisdom, not experiments.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-2">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="why-title">Outcomes, Not Infrastructure</h3>
+                        <p class="why-desc">Traditional providers hand you tools. We deliver results — operational uptime, audit readiness, and business continuity. You receive outcomes, not components.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-3">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="why-title">We Anticipate, Not React</h3>
+                        <p class="why-desc">Local vendors react to market changes as they occur. We prepare for technological and regulatory evolutions — positioning you ahead of industry shifts, not behind them.</p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-4">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="why-title">Compliance as Competitive Advantage</h3>
+                        <p class="why-desc">While your competitors treat compliance as a cost center, we embed it into your infrastructure — making regulatory requirements a natural outcome of normal operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MANIFESTO / QUOTE
+    ═══════════════════════════════════════════ -->
+    <section class="manifesto">
+        <div class="container">
+            <div class="manifesto-inner reveal">
+                <div class="manifesto-quote-mark">"</div>
+                <p class="manifesto-text">
+                    TRISIAN represents more than technology — we are the architects of <strong>operational peace of mind</strong>. Through our three pillars, we create Safe Workspaces that liberate leaders to focus on what truly matters: <strong>building the future</strong>.
+                </p>
+                <div class="manifesto-tagline">Three Pillars. One Safe Workspace of Absolute Confidence.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-eyebrow">Frequently Asked Questions</div>
+                <h2 class="section-title">What Leaders Ask Us</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal reveal-delay-1" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <h3>What exactly is Safe Workspace?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Safe Workspace is a cloud-based desktop environment (DaaS) built on Azure Virtual Desktop or Citrix Cloud. It replaces fragmented systems with a unified, secure, and compliance-ready digital ecosystem — including Microsoft 365, endpoint security, monitoring, and automated governance, all managed by Trisian.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-2" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <h3>Which compliance frameworks do you support?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our platform supports HIPAA, SOC 2 Type II, PCI-DSS, GDPR, SOX, DORA, CMMC 2.0, GLBA, and FERPA with pre-built technical controls, automated evidence collection, and compliance posture dashboards. The Enterprise tier provides the most comprehensive compliance automation.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-1" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <h3>How do you determine which tier is right for us?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Through our structured assessment process, we score your organization across all three pillars — security, performance, and compliance. This data-driven approach, combined with your user count, industry, and regulatory requirements, determines the optimal tier recommendation with full transparency.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-2" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <h3>What happens during an emergency at 2 AM?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Advanced and Enterprise clients have 24/7 SLA coverage included. All tiers have access to Emergency Escalation — your designated contacts call our emergency line for immediate, queue-jumping response targeting 15-minute engagement. Our HaloPSA system auto-notifies on-call engineers instantly.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-1" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <h3>Do you replace our existing Microsoft 365?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Each tier includes Microsoft 365 licensing (Business Premium, E3, or E5). If you already have M365 licenses, we offer a License Transition Credit framework to minimize overlap costs during migration. We handle the complete transition seamlessly.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-2" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <h3>How long does deployment take?</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our standard implementation follows a structured 90-day plan: Days 1-30 for platform deployment and initial onboarding, Days 31-60 for full user migration and training, and Days 61-90 for optimization, compliance validation, and transition to steady state. Complexity may adjust this timeline.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CTA
+    ═══════════════════════════════════════════ -->
+    <section class="cta" id="cta">
+        <div class="cta-glow"></div>
+        <div class="container">
+            <div class="cta-inner reveal">
+                <div class="section-eyebrow" style="justify-content:center;">Start Here</div>
+                <h2 class="cta-title">Ready for Operational<br>Peace of Mind?</h2>
+                <p class="cta-subtitle">Schedule your free three-pillar assessment. We'll score your security, performance, and compliance maturity — and show you exactly what Safe Workspace looks like for your organization.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contact@trisian.com?subject=Safe Workspace Assessment Request" class="btn-primary">
+                        Schedule Your Assessment
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="mailto:contact@trisian.com" class="btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="nav-logo" aria-label="Trisian home">
+                        <svg viewBox="0 0 100 88" fill="none" xmlns="http://www.w3.org/2000/svg" width="34">
+                            <polygon points="50,0 100,88 0,88" fill="url(#fGrad)"/>
+                            <defs><linearGradient id="fGrad" x1="0" y1="0" x2="100" y2="88"><stop offset="0%" stop-color="#004AAD"/><stop offset="50%" stop-color="#5170FF"/><stop offset="100%" stop-color="#1800AD"/></linearGradient></defs>
+                        </svg>
+                        TRISIAN
+                    </a>
+                    <p class="footer-brand-desc">The only company that transforms compliance into competitive advantage. Three pillars. One unbreakable Safe Workspace. 28 years of operational peace of mind.</p>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#product">Safe Workspace</a></li>
+                        <li><a href="#tiers">Core Tier</a></li>
+                        <li><a href="#tiers">Advanced Tier</a></li>
+                        <li><a href="#tiers">Enterprise Tier</a></li>
+                        <li><a href="#pillars">Three Pillars</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Industries</h4>
+                    <ul class="footer-links">
+                        <li><a href="#industries">Healthcare</a></li>
+                        <li><a href="#industries">Financial Services</a></li>
+                        <li><a href="#industries">Legal Services</a></li>
+                        <li><a href="#industries">Defense</a></li>
+                        <li><a href="#industries">Retail</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#why">About Trisian</a></li>
+                        <li><a href="#cta">Free Assessment</a></li>
+                        <li><a href="mailto:contact@trisian.com">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 All IT Host Inc, DBA Trisian. All rights reserved.</span>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════
+         SCRIPTS
+    ═══════════════════════════════════════════ -->
+    <script>
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
