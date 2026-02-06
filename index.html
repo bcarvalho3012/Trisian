@@ -6,8 +6,8 @@
     
     <!-- SEO Meta Tags -->
     <title>Trisian — Three Pillars, One Unbreakable Safe Workspace | Managed Cloud Desktop Security & Compliance</title>
-    <meta name="description" content="Trisian delivers Safe Workspace — a secure, scalable, compliance-ready cloud desktop for regulated industries. 28 years of expertise in security, performance, and compliance. HIPAA, SOC 2, PCI-DSS, GDPR, DORA ready.">
-    <meta name="keywords" content="Safe Workspace, managed cloud desktop, DaaS, Azure Virtual Desktop, HIPAA compliance, SOC 2, PCI-DSS, GDPR, DORA, cybersecurity, managed IT, virtual desktop infrastructure, compliance automation, zero trust">
+    <meta name="description" content="Trisian delivers Safe Workspace — a secure, scalable, compliance-ready cloud desktop for regulated industries. Professional services including cloud migrations, Zero Trust security, compliance automation, and managed SOC. 28 years of expertise. HIPAA, SOC 2, PCI-DSS, GDPR, DORA ready.">
+    <meta name="keywords" content="Safe Workspace, managed cloud desktop, DaaS, Azure Virtual Desktop, HIPAA compliance, SOC 2, PCI-DSS, GDPR, DORA, cybersecurity, managed IT, virtual desktop infrastructure, compliance automation, zero trust, cloud migration, Citrix to AVD migration, VMware Horizon migration, managed detection response, SIEM deployment, Microsoft Sentinel, managed SOC, IT strategic planning, disaster recovery, VDI optimization">
     <meta name="author" content="Trisian">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.trisian.com/">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.trisian.com/">
     <meta property="og:title" content="Trisian — Three Pillars, One Unbreakable Safe Workspace">
-    <meta property="og:description" content="The strategic partner that makes compliance invisible and growth inevitable. We deliver secure, scalable, compliance-ready cloud desktops for leaders who refuse to let infrastructure stand between them and growth.">
+    <meta property="og:description" content="The strategic partner that makes compliance invisible and growth inevitable. Secure, scalable, compliance-ready cloud desktops for regulated industries.">
     <meta property="og:image" content="https://www.trisian.com/og-image.jpg">
     <meta property="og:site_name" content="Trisian">
 
@@ -92,6 +92,67 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Professional Services Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Trisian Professional Services",
+        "description": "Strategic IT projects including cloud migrations, security implementations, compliance automation, and managed security services for regulated industries.",
+        "itemListElement": [
+            {
+                "@type": "Service",
+                "position": 1,
+                "name": "Safe Workspace Migration",
+                "description": "End-to-end cloud desktop migration to Azure Virtual Desktop or Citrix Cloud DaaS with zero-downtime implementation, including VDI, Citrix, VMware Horizon, and cross-tenant migrations.",
+                "provider": {"@type": "Organization", "name": "Trisian"},
+                "serviceType": "Cloud Migration",
+                "areaServed": ["US", "ES"]
+            },
+            {
+                "@type": "Service",
+                "position": 2,
+                "name": "Zero Trust Architecture Implementation",
+                "description": "Complete Zero Trust security framework with continuous verification, privileged identity management, passwordless authentication, and SIEM/SOAR deployment using Microsoft Sentinel.",
+                "provider": {"@type": "Organization", "name": "Trisian"},
+                "serviceType": "Cybersecurity"
+            },
+            {
+                "@type": "Service",
+                "position": 3,
+                "name": "Compliance Automation & Certification Preparation",
+                "description": "Automated compliance controls, gap analysis, and audit preparation for HIPAA, SOC 2 Type II, PCI-DSS, GDPR, SOX, DORA, and CMMC frameworks with Microsoft Purview Compliance Manager.",
+                "provider": {"@type": "Organization", "name": "Trisian"},
+                "serviceType": "Compliance Consulting"
+            },
+            {
+                "@type": "Service",
+                "position": 4,
+                "name": "Managed Detection & Response (MDR)",
+                "description": "24/7 threat monitoring, detection, and active response with fully managed SOC services and continuous compliance monitoring for regulated industries.",
+                "provider": {"@type": "Organization", "name": "Trisian"},
+                "serviceType": "Managed Security Services"
+            },
+            {
+                "@type": "Service",
+                "position": 5,
+                "name": "Disaster Recovery & Business Continuity",
+                "description": "Enterprise resilience architecture with multi-region failover, Veeam backup, Azure Site Recovery, and business continuity program development.",
+                "provider": {"@type": "Organization", "name": "Trisian"},
+                "serviceType": "Disaster Recovery"
+            },
+            {
+                "@type": "Service",
+                "position": 6,
+                "name": "Financial Services & Healthcare IT Solutions",
+                "description": "Industry-specific solutions including trading floor VDI optimization, Bloomberg integration, EHR/EMR optimization, HIPAA security risk assessment, and SOX IT controls implementation.",
+                "provider": {"@type": "Organization", "name": "Trisian"},
+                "serviceType": "Industry-Specific IT Services"
+            }
+        ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -1324,6 +1385,182 @@
         }
 
         /* ═══════════════════════════════════════════
+           PROFESSIONAL SERVICES
+        ═══════════════════════════════════════════ */
+        .services {
+            padding: var(--section-pad) 0;
+            background: var(--deep);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--cornflower) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .svc-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .svc-tab {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 24px;
+            background: var(--surface);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 8px 100%);
+        }
+
+        .svc-tab:hover {
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+        }
+
+        .svc-tab.active {
+            background: var(--cornflower);
+            color: white;
+            border-color: var(--cornflower);
+        }
+
+        .svc-panel {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .svc-panel.active {
+            display: block;
+        }
+
+        .svc-panel-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .svc-panel-pillar {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cornflower);
+            margin-bottom: 12px;
+        }
+
+        .svc-panel-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .svc-panel-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .svc-card {
+            background: var(--surface);
+            padding: 36px 28px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .svc-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--grad-brand);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .svc-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .svc-card:hover {
+            background: var(--surface-2);
+        }
+
+        .svc-card-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(81, 112, 255, 0.06);
+            border: 1px solid var(--border);
+        }
+
+        .svc-card-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--cornflower);
+        }
+
+        .svc-card h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .svc-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .svc-cta-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            margin-top: 48px;
+            padding: 36px 40px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
+
+        .svc-cta-strip p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .svc-cta-strip p strong {
+            color: var(--text-primary);
+        }
+
+        /* ═══════════════════════════════════════════
            HOW IT WORKS / PROCESS
         ═══════════════════════════════════════════ */
         .process {
@@ -1750,6 +1987,15 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .svc-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .svc-cta-strip {
+                flex-direction: column;
+                text-align: center;
+            }
+
             .process-steps {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
@@ -1777,6 +2023,19 @@
             .faq-grid,
             .industries-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .svc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .svc-tabs {
+                gap: 6px;
+            }
+
+            .svc-tab {
+                font-size: 0.7rem;
+                padding: 10px 16px;
             }
 
             .process-steps {
@@ -1817,6 +2076,7 @@
                 <li><a href="#product">Safe Workspace</a></li>
                 <li><a href="#tiers">Solutions</a></li>
                 <li><a href="#industries">Industries</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#why">Why Trisian</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
@@ -2239,6 +2499,321 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
+         PROFESSIONAL SERVICES
+    ═══════════════════════════════════════════ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="section-eyebrow">Professional Services</div>
+                <h2 class="section-title">Strategic Projects. Measurable Outcomes.</h2>
+                <p class="section-subtitle">Beyond managed Safe Workspace, Trisian delivers project-based engagements that fundamentally transform your environment — from migrations and security deployments to compliance certification and ongoing managed security operations.</p>
+            </div>
+
+            <!-- Service Category Tabs -->
+            <div class="svc-tabs reveal" role="tablist" aria-label="Professional service categories">
+                <button class="svc-tab active" onclick="switchServiceTab(this, 'tab-migrations')" role="tab" aria-selected="true">Migrations</button>
+                <button class="svc-tab" onclick="switchServiceTab(this, 'tab-security')" role="tab" aria-selected="false">Security</button>
+                <button class="svc-tab" onclick="switchServiceTab(this, 'tab-compliance')" role="tab" aria-selected="false">Compliance</button>
+                <button class="svc-tab" onclick="switchServiceTab(this, 'tab-infrastructure')" role="tab" aria-selected="false">Infrastructure</button>
+                <button class="svc-tab" onclick="switchServiceTab(this, 'tab-managed')" role="tab" aria-selected="false">Managed Services</button>
+                <button class="svc-tab" onclick="switchServiceTab(this, 'tab-advisory')" role="tab" aria-selected="false">Advisory</button>
+            </div>
+
+            <!-- TAB: Migrations -->
+            <div class="svc-panel active" id="tab-migrations" role="tabpanel">
+                <div class="svc-panel-header">
+                    <div class="svc-panel-pillar">Pillar: Performance that Scales</div>
+                    <h3 class="svc-panel-title">Safe Workspace Migrations &amp; Platform Implementation</h3>
+                    <p class="svc-panel-desc">End-to-end transformation projects that move your organization to Trisian's managed Safe Workspace — or architect entirely new virtualization environments from the ground up.</p>
+                </div>
+                <div class="svc-grid">
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <h4>Safe Workspace Migration</h4>
+                        <p>Complete implementation to Trisian's DaaS platform with zero-downtime cutover and full user onboarding.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h4>VDI Migration (On-Prem to Cloud)</h4>
+                        <p>Migration from physical or virtualized infrastructure to cloud-hosted virtual desktops on Azure.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                        </div>
+                        <h4>Citrix to AVD Migration</h4>
+                        <p>Full migration from Citrix Virtual Apps &amp; Desktops to Azure Virtual Desktop, preserving profiles and configurations.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                        </div>
+                        <h4>VMware Horizon Migration</h4>
+                        <p>Migration from VMware Horizon View to AVD, including infrastructure redesign and application repackaging.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                        </div>
+                        <h4>Multi-Site / Global Deployment</h4>
+                        <p>Expand Safe Workspace to additional regions with unified governance and multi-region failover.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+                        </div>
+                        <h4>Email &amp; Cross-Tenant Migration</h4>
+                        <p>M365 tenant migrations for M&amp;A or restructuring, plus third-party email system migrations with archive transfer and DNS cutover.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: Security -->
+            <div class="svc-panel" id="tab-security" role="tabpanel">
+                <div class="svc-panel-header">
+                    <div class="svc-panel-pillar">Pillar: Security that Anticipates</div>
+                    <h3 class="svc-panel-title">Identity, Access &amp; Advanced Security Stack</h3>
+                    <p class="svc-panel-desc">Zero Trust identity architecture, enterprise SIEM/SOAR deployments, and end-to-end threat detection — from design through implementation and tuning.</p>
+                </div>
+                <div class="svc-grid">
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h4>Zero Trust Architecture</h4>
+                        <p>Complete Zero Trust framework replacing traditional VPN with continuous verification across identity, devices, and data.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                        </div>
+                        <h4>Privileged Identity Management</h4>
+                        <p>Just-in-time privileged access with approval workflows, credential rotation, and full audit trails.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <h4>Microsoft Sentinel SIEM Deployment</h4>
+                        <p>Centralized threat detection, analytics rules, and automated incident response with SOAR playbooks.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                        </div>
+                        <h4>Defender XDR Integration</h4>
+                        <p>Unified security across endpoints, email, identity, and cloud apps with centralized detection and response.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        </div>
+                        <h4>Data Loss Prevention (DLP)</h4>
+                        <p>Microsoft Purview DLP across endpoints, email, and cloud applications with auto-labeling and policy enforcement.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                        </div>
+                        <h4>Passwordless Authentication</h4>
+                        <p>Enterprise rollout of Windows Hello, FIDO2 security keys, and Microsoft Authenticator for phishing-resistant access.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: Compliance -->
+            <div class="svc-panel" id="tab-compliance" role="tabpanel">
+                <div class="svc-panel-header">
+                    <div class="svc-panel-pillar">Pillar: Compliance that Facilitates</div>
+                    <h3 class="svc-panel-title">Compliance Automation &amp; Certification Preparation</h3>
+                    <p class="svc-panel-desc">From gap analysis to audit-ready controls — we build the technical compliance foundation so you can achieve and maintain certification with confidence.</p>
+                </div>
+                <div class="svc-grid">
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <h4>Compliance Program</h4>
+                        <p>Comprehensive security risk analysis, controls implementation, and audit preparation tailored to your regulatory landscape.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <h4>SOC 2 Type II Preparation</h4>
+                        <p>Full assessment against SOC 2 trust criteria with gap remediation, evidence automation, and pre-audit readiness validation.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <h4>HIPAA Security Risk Assessment</h4>
+                        <p>Comprehensive security risk analysis with remediation roadmap, PHI data flow mapping, and safeguard gap identification.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <h4>Compliance Gap Analysis</h4>
+                        <p>Assessment against HIPAA, SOC 2, PCI-DSS, DORA, and SOX — identifying control gaps with prioritized remediation plans.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15"/></svg>
+                        </div>
+                        <h4>Advanced Compliance Suite Deployment</h4>
+                        <p>Microsoft Purview Compliance Manager with automated audit evidence collection, control monitoring, and posture dashboards.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                        </div>
+                        <h4>SOX IT Controls &amp; FINRA/SEC Config</h4>
+                        <p>IT general controls implementation for Sarbanes-Oxley and financial regulatory environment configuration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: Infrastructure -->
+            <div class="svc-panel" id="tab-infrastructure" role="tabpanel">
+                <div class="svc-panel-header">
+                    <div class="svc-panel-pillar">Pillar: Performance that Scales</div>
+                    <h3 class="svc-panel-title">Infrastructure, DR &amp; Platform Optimization</h3>
+                    <p class="svc-panel-desc">Enterprise architecture, disaster recovery, network optimization, and AVD management — the operational backbone that ensures your Safe Workspace never misses a beat.</p>
+                </div>
+                <div class="svc-grid">
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                        </div>
+                        <h4>AVD &amp; Citrix Deployment</h4>
+                        <p>Complete Azure Virtual Desktop with Nerdio management or Citrix Cloud DaaS with optional NetScaler ADC.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                        </div>
+                        <h4>Nerdio &amp; AVD Cost Optimization</h4>
+                        <p>Auto-scaling configuration, reserved instances, savings plans, and intelligent resource right-sizing for cost control.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+                        </div>
+                        <h4>DR Architecture &amp; Azure Site Recovery</h4>
+                        <p>Multi-region failover design, Veeam backup implementation, and ASR automated replication with RTO/RPO assurance.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+                        </div>
+                        <h4>Network Architecture &amp; SD-WAN</h4>
+                        <p>LAN/WAN optimization for VDI workloads, ExpressRoute hybrid connectivity, and software-defined WAN deployment.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                        </div>
+                        <h4>Azure Infrastructure Deployment</h4>
+                        <p>Azure VMs, networking, and storage provisioned and optimized for virtualization and application workloads.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <h4>ControlUp User Experience Monitoring</h4>
+                        <p>Real-time performance monitoring, session analytics, and automated remediation for virtual desktop environments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: Managed Services -->
+            <div class="svc-panel" id="tab-managed" role="tabpanel">
+                <div class="svc-panel-header">
+                    <div class="svc-panel-pillar">Pillar: Security that Anticipates</div>
+                    <h3 class="svc-panel-title">Managed Security &amp; Compliance Operations</h3>
+                    <p class="svc-panel-desc">Ongoing, contract-based security and compliance operations — because protection isn't a project, it's a continuous commitment. We monitor, detect, respond, and report so you don't have to.</p>
+                </div>
+                <div class="svc-grid">
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h4>Managed Detection &amp; Response (MDR)</h4>
+                        <p>24/7 threat monitoring, detection, and active response services — continuous protection under annual contract.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h4>Managed SOC Services</h4>
+                        <p>Fully managed Security Operations Center powered by Microsoft Sentinel with alert triage, investigation, and escalation.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <h4>Managed Compliance Monitoring</h4>
+                        <p>Continuous compliance posture monitoring and regulatory reporting for regulated industries — never caught off-guard by an audit.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <h4>Incident Response Retainer</h4>
+                        <p>Pre-paid incident response hours with guaranteed SLA — immediate containment within 15 minutes, sustained response under Professional Services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: Advisory -->
+            <div class="svc-panel" id="tab-advisory" role="tabpanel">
+                <div class="svc-panel-header">
+                    <div class="svc-panel-pillar">All Three Pillars</div>
+                    <h3 class="svc-panel-title">Strategic Advisory &amp; Industry Verticals</h3>
+                    <p class="svc-panel-desc">Executive-level IT leadership, M&amp;A due diligence, and deep industry-specific solutions — for financial services trading floors, healthcare clinical workflows, and beyond.</p>
+                </div>
+                <div class="svc-grid">
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                        </div>
+                        <h4>IT Strategic Planning (3–5 Year Roadmap)</h4>
+                        <p>Comprehensive IT roadmap aligned with business objectives, growth trajectory, and evolving regulatory requirements.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 012 2v7"/><path d="M11 18H8a2 2 0 01-2-2V9"/></svg>
+                        </div>
+                        <h4>M&amp;A IT Due Diligence</h4>
+                        <p>Technology assessment, risk evaluation, and integration planning for mergers, acquisitions, and divestitures.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </div>
+                        <h4>Trading Floor VDI &amp; Bloomberg Integration</h4>
+                        <p>Low-latency virtual desktops optimized for trading applications with Bloomberg Terminal integration for financial institutions.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h4>EHR/EMR &amp; Clinical Workflow Optimization</h4>
+                        <p>Optimized EHR systems in virtual environments with clinical workflow design and healthcare data segmentation for PHI protection.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
          HOW IT WORKS
     ═══════════════════════════════════════════ -->
     <section class="process" id="process">
@@ -2442,7 +3017,7 @@
                         </svg>
                         TRISIAN
                     </a>
-                    <p class="footer-brand-desc">The only company that transforms compliance into competitive advantage. Three pillars. One unbreakable Safe Workspace. 28 years of operational peace of mind.</p>
+                    <p class="footer-brand-desc">The strategic partner that makes compliance invisible and growth inevitable. Three pillars. One unbreakable Safe Workspace. 28 years of operational peace of mind.</p>
                 </div>
                 <div>
                     <h4 class="footer-col-title">Product</h4>
@@ -2452,6 +3027,7 @@
                         <li><a href="#tiers">Advanced Tier</a></li>
                         <li><a href="#tiers">Enterprise Tier</a></li>
                         <li><a href="#pillars">Three Pillars</a></li>
+                        <li><a href="#services">Professional Services</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2517,6 +3093,19 @@
                 }
             });
         });
+
+        // Professional Services tab switching
+        function switchServiceTab(btn, panelId) {
+            // Deactivate all tabs and panels
+            document.querySelectorAll('.svc-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.svc-tab').forEach(t => t.setAttribute('aria-selected', 'false'));
+            document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+            
+            // Activate clicked tab and target panel
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            document.getElementById(panelId).classList.add('active');
+        }
     </script>
 </body>
 </html>
