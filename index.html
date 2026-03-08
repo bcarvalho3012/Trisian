@@ -129,7 +129,7 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between}
 .hero-stat .sl{font-size:.72rem;color:rgba(255,255,255,.4);font-weight:500}
 
 /* TRUST BAR */
-.trust{background:var(--heroDark);padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.04)}
+.trust{position:relative;z-index:1;padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.04)}
 .trust-inner{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
 .trust-label{font-family:var(--fH);font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);white-space:nowrap}
 .trust-items{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;justify-content:center}
@@ -456,9 +456,8 @@ nav.open .nlinks a{color:rgba(255,255,255,.7)}nav.open .nlinks a:hover{color:#ff
 <div class="hero-stat"><div class="sn">30<small>min</small></div><div class="sl">Critical Response SLA</div></div>
 </div>
 </div>
-</div></section>
 
-<!-- ===== TRUST BAR ===== -->
+<!-- Trust bar inside hero for unified background effects -->
 <div class="trust"><div class="ctn">
 <div class="trust-inner">
 <span class="trust-label">Compliance-Ready Across</span>
@@ -475,6 +474,8 @@ nav.open .nlinks a{color:rgba(255,255,255,.7)}nav.open .nlinks a:hover{color:#ff
 </div>
 </div>
 </div></div>
+
+</div></section>
 
 <!-- ===== 2. THREE PILLARS ===== -->
 <section class="bgl" id="pillars"><div class="ctn">
