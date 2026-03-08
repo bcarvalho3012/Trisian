@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trisian — Three Pillars. One Safe Workspace.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sec:#004AAD;--perf:#5170FF;--comp:#1800AD;
+  --txt:#1A1D23;--txt2:#4A4F5C;--txtL:#6B7280;
+  --bdr:#E2E5EB;--white:#FFFFFF;--light:#F7F8FA;--surface:#FAFBFC;
+  --dark:#0D1117;--darkSurface:#161B22;--darkCard:#1C2128;
+  --cta:#004AAD;--ctaH:#003A8C;--ok:#16A34A;
+  --fH:'Montserrat',sans-serif;--fB:'Open Sans',sans-serif;
+  --r:6px;--rL:10px;
+  --pillarGrad:linear-gradient(90deg,var(--sec),var(--perf),var(--comp));
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fB);color:var(--txt);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{text-decoration:none;color:inherit}
+.ctn{max-width:1180px;margin:0 auto;padding:0 2rem}
+h1,h2,h3,h4{font-family:var(--fH);font-weight:700;line-height:1.2;color:var(--txt);letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,5vw,3.8rem);font-weight:800}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
+h3{font-size:clamp(1.1rem,2vw,1.35rem)}
+p{color:var(--txt2)}
+.lbl{font-family:var(--fH);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.6rem}
+.shdr{text-align:center;margin-bottom:4rem}
+.shdr .sub{margin:.8rem auto 0;max-width:640px;font-size:.98rem;color:var(--txt2);line-height:1.8}
+
+/* Pillar gradient line divider */
+.pillar-line{height:2px;background:var(--pillarGrad);border:none;margin:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fH);font-size:.88rem;font-weight:600;padding:.9rem 2.2rem;border-radius:var(--r);border:none;cursor:pointer;transition:all .3s ease;letter-spacing:.01em}
+.bp{background:var(--cta);color:#fff}.bp:hover{background:var(--ctaH);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,74,173,.3)}
+.bo{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.3)}.bo:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+.bo-dark{background:transparent;color:var(--cta);border:1.5px solid var(--cta)}.bo-dark:hover{background:var(--cta);color:#fff}
+.bw{background:#fff;color:var(--cta)}.bw:hover{background:rgba(255,255,255,.9);transform:translateY(-2px)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:all .4s}
+nav.scrolled{background:rgba(13,17,23,.95);backdrop-filter:blur(20px);padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+nav .ctn{display:flex;align-items:center;justify-content:space-between}
+.nlogo{font-family:var(--fH);font-weight:800;font-size:1.3rem;color:#fff;letter-spacing:.08em}
+.nlinks{display:flex;gap:1.5rem;align-items:center}
+.nlinks a{font-family:var(--fH);font-size:.78rem;font-weight:500;color:rgba(255,255,255,.6);transition:color .3s;letter-spacing:.02em}.nlinks a:hover{color:#fff}
+.nav-cta{background:var(--sec)!important;color:#fff!important;padding:.55rem 1.5rem!important;border-radius:var(--r)!important;font-weight:600!important;font-size:.78rem!important;letter-spacing:.02em!important;transition:all .3s!important}
+.nav-cta:hover{background:var(--ctaH)!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,74,173,.4)!important}
+.mtog{display:none;background:none;border:none;cursor:pointer;padding:.5rem}.mtog span{display:block;width:20px;height:1.5px;background:#fff;margin:5px 0;transition:all .3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;background:var(--dark);position:relative;overflow:hidden;padding:6rem 0 5rem}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(0,74,173,.12),transparent 60%),radial-gradient(ellipse 60% 50% at 20% 70%,rgba(24,0,173,.08),transparent 50%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 52H0z' fill='none' stroke='rgba(255,255,255,0.015)' stroke-width='.5'/%3E%3C/svg%3E") repeat;pointer-events:none}
+.hero .ctn{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-txt h1{color:#fff;margin-bottom:1.5rem;line-height:1.1}
+.hero-txt h1 span{background:var(--pillarGrad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-txt .hero-sub{font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,.55);margin-bottom:2.5rem}
+.hero-txt .hero-sub strong{color:rgba(255,255,255,.9);font-weight:600}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-right{display:flex;flex-direction:column;gap:2rem}
+.hero-belief{font-family:var(--fH);font-size:1.35rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.4);line-height:1.6;padding-left:1.5rem;border-left:2px solid rgba(255,255,255,.08)}
+.hero-belief em{font-weight:600;color:var(--perf);font-style:normal}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.hero-stat{text-align:center;padding:1rem .5rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--r)}
+.hero-stat strong{display:block;font-family:var(--fH);font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.15rem}
+.hero-stat strong small{font-size:.8rem;font-weight:600}
+.hero-stat span{font-size:.68rem;color:rgba(255,255,255,.4);font-weight:500;letter-spacing:.03em}
+
+/* TRUST */
+.trust{background:var(--dark);padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.04)}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.trust-label{font-family:var(--fH);font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+.trust-items{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center}
+.trust-item{font-family:var(--fH);font-size:.7rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.04em;transition:color .3s}
+.trust-item:hover{color:rgba(255,255,255,.8)}
+.trust-sep{color:rgba(255,255,255,.1);font-size:.5rem}
+
+/* SECTIONS */
+section{padding:7rem 0}
+section.light{background:var(--white)}
+section.surface{background:var(--surface)}
+section.dark{background:var(--dark);color:#fff}
+section.dark h2,section.dark h3,section.dark h4{color:#fff}
+section.dark p{color:rgba(255,255,255,.6)}
+section.dark .lbl{color:var(--perf)}
+section.dark .sub{color:rgba(255,255,255,.5)!important}
+section.brand{background:var(--sec);color:#fff}
+section.brand h2,section.brand p{color:#fff}
+section.brand .lbl{color:rgba(255,255,255,.5)}
+
+/* PILLARS */
+.pl-intro{max-width:700px;margin:0 auto 3.5rem;text-align:center}
+.pl-intro p{font-size:1.02rem;line-height:1.85}
+.plgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.plcol{border-radius:var(--rL);background:var(--white);border:1px solid var(--bdr);overflow:hidden;display:flex;flex-direction:column;transition:all .4s}
+.plcol:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,74,173,.08);border-color:rgba(0,74,173,.15)}
+.pltop{height:3px}.pltop.s{background:var(--sec)}.pltop.p{background:var(--perf)}.pltop.c{background:var(--comp)}
+.plbd{padding:2rem;flex:1}
+.pltag{font-family:var(--fH);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.4rem}
+.pltag.s{color:var(--sec)}.pltag.p{color:var(--perf)}.pltag.c{color:var(--comp)}
+.plbd h3{margin-bottom:.6rem}
+.plbd .met{font-family:var(--fH);font-weight:300;font-style:italic;color:var(--txtL);font-size:.88rem;margin-bottom:1rem;line-height:1.55}
+.plcomps{display:flex;flex-direction:column;gap:.5rem;padding-top:.75rem;border-top:1px solid var(--bdr)}
+.plci{font-size:.84rem;color:var(--txt2);padding-left:1.1rem;position:relative}
+.plci::before{content:'';position:absolute;left:0;top:.55rem;width:4px;height:4px;border-radius:50%}
+.plcol:nth-child(1) .plci::before{background:var(--sec)}
+.plcol:nth-child(2) .plci::before{background:var(--perf)}
+.plcol:nth-child(3) .plci::before{background:var(--comp)}
+
+/* SAFE WORKSPACE */
+.sw-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center;margin-bottom:4rem}
+.sw-txt .lbl{color:var(--sec)}
+.sw-txt h2{color:var(--sec);margin-bottom:.6rem}
+.sw-tagline{font-family:var(--fH);font-size:1.1rem;font-weight:500;color:var(--txt2);margin-bottom:1.5rem;letter-spacing:.01em}
+.sw-txt p{font-size:.98rem;line-height:1.85;margin-bottom:1rem}
+.sw-visual{background:var(--dark);border-radius:var(--rL);padding:3rem 2.5rem;position:relative;overflow:hidden}
+.sw-visual::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 52H0z' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='.5'/%3E%3C/svg%3E") repeat;pointer-events:none}
+.sw-belief{font-family:var(--fH);font-size:1.2rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);text-align:center;position:relative;z-index:1;line-height:1.65;margin-bottom:2rem}
+.sw-belief em{font-weight:700;color:var(--perf);font-style:normal}
+.sw-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;position:relative;z-index:1}
+.sw-stat{text-align:center;padding:.85rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:var(--r)}
+.sw-stat strong{display:block;font-family:var(--fH);font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.1rem}.sw-stat span{font-size:.65rem;color:rgba(255,255,255,.35);letter-spacing:.03em}
+
+.quad-label{text-align:center;margin-bottom:1.5rem}
+.quad-label span{font-family:var(--fH);font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--txtL)}
+.qstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.qi{padding:1.75rem 1.5rem;border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);text-align:center;transition:all .4s}
+.qi:hover{border-color:rgba(0,74,173,.2);box-shadow:0 12px 40px rgba(0,74,173,.06);transform:translateY(-4px)}
+.qic{font-size:1.5rem;margin-bottom:.75rem;display:block;opacity:.7}
+.qi h4{font-family:var(--fH);font-size:.88rem;font-weight:700;margin-bottom:.4rem;color:var(--txt)}.qi p{font-size:.8rem;line-height:1.6;color:var(--txt2)}
+
+/* BEFORE / AFTER */
+.ba-header{text-align:center;margin-bottom:3rem}
+.ba-header .stat-line{font-family:var(--fH);font-size:.85rem;color:rgba(255,255,255,.4);margin-top:.75rem;line-height:1.6}
+.ba-header .stat-line strong{color:var(--perf);font-weight:700}
+.ba-grid{display:grid;grid-template-columns:1fr 3px 1fr;gap:0;overflow:hidden;border-radius:var(--rL)}
+.ba-divider{background:var(--pillarGrad)}
+.ba-col{padding:2.5rem}
+.ba-col.before{background:rgba(255,255,255,.02)}
+.ba-col.after{background:rgba(0,74,173,.08)}
+.ba-col h3{font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.75rem;display:flex;align-items:center;gap:.6rem;color:#fff}
+.ba-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.ba-col.before .ba-dot{background:#EF4444}
+.ba-col.after .ba-dot{background:var(--ok)}
+.ba-row{padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.ba-row:last-child{border-bottom:none}
+.ba-label{font-family:var(--fH);font-size:.68rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem}
+.ba-text{font-size:.86rem;line-height:1.55;color:rgba(255,255,255,.65)}
+
+/* TIERS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.tc{border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);overflow:hidden;transition:all .4s;display:flex;flex-direction:column}
+.tc:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.tc.feat{border-color:var(--sec);box-shadow:0 4px 20px rgba(0,74,173,.08)}
+.tc.feat:hover{box-shadow:0 20px 60px rgba(0,74,173,.15)}
+.th{padding:1.5rem 1.5rem 1.25rem;border-bottom:1px solid var(--bdr)}
+.th.co{border-top:3px solid var(--perf)}.th.ad{border-top:3px solid var(--sec)}.th.en{border-top:3px solid var(--comp)}
+.tbdg{display:inline-block;font-family:var(--fH);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;margin-bottom:.5rem}
+.tbdg.co{background:rgba(81,112,255,.08);color:var(--perf)}.tbdg.ad{background:rgba(0,74,173,.08);color:var(--sec)}.tbdg.en{background:rgba(24,0,173,.08);color:var(--comp)}
+.th h3{margin-bottom:.2rem}.ttag{font-size:.85rem;color:var(--txtL);font-weight:400}
+.tbd{padding:1.5rem;flex:1}
+.ttar{font-size:.78rem;color:var(--txt2);padding:.7rem .85rem;background:var(--surface);border-radius:var(--r);margin-bottom:1rem;line-height:1.5}.ttar strong{color:var(--txt);font-weight:700}
+.tfeat{list-style:none;margin-bottom:1rem}
+.tfeat li{font-size:.82rem;color:var(--txt2);padding:.3rem 0 .3rem 1.2rem;position:relative}
+.tfeat li::before{content:'\2713';position:absolute;left:0;color:var(--ok);font-weight:700;font-size:.72rem}
+.tfeat li.hr{font-weight:700;color:var(--txt);border-bottom:1px solid var(--bdr);padding-bottom:.45rem;margin-bottom:.2rem;font-family:var(--fH);font-size:.75rem;letter-spacing:.02em}.tfeat li.hr::before{content:''}
+.tsla{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;padding:.65rem;background:var(--surface);border-radius:var(--r)}
+.slai{text-align:center}.slal{font-size:.58rem;color:var(--txtL);text-transform:uppercase;letter-spacing:.06em;font-weight:600}.slav{font-family:var(--fH);font-size:.85rem;font-weight:800;color:var(--txt)}
+.tft{padding:0 1.5rem 1.5rem}.tft .btn{width:100%;justify-content:center;font-size:.82rem;padding:.75rem;background:var(--cta);color:#fff;border:none;border-radius:var(--r)}.tft .btn:hover{background:var(--ctaH)}
+.tft .btn.secondary{background:transparent;color:var(--cta);border:1.5px solid var(--cta)}.tft .btn.secondary:hover{background:var(--cta);color:#fff}
+.tier-actions{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.cmp-trigger{font-family:var(--fH);font-size:.82rem;font-weight:600;color:var(--sec);background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:color .3s;padding:.5rem 0}
+.cmp-trigger:hover{color:var(--ctaH)}
+.ctab{text-align:center;padding:2.5rem;background:var(--surface);border-radius:var(--rL);border:1px solid var(--bdr)}
+.ctab h3{margin-bottom:.4rem;font-size:1.15rem}.ctab p{margin-bottom:1.5rem;font-size:.92rem}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:2000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity .35s}
+.modal-overlay.open{display:flex;opacity:1}
+.modal-box{background:var(--white);border-radius:var(--rL);max-width:900px;width:100%;max-height:85vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 32px 100px rgba(0,0,0,.3);transform:scale(.96);transition:transform .35s}
+.modal-overlay.open .modal-box{transform:scale(1)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.75rem;border-bottom:1px solid var(--bdr)}
+.modal-header h3{font-size:1rem}
+.modal-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--txtL);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--r);transition:all .2s}
+.modal-close:hover{background:var(--surface);color:var(--txt)}
+.modal-body{overflow-y:auto}
+.cmpt{width:100%;border-collapse:collapse;font-size:.78rem}
+.cmpt th,.cmpt td{padding:.55rem 1rem;text-align:left;border-bottom:1px solid var(--bdr)}
+.cmpt thead th{background:var(--dark);color:#fff;font-family:var(--fH);font-weight:600;font-size:.72rem;letter-spacing:.04em;position:sticky;top:0;z-index:1}
+.cmpt .cat td{background:var(--surface);font-family:var(--fH);font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sec);padding:.45rem 1rem}
+.cmpt td:nth-child(n+2),.cmpt th:nth-child(n+2){text-align:center;min-width:110px}
+.cmpt .ck{color:var(--ok);font-weight:700}.cmpt .no{color:var(--bdr)}
+.cmpt tbody tr:hover{background:rgba(0,74,173,.02)}.cmpt td:first-child{color:var(--txt2);padding-left:1.4rem}
+
+/* BILLING */
+.blgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
+.blc{padding:2.5rem 2rem;border-radius:var(--rL);background:var(--white);border:1px solid var(--bdr);transition:all .4s}
+.blc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.05);border-color:rgba(0,74,173,.15)}
+.blc h4{font-family:var(--fH);margin-bottom:.5rem;color:var(--sec);font-size:1rem}.blc p{font-size:.88rem;line-height:1.65}
+.bl-notes{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.bl-note{padding:1.25rem 1.5rem;background:var(--white);border-radius:var(--rL);border:1px solid var(--bdr)}
+.bl-note strong{font-family:var(--fH);font-size:.82rem;color:var(--txt);display:block;margin-bottom:.3rem}
+.bl-note p{font-size:.82rem;line-height:1.6}
+
+/* DIFFERENTIATORS */
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.dc{padding:2.25rem;border-radius:var(--rL);background:var(--darkCard);border:1px solid rgba(255,255,255,.04);transition:all .4s}
+.dc:hover{border-color:rgba(81,112,255,.2);transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.dnum{font-family:var(--fH);font-size:.68rem;font-weight:800;color:var(--perf);margin-bottom:.5rem;letter-spacing:.06em}
+.dc h4{margin-bottom:.5rem;font-size:.98rem;color:#fff}.dc p{font-size:.84rem;line-height:1.65;color:rgba(255,255,255,.5)}
+
+/* INDUSTRIES */
+.igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.ic{padding:1.75rem;border-radius:var(--rL);background:var(--white);border:1px solid var(--bdr);transition:all .4s}
+.ic:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.05);border-color:rgba(0,74,173,.15)}
+.ic h4{margin-bottom:.5rem;font-size:.95rem}
+.ibdgs{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.85rem}
+.ibdg{font-family:var(--fH);font-size:.58rem;font-weight:700;padding:.2rem .5rem;border-radius:4px;background:rgba(0,74,173,.06);color:var(--sec);letter-spacing:.05em}
+.ic p{font-size:.82rem;line-height:1.6}
+
+/* TIMELINE */
+.tl{position:relative;display:flex;justify-content:space-between;padding:3rem 0 1rem}
+.tl::before{content:'';position:absolute;top:30px;left:8%;right:8%;height:2px;background:var(--pillarGrad);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform 1.2s ease .3s}
+.tl.vis::before{transform:scaleX(1)}
+.tls{position:relative;text-align:center;width:17%;z-index:1;opacity:0;transform:translateY(20px);transition:all .6s ease}
+.tl.vis .tls:nth-child(1){opacity:1;transform:none;transition-delay:.4s}
+.tl.vis .tls:nth-child(2){opacity:1;transform:none;transition-delay:.6s}
+.tl.vis .tls:nth-child(3){opacity:1;transform:none;transition-delay:.8s}
+.tl.vis .tls:nth-child(4){opacity:1;transform:none;transition-delay:1s}
+.tl.vis .tls:nth-child(5){opacity:1;transform:none;transition-delay:1.2s}
+.tld{width:52px;height:52px;border-radius:50%;background:var(--white);border:2px solid var(--sec);display:flex;align-items:center;justify-content:center;margin:0 auto .85rem;font-family:var(--fH);font-weight:800;font-size:.78rem;color:var(--sec);box-shadow:0 2px 12px rgba(0,74,173,.1)}
+.tls:nth-child(2) .tld{border-color:#1A5FBE;color:#1A5FBE}
+.tls:nth-child(3) .tld{border-color:var(--perf);color:var(--perf)}
+.tls:nth-child(4) .tld{border-color:#3338D0;color:#3338D0}
+.tls:nth-child(5) .tld{border-color:var(--comp);color:var(--comp)}
+.tls h4{font-size:.88rem;margin-bottom:.3rem}.tls p{font-size:.74rem;line-height:1.5;color:var(--txt2)}
+
+/* SERVICES */
+.stabs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:3rem;justify-content:center}
+.stb{font-family:var(--fH);font-size:.78rem;font-weight:600;padding:.6rem 1.2rem;border:1px solid var(--bdr);border-radius:100px;background:var(--white);color:var(--txt2);cursor:pointer;transition:all .3s;letter-spacing:.02em}
+.stb:hover{border-color:var(--sec);color:var(--sec)}.stb.act{background:var(--sec);color:#fff;border-color:var(--sec)}
+.tcnt{display:none}.tcnt.act{display:block}
+.thd{margin-bottom:1.5rem}
+.tpl{font-family:var(--fH);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.25rem}
+.tsub{font-size:.88rem;color:var(--txtL);font-style:italic;font-family:var(--fH);font-weight:300}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.sc{padding:1.5rem;border-radius:var(--r);border:1px solid var(--bdr);background:var(--white);transition:all .3s}
+.sc:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.04);border-color:rgba(0,74,173,.12)}
+.sc h4{font-size:.86rem;margin-bottom:.3rem}.sc p{font-size:.78rem;line-height:1.6}
+
+/* BLOG */
+.blg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+.blg-card{border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);overflow:hidden;transition:all .4s}
+.blg-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.06);transform:translateY(-4px);border-color:rgba(0,74,173,.1)}
+.blg-img{height:180px;position:relative;overflow:hidden}
+.blg-img.sec-bg{background:linear-gradient(135deg,#003A8C,var(--sec))}.blg-img.perf-bg{background:linear-gradient(135deg,var(--sec),var(--perf))}.blg-img.comp-bg{background:linear-gradient(135deg,var(--comp),#3338D0)}
+.blg-img::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 52H0z' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='.5'/%3E%3C/svg%3E") repeat}
+.blg-cat{position:absolute;bottom:.75rem;left:.75rem;font-family:var(--fH);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(8px);padding:.25rem .65rem;border-radius:100px;z-index:1}
+.blg-body{padding:1.5rem}
+.blg-body h4{font-size:.92rem;margin-bottom:.4rem;line-height:1.35}.blg-body p{font-size:.82rem;line-height:1.6;color:var(--txt2);margin-bottom:.75rem}
+.blg-meta{font-size:.7rem;color:var(--txtL);font-family:var(--fH);font-weight:500;letter-spacing:.02em}
+.blg-cta{text-align:center;margin-top:3rem}
+
+/* FAQ */
+.fl{max-width:720px;margin:0 auto}.fi{border-bottom:1px solid var(--bdr)}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:1.35rem 0;cursor:pointer;width:100%;background:none;border:none;text-align:left;font-family:var(--fH);font-size:.92rem;font-weight:600;color:var(--txt);transition:color .3s;letter-spacing:-.01em}.fq:hover{color:var(--sec)}
+.fic{font-size:1.3rem;font-weight:300;color:var(--txtL);transition:transform .3s;flex-shrink:0;margin-left:1.5rem}
+.fi.open .fic{transform:rotate(45deg);color:var(--sec)}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease}.fi.open .fa{max-height:500px}
+.fai{padding-bottom:1.35rem;font-size:.9rem;line-height:1.75;color:var(--txt2)}
+
+/* CTA */
+.cta-section{text-align:center;padding:8rem 0}
+.cta-section h2{color:#fff;margin-bottom:1rem;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.cta-section p{color:rgba(255,255,255,.7);margin-bottom:2.5rem;font-size:1rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.8}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem;border-top:1px solid rgba(255,255,255,.04)}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:2.5rem}
+.fbrand p{font-size:.84rem;line-height:1.75;color:rgba(255,255,255,.35);margin-top:.5rem}
+.fcol h5{font-family:var(--fH);color:rgba(255,255,255,.8);font-size:.72rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.12em}
+.fcol a{display:block;font-size:.82rem;color:rgba(255,255,255,.35);padding:.2rem 0;transition:color .3s}.fcol a:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.72rem;color:rgba(255,255,255,.25)}.fbot a{color:rgba(255,255,255,.25);margin-left:1.5rem;transition:color .3s}.fbot a:hover{color:rgba(255,255,255,.6)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero .ctn{grid-template-columns:1fr}.hero-right{margin-top:1rem}
+.hero-stats{grid-template-columns:repeat(2,1fr)}
+.plgrid,.tgrid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+.sw-grid{grid-template-columns:1fr}
+.qstrip,.igrid{grid-template-columns:repeat(2,1fr)}
+.sgrid,.dgrid,.blg-grid{grid-template-columns:repeat(2,1fr)}
+.ba-grid{grid-template-columns:1fr;border-radius:var(--rL)}.ba-divider{height:2px;width:100%}
+.bl-notes{grid-template-columns:1fr}
+.tl{flex-direction:column;align-items:flex-start;gap:1.5rem;padding-left:40px}
+.tl::before{top:0;bottom:0;left:25px;right:auto;width:2px;height:auto}
+.tls{width:100%;text-align:left;display:flex;gap:1rem;align-items:flex-start}
+.tld{margin:0;flex-shrink:0;width:44px;height:44px;font-size:.72rem}
+.fgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+section{padding:4.5rem 0}.ctn{padding:0 1.25rem}
+.nlinks{display:none}.mtog{display:block}
+nav.open .nlinks{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,17,23,.98);backdrop-filter:blur(20px);padding:1.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.hero{min-height:auto;padding:7rem 0 4rem}
+.hero-stats,.qstrip,.igrid,.sgrid,.dgrid,.blg-grid,.blgrid{grid-template-columns:1fr}
+.trust-items{gap:.6rem}.trust-label{width:100%;text-align:center}
+.fgrid{grid-template-columns:1fr;gap:1.5rem}.fbot{flex-direction:column;gap:.5rem}
+.modal-overlay{padding:.5rem}.modal-box{max-height:95vh;border-radius:var(--r)}
+}
+
+/* ANIMATIONS */
+.anim{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.anim.vis{opacity:1;transform:none}
+.anim-d1{transition-delay:.08s}.anim-d2{transition-delay:.16s}.anim-d3{transition-delay:.24s}.anim-d4{transition-delay:.32s}.anim-d5{transition-delay:.4s}.anim-d6{transition-delay:.48s}
+.nlinks a.active{color:#fff}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nb"><div class="ctn">
+<a href="#" class="nlogo">TRISIAN</a>
+<div class="nlinks">
+<a href="#pillars">Three Pillars</a><a href="#workspace">Safe Workspace</a><a href="#tiers">Tiers</a><a href="#services">Services</a><a href="#industries">Industries</a><a href="#blog">Insights</a>
+<a href="#cta" class="nav-cta">Schedule Assessment &#8594;</a>
+</div>
+<button class="mtog" onclick="document.getElementById('nb').classList.toggle('open')"><span></span><span></span><span></span></button>
+</div></nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero"><div class="ctn">
+<div class="hero-txt">
+<p class="lbl" style="color:var(--perf)">Safe Workspace for Regulated Industries</p>
+<h1>Three Pillars.<br>One <span>Safe Workspace.</span></h1>
+<p class="hero-sub">Your vendors point fingers. Your compliance evidence lives in spreadsheets. Your infrastructure needs six tools and three calls to troubleshoot one issue.<br><br><strong>Trisian ends that.</strong> Total responsibility for your digital environment. Security, performance, and compliance under one partner.</p>
+<div class="hero-btns"><a href="#cta" class="btn bp">Schedule Your Assessment &#8594;</a><a href="#workspace" class="btn bo">Explore Safe Workspace</a></div>
+</div>
+<div class="hero-right">
+<p class="hero-belief">"The best technology is the kind you never think about."<br><br>Technology becomes invisible.<br><em>Business becomes visible.</em></p>
+<div class="hero-stats">
+<div class="hero-stat"><strong>28<small>+</small></strong><span>Years</span></div>
+<div class="hero-stat"><strong>9<small>+</small></strong><span>Frameworks</span></div>
+<div class="hero-stat"><strong>24/7</strong><span>Monitoring</span></div>
+<div class="hero-stat"><strong>30<small>m</small></strong><span>Critical SLA</span></div>
+</div>
+</div>
+</div></section>
+
+<!-- TRUST -->
+<div class="trust"><div class="ctn">
+<div class="trust-inner">
+<span class="trust-label">Compliance-ready across</span>
+<div class="trust-items">
+<span class="trust-item">HIPAA</span><span class="trust-sep">&#183;</span>
+<span class="trust-item">SOC 2</span><span class="trust-sep">&#183;</span>
+<span class="trust-item">PCI-DSS</span><span class="trust-sep">&#183;</span>
+<span class="trust-item">GDPR</span><span class="trust-sep">&#183;</span>
+<span class="trust-item">SOX</span><span class="trust-sep">&#183;</span>
+<span class="trust-item">DORA</span><span class="trust-sep">&#183;</span>
+<span class="trust-item">CMMC</span><span class="trust-sep">&#183;</span>
+<span class="trust-item">ISO 27001</span><span class="trust-sep">&#183;</span>
+<span class="trust-item">GLBA</span>
+</div>
+</div>
+</div></div>
+
+<hr class="pillar-line">
+
+<!-- ===== PILLARS ===== -->
+<section class="surface" id="pillars"><div class="ctn">
+<div class="shdr"><p class="lbl" style="color:var(--sec)">How We Deliver</p><h2>The Three Pillars</h2></div>
+<div class="pl-intro">
+<p>Over 28 years inside financial institutions, healthcare organizations, and legal firms, we discovered what separates resilient businesses from fragile ones: the integration between security, performance, and compliance. When one partner sees the complete picture, organizations move faster and turn regulatory requirements into competitive advantages.</p>
+</div>
+<div class="plgrid">
+<div class="plcol"><div class="pltop s"></div><div class="plbd">
+<p class="pltag s">Security</p><h3>Security that Anticipates</h3>
+<p class="met">Not reactive. Predictive. Problems neutralized before they become incidents.</p>
+<div class="plcomps"><div class="plci">Predictive Threat Intelligence</div><div class="plci">Zero-Trust Architecture</div><div class="plci">Adaptive Defense</div><div class="plci">Automated Incident Response</div></div>
+</div></div>
+<div class="plcol"><div class="pltop p"></div><div class="plbd">
+<p class="pltag p">Performance</p><h3>Performance that Scales</h3>
+<p class="met">Infrastructure that adapts to business rhythm. Growth never disrupts operations.</p>
+<div class="plcomps"><div class="plci">Elastic Auto-Scaling</div><div class="plci">Intelligent Load Balancing</div><div class="plci">Predictive Capacity Analytics</div><div class="plci">Global Optimization</div></div>
+</div></div>
+<div class="plcol"><div class="pltop c"></div><div class="plbd">
+<p class="pltag c">Compliance</p><h3>Compliance that Facilitates</h3>
+<p class="met">Regulations become confidence, not burden. Audit readiness as a continuous state.</p>
+<div class="plcomps"><div class="plci">Automated Governance</div><div class="plci">Continuous Auditing</div><div class="plci">Regulatory Intelligence</div><div class="plci">Simplified Reporting</div></div>
+</div></div>
+</div>
+</div></section>
+
+<!-- ===== SAFE WORKSPACE ===== -->
+<section class="light" id="workspace"><div class="ctn">
+<div class="sw-grid">
+<div class="sw-txt">
+<p class="lbl">The Solution</p>
+<h2>Safe Workspace</h2>
+<p class="sw-tagline">Your digital environment. Our total responsibility.</p>
+<p>Safe Workspace consolidates infrastructure, security, compliance, licensing, monitoring, and support into a single managed platform &#8212; standardized, continuously optimized, and designed to evolve with your business.</p>
+<p>Built on Azure Virtual Desktop or Citrix Cloud for organizations that handle sensitive data, operate under regulatory oversight, and depend on continuous availability.</p>
+</div>
+<div class="sw-visual">
+<p class="sw-belief">"The best technology is the kind you never think about."<br><br>Technology becomes invisible.<br><em>Business becomes visible.</em></p>
+<div class="sw-stats">
+<div class="sw-stat"><strong>AVD + Citrix</strong><span>Dual platform</span></div>
+<div class="sw-stat"><strong>M365 Included</strong><span>Every tier</span></div>
+<div class="sw-stat"><strong>Non-Persistent</strong><span>Session-reset</span></div>
+</div>
+</div>
+</div>
+
+<div class="quad-label"><span>&#9670; What Safe Workspace Delivers &#9670;</span></div>
+<div class="qstrip">
+<div class="qi"><div class="qic">&#9729;</div><h4>Cloud-Native Desktop</h4><p>Windows multi-session on Azure or Citrix. Non-persistent sessions reset after each use. Profiles and files persist seamlessly.</p></div>
+<div class="qi"><div class="qic">&#128737;</div><h4>Security Woven In</h4><p>MFA and Conditional Access at baseline. CIS-hardened images, behavioral detection, and full EDR available by tier.</p></div>
+<div class="qi"><div class="qic">&#128200;</div><h4>Designed to Scale</h4><p>Auto-scaling adjusts to real demand. Schedule-based optimization reduces cost. From 10 users to unlimited.</p></div>
+<div class="qi"><div class="qic">&#10003;</div><h4>Compliance-Ready</h4><p>Automated evidence collection, immutable audit trails, and pre-built controls mapped to nine regulatory frameworks.</p></div>
+</div>
+</div></section>
+
+<hr class="pillar-line">
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="dark" id="transform"><div class="ctn">
+<div class="ba-header">
+<p class="lbl">The Transformation</p>
+<h2>What Changes When You Work With Us</h2>
+<p class="stat-line">The average US data breach costs <strong>$10.2M</strong>. <strong>88%</strong> of SMB breaches involve ransomware. Organizations take <strong>241 days</strong> to contain a breach.<br>Fragmented infrastructure isn't just inefficient. It's dangerous.</p>
+</div>
+<div class="ba-grid">
+<div class="ba-col before">
+<h3><span class="ba-dot"></span>Before Safe Workspace</h3>
+<div class="ba-row"><div class="ba-label">Patching</div><div class="ba-text">Manual scheduling, testing, deployment. A recurring drain on IT capacity.</div></div>
+<div class="ba-row"><div class="ba-label">Passwords</div><div class="ba-text">IT handles each request manually. Routine tickets consuming support hours.</div></div>
+<div class="ba-row"><div class="ba-label">Vendors</div><div class="ba-text">Multiple providers, separate contracts, finger-pointing when things break.</div></div>
+<div class="ba-row"><div class="ba-label">Security</div><div class="ba-text">Reactive. Discover issues when users complain or damage is done.</div></div>
+<div class="ba-row"><div class="ba-label">Compliance</div><div class="ba-text">Manual evidence collection. Weeks of preparation before each audit.</div></div>
+<div class="ba-row"><div class="ba-label">Consistency</div><div class="ba-text">Each machine different. Inconsistent policies. Configuration drift.</div></div>
+</div>
+<div class="ba-divider"></div>
+<div class="ba-col after">
+<h3><span class="ba-dot"></span>With Safe Workspace</h3>
+<div class="ba-row"><div class="ba-label">Patching</div><div class="ba-text">Automated. Applied on schedule. Zero intervention.</div></div>
+<div class="ba-row"><div class="ba-label">Passwords</div><div class="ba-text">Self-service reset. Users resolve their own lockouts instantly.</div></div>
+<div class="ba-row"><div class="ba-label">Vendors</div><div class="ba-text">One ticket. One partner. One accountability chain.</div></div>
+<div class="ba-row"><div class="ba-label">Security</div><div class="ba-text">24&#215;7 automated monitoring with auto-remediation before impact.</div></div>
+<div class="ba-row"><div class="ba-label">Compliance</div><div class="ba-text">Automated dashboards. Continuous evidence gathering.*</div></div>
+<div class="ba-row"><div class="ba-label">Consistency</div><div class="ba-text">Golden image. Centrally managed. Universally deployed.</div></div>
+</div>
+</div>
+<p style="font-size:.68rem;color:rgba(255,255,255,.25);text-align:center;margin-top:1.25rem">*Automated compliance dashboards available at Enterprise tier.</p>
+</div></section>
+
+<hr class="pillar-line">
+
+<!-- ===== TIERS ===== -->
+<section class="light" id="tiers"><div class="ctn">
+<div class="shdr"><p class="lbl" style="color:var(--sec)">Find Your Fit</p><h2>Three Tiers. One Standard.</h2>
+<p class="sub">Every tier includes automated platform management, 24/7 monitoring, Microsoft 365 licensing, and golden image management.</p></div>
+<div class="tgrid">
+<div class="tc"><div class="th co"><span class="tbdg co">Foundation</span><h3>Core</h3><p class="ttag">Professional-grade security for small and mid-sized businesses</p></div>
+<div class="tbd"><div class="ttar"><strong>Up to 300 users</strong> &middot; Standard security &middot; Business hours support</div>
+<ul class="tfeat"><li class="hr">Includes</li><li>Microsoft 365 Business Premium</li><li>Windows Multi-Session AVD</li><li>Non-persistent desktops + FSLogix</li><li>MFA + Conditional Access</li><li>Standard endpoint protection</li><li>Automated OS &amp; M365 patching</li><li>Golden image management</li></ul>
+<div class="tsla"><div class="slai"><div class="slal">P1 Critical</div><div class="slav">1 hour</div></div><div class="slai"><div class="slal">P2 High</div><div class="slav">4 hours</div></div><div class="slai"><div class="slal">Support</div><div class="slav">Business Hrs</div></div><div class="slai"><div class="slal">Users</div><div class="slav">&#8804; 300</div></div></div>
+</div><div class="tft"><a href="#cta" class="btn secondary">Start Your Assessment</a></div></div>
+
+<div class="tc feat"><div class="th ad"><span class="tbdg ad">Most Selected</span><h3>Advanced</h3><p class="ttag">Proactive defense with 24/7 resilience</p></div>
+<div class="tbd"><div class="ttar"><strong>Unlimited users</strong> &middot; HIPAA, GDPR, PCI-DSS, SOC 2 &middot; 24/7/365</div>
+<ul class="tfeat"><li class="hr">Everything in Core, plus</li><li>Microsoft 365 E3</li><li>CIS-hardened workstation images</li><li>Behavioral threat detection (P1)</li><li>Advanced email threat protection</li><li>Email authentication (SPF/DKIM/DMARC)</li><li>User experience monitoring</li><li>Auto-scaling &amp; schedule optimization</li></ul>
+<div class="tsla"><div class="slai"><div class="slal">P1 Critical</div><div class="slav">1 hour</div></div><div class="slai"><div class="slal">P2 High</div><div class="slav">4 hours</div></div><div class="slai"><div class="slal">Support</div><div class="slav">24/7/365</div></div><div class="slai"><div class="slal">Users</div><div class="slav">Unlimited</div></div></div>
+</div><div class="tft"><a href="#cta" class="btn">Start Your Assessment</a></div></div>
+
+<div class="tc"><div class="th en"><span class="tbdg en">Maximum Protection</span><h3>Enterprise</h3><p class="ttag">Full compliance automation for regulated industries</p></div>
+<div class="tbd"><div class="ttar"><strong>Unlimited users</strong> &middot; SOX, DORA, CMMC &middot; 30-min critical SLA</div>
+<ul class="tfeat"><li class="hr">Everything in Advanced, plus</li><li>Microsoft 365 E5</li><li>SIEM/SOAR (Microsoft Sentinel)</li><li>Zero Trust Architecture</li><li>Full EDR + AI-driven threat hunting</li><li>Privileged Identity Management</li><li>DLP + auto-labeling</li><li>Automated compliance suite</li><li>Multi-region infrastructure + failover</li><li>Dedicated team + named TAM</li></ul>
+<div class="tsla"><div class="slai"><div class="slal">P1 Critical</div><div class="slav">30 min</div></div><div class="slai"><div class="slal">P2 High</div><div class="slav">2 hours</div></div><div class="slai"><div class="slal">Support</div><div class="slav">24/7 Priority</div></div><div class="slai"><div class="slal">Users</div><div class="slav">Unlimited</div></div></div>
+</div><div class="tft"><a href="#cta" class="btn secondary">Start Your Assessment</a></div></div>
+</div>
+
+<div class="tier-actions">
+<button class="cmp-trigger" onclick="openModal()">View full tier comparison &#8594;</button>
+<div class="ctab"><h3>Not sure which tier?</h3><p>Our three-pillar assessment scores your security, performance, and compliance maturity &#8212; then maps the right tier to your organization.</p><a href="#cta" class="btn bp">Request Your Assessment</a></div>
+</div>
+</div></section>
+
+<!-- ===== BILLING ===== -->
+<section class="surface" id="billing"><div class="ctn">
+<div class="shdr"><p class="lbl" style="color:var(--sec)">Transparent by Design</p><h2>Three Components. No Surprises.</h2>
+<p class="sub">Every cost defined before work begins. Every hour logged. Every invoice itemized.</p></div>
+<div class="blgrid">
+<div class="blc"><h4>Platform Fee</h4><p>Per-user monthly. Everything automated is included &#8212; monitoring, patching, security updates, licensing.</p></div>
+<div class="blc"><h4>Support Hours</h4><p>Contracted minimum for human-delivered services. Every hour logged, categorized, and reported with SLA-backed response times.</p></div>
+<div class="blc"><h4>Professional Services</h4><p>Migrations, security implementations, compliance programs. Scoped projects with defined deliverables. Quoted separately.</p></div>
+</div>
+<div class="bl-notes">
+<div class="bl-note"><strong>Azure at Cost</strong><p>Compute, storage, and networking billed as a pass-through. Zero markup. We optimize your cloud spend, not profit from it.</p></div>
+<div class="bl-note"><strong>Optional Add-Ons</strong><p>Compliance log archival, user experience monitoring, SIEM/SOAR, email threat protection, emergency readiness retainers. Available without changing tiers.</p></div>
+</div>
+</div></section>
+
+<hr class="pillar-line">
+
+<!-- ===== DIFFERENTIATORS ===== -->
+<section class="dark" id="why"><div class="ctn">
+<div class="shdr"><p class="lbl">Why Trisian</p><h2>Six Commitments That Define the Partnership</h2></div>
+<div class="dgrid">
+<div class="dc"><div class="dnum">01</div><h4>Accountable by Design</h4><p>Every issue has an owner, an SLA, and a resolution path. Response times as fast as 30 minutes for critical issues.</p></div>
+<div class="dc"><div class="dnum">02</div><h4>Anticipatory by Nature</h4><p>24&#215;7 monitoring detects and resolves issues before they reach your team. Non-persistent desktops reset every session.</p></div>
+<div class="dc"><div class="dnum">03</div><h4>Compliance-Ready at Every Scale</h4><p>From SOC 2 for growing businesses to HIPAA and DORA for regulated industries. Pre-built controls and automated evidence collection.</p></div>
+<div class="dc"><div class="dnum">04</div><h4>Transparent Operations</h4><p>Azure billed at cost. Every support hour logged and itemized. Complete visibility into every cost, every month.</p></div>
+<div class="dc"><div class="dnum">05</div><h4>Unified Ecosystem</h4><p>One partner. One platform. One point of accountability. Cloud desktops, security, licensing, monitoring, and support consolidated.</p></div>
+<div class="dc"><div class="dnum">06</div><h4>Technology That Evolves</h4><p>Automated patching handles 100% of update cycles. Golden images and security baselines modernize continuously.</p></div>
+</div>
+</div></section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="light" id="industries"><div class="ctn">
+<div class="shdr"><p class="lbl" style="color:var(--sec)">Industries</p><h2>Purpose-Built for Regulated Sectors</h2>
+<p class="sub">Every Safe Workspace is configured for your industry's regulatory landscape.</p></div>
+<div class="igrid">
+<div class="ic"><h4>Financial Services</h4><div class="ibdgs"><span class="ibdg">DORA</span><span class="ibdg">SOX</span><span class="ibdg">PCI-DSS</span><span class="ibdg">GLBA</span></div><p>Audit-ready infrastructure for regulated capital. PIM for segregation of duties, 7-year retention, trading-grade performance.</p></div>
+<div class="ic"><h4>Healthcare</h4><div class="ibdgs"><span class="ibdg">HIPAA</span><span class="ibdg">HITECH</span></div><p>Compliant environments for patient data. PHI safeguards, 6-7 year audit trails, BAA-ready infrastructure.</p></div>
+<div class="ic"><h4>Legal Services</h4><div class="ibdgs"><span class="ibdg">SOC 2</span><span class="ibdg">GDPR</span></div><p>Secure workspaces for privileged communications. Matter segregation, premium eDiscovery, DLP for sensitive data.</p></div>
+<div class="ic"><h4>Growing Businesses</h4><div class="ibdgs"><span class="ibdg">SOC 2</span><span class="ibdg">GDPR</span><span class="ibdg">ISO 27001</span></div><p>Enterprise-grade protection scaled to your stage. Start with Core and grow as requirements evolve.</p></div>
+</div>
+</div></section>
+
+<!-- ===== JOURNEY ===== -->
+<section class="surface" id="journey"><div class="ctn">
+<div class="shdr"><p class="lbl" style="color:var(--sec)">Your Journey</p><h2>From First Conversation to Ongoing Partnership</h2>
+<p class="sub">This is not a handoff. It is an ongoing partnership.</p></div>
+<div class="tl">
+<div class="tls"><div class="tld">01</div><div><h4>Discover</h4><p>We listen first. The Three-Pillar Assessment maps your maturity and identifies where to focus.</p></div></div>
+<div class="tls"><div class="tld">02</div><div><h4>Design</h4><p>Together, we architect a Safe Workspace around your applications, compliance needs, and growth plans.</p></div></div>
+<div class="tls"><div class="tld">03</div><div><h4>Deploy</h4><p>Phased rollout. Pilot group first, then full deployment with training and validation at every stage.</p></div></div>
+<div class="tls"><div class="tld">04</div><div><h4>Operate</h4><p>We manage everything. The environment evolves continuously while your team focuses on growth.</p></div></div>
+<div class="tls"><div class="tld">05</div><div><h4>Evolve</h4><p>Quarterly reviews, compliance updates, and strategic alignment. The partnership keeps pace with your business.</p></div></div>
+</div>
+</div></section>
+
+<!-- ===== SERVICES ===== -->
+<section class="light" id="services"><div class="ctn">
+<div class="shdr"><p class="lbl" style="color:var(--sec)">Professional Services</p><h2>Strategic Projects. Measurable Outcomes.</h2>
+<p class="sub">Project-based engagements that fundamentally transform your environment.</p></div>
+<div class="stabs">
+<button class="stb act" onclick="swt('mig')">Migrations</button>
+<button class="stb" onclick="swt('sec')">Security</button>
+<button class="stb" onclick="swt('cmp')">Compliance</button>
+<button class="stb" onclick="swt('inf')">Infrastructure &amp; DR</button>
+<button class="stb" onclick="swt('mng')">Managed Services</button>
+</div>
+<div class="tcnt act" id="t-mig"><div class="thd"><p class="tpl" style="color:var(--perf)">Performance that Scales</p><h3>Safe Workspace Migrations</h3><p class="tsub">How you get onto the platform</p></div>
+<div class="sgrid">
+<div class="sc"><h4>Safe Workspace Migration</h4><p>Complete implementation with zero-downtime cutover and full user onboarding.</p></div>
+<div class="sc"><h4>VDI Migration</h4><p>Physical or virtualized infrastructure to cloud-hosted virtual desktops on Azure.</p></div>
+<div class="sc"><h4>Citrix to AVD</h4><p>Full migration preserving profiles, applications, and configurations.</p></div>
+<div class="sc"><h4>VMware Horizon</h4><p>Infrastructure redesign and application repackaging for AVD.</p></div>
+<div class="sc"><h4>Multi-Site / Global</h4><p>Expand to additional regions with unified governance and failover.</p></div>
+<div class="sc"><h4>Email &amp; Cross-Tenant</h4><p>M365 tenant migrations for M&amp;A plus third-party email migrations.</p></div>
+</div></div>
+<div class="tcnt" id="t-sec"><div class="thd"><p class="tpl" style="color:var(--sec)">Security that Anticipates</p><h3>Identity, Access &amp; Advanced Security</h3><p class="tsub">How we build your defense layers</p></div>
+<div class="sgrid">
+<div class="sc"><h4>Zero Trust Architecture</h4><p>Complete framework replacing traditional VPN with continuous verification.</p></div>
+<div class="sc"><h4>Privileged Identity Management</h4><p>Just-in-time access with approval workflows and credential rotation.</p></div>
+<div class="sc"><h4>Microsoft Sentinel SIEM</h4><p>Centralized detection, analytics, and automated response with SOAR.</p></div>
+<div class="sc"><h4>Defender XDR Integration</h4><p>Unified security across endpoints, email, identity, and cloud.</p></div>
+<div class="sc"><h4>Data Loss Prevention</h4><p>Microsoft Purview DLP across endpoints, email, and cloud.</p></div>
+<div class="sc"><h4>Passwordless Authentication</h4><p>Windows Hello, FIDO2 keys, and Authenticator enterprise-wide.</p></div>
+</div></div>
+<div class="tcnt" id="t-cmp"><div class="thd"><p class="tpl" style="color:var(--comp)">Compliance that Facilitates</p><h3>Compliance Automation &amp; Certification</h3><p class="tsub">How you become audit-ready</p></div>
+<div class="sgrid">
+<div class="sc"><h4>Compliance Program</h4><p>Risk analysis, controls implementation, and audit preparation.</p></div>
+<div class="sc"><h4>SOC 2 Type II Preparation</h4><p>Assessment against trust criteria with gap remediation and evidence automation.</p></div>
+<div class="sc"><h4>HIPAA Security Risk Assessment</h4><p>Comprehensive risk analysis with remediation roadmap.</p></div>
+<div class="sc"><h4>Compliance Gap Analysis</h4><p>Assessment against HIPAA, SOC 2, PCI-DSS, DORA, SOX.</p></div>
+<div class="sc"><h4>Compliance Suite Deployment</h4><p>Microsoft Purview with evidence collection and control monitoring.</p></div>
+<div class="sc"><h4>ISO 27001 &amp; DORA Prep</h4><p>Full certification preparation including gap analysis and pre-audit readiness.</p></div>
+</div></div>
+<div class="tcnt" id="t-inf"><div class="thd"><p class="tpl" style="color:var(--perf)">Performance that Scales</p><h3>Infrastructure, DR &amp; Optimization</h3><p class="tsub">How we protect against the unexpected</p></div>
+<div class="sgrid">
+<div class="sc"><h4>AVD &amp; Citrix Deployment</h4><p>Azure Virtual Desktop with Nerdio or Citrix Cloud DaaS.</p></div>
+<div class="sc"><h4>Cost Optimization</h4><p>Auto-scaling, reserved instances, savings plans, right-sizing.</p></div>
+<div class="sc"><h4>DR &amp; Site Recovery</h4><p>Multi-region failover, Veeam backup, Azure Site Recovery.</p></div>
+<div class="sc"><h4>Network &amp; SD-WAN</h4><p>LAN/WAN optimization for VDI, ExpressRoute, SD-WAN.</p></div>
+<div class="sc"><h4>Azure Infrastructure</h4><p>VMs, networking, storage optimized for virtualization.</p></div>
+<div class="sc"><h4>ControlUp Monitoring</h4><p>Real-time performance monitoring, analytics, remediation.</p></div>
+</div></div>
+<div class="tcnt" id="t-mng"><div class="thd"><p class="tpl" style="color:var(--sec)">Security that Anticipates</p><h3>Managed Security &amp; Compliance</h3><p class="tsub">How we provide ongoing protection</p></div>
+<div class="sgrid">
+<div class="sc"><h4>Managed Detection &amp; Response</h4><p>24/7 threat monitoring, detection, and active response.</p></div>
+<div class="sc"><h4>Managed SOC</h4><p>Fully managed Security Operations Center powered by Sentinel.</p></div>
+<div class="sc"><h4>Compliance Monitoring</h4><p>Continuous posture monitoring and regulatory reporting.</p></div>
+<div class="sc"><h4>Incident Response Retainer</h4><p>Pre-paid hours with guaranteed SLA for immediate containment.</p></div>
+</div></div>
+</div></section>
+
+<!-- ===== BLOG ===== -->
+<section class="surface" id="blog"><div class="ctn">
+<div class="shdr"><p class="lbl" style="color:var(--sec)">Insights</p><h2>Perspectives from Inside Regulated Environments</h2></div>
+<div class="blg-grid">
+<div class="blg-card"><div class="blg-img sec-bg"><span class="blg-cat">Security</span></div><div class="blg-body"><h4>How Non-Persistent Desktops Keep Your Environment Clean by Design</h4><p>Session-reset architecture is one of the most effective security approaches. Understanding it can reshape your strategy.</p><span class="blg-meta">March 2026 &middot; 5 min</span></div></div>
+<div class="blg-card"><div class="blg-img comp-bg"><span class="blg-cat">Compliance</span></div><div class="blg-body"><h4>DORA Compliance: What Your ICT Provider Should Deliver</h4><p>The Digital Operational Resilience Act is reshaping how financial institutions evaluate technology partners.</p><span class="blg-meta">March 2026 &middot; 7 min</span></div></div>
+<div class="blg-card"><div class="blg-img perf-bg"><span class="blg-cat">Performance</span></div><div class="blg-body"><h4>How Auto-Scaling Aligns Cloud Spend with Actual Demand</h4><p>Schedule-based optimization and predictive analytics transform Azure resource management.</p><span class="blg-meta">February 2026 &middot; 4 min</span></div></div>
+</div>
+<div class="blg-cta"><a href="#" class="btn bo-dark">View All Insights &#8594;</a></div>
+</div></section>
+
+<!-- ===== FAQ ===== -->
+<section class="light" id="faq"><div class="ctn">
+<div class="shdr"><p class="lbl" style="color:var(--sec)">FAQ</p><h2>What Leaders Ask Us</h2></div>
+<div class="fl">
+<div class="fi"><button class="fq" onclick="tf(this)">What exactly is Safe Workspace?<span class="fic">+</span></button><div class="fa"><div class="fai">A cloud-based desktop environment built on Azure Virtual Desktop or Citrix Cloud. It unifies Microsoft 365, endpoint security, monitoring, compliance automation, and support into one platform managed entirely by Trisian. When technology works perfectly, leaders focus on what drives the business forward.</div></div></div>
+<div class="fi"><button class="fq" onclick="tf(this)">How do you determine which tier fits?<span class="fic">+</span></button><div class="fa"><div class="fai">Through our three-pillar assessment: we score your organization across security, performance, and compliance maturity. Combined with user count, industry, and regulatory requirements, the data produces a tier recommendation with full transparency.</div></div></div>
+<div class="fi"><button class="fq" onclick="tf(this)">How does the pricing model work?<span class="fic">+</span></button><div class="fa"><div class="fai">Three components: a per-user Platform Fee covering all automated services and M365 licensing, contracted Support Hours for human-delivered services with every minute logged, and separately quoted Professional Services for project work. Azure infrastructure at cost. Zero markup.</div></div></div>
+<div class="fi"><button class="fq" onclick="tf(this)">What about emergencies outside business hours?<span class="fic">+</span></button><div class="fa"><div class="fai">Advanced and Enterprise clients receive 24/7 SLA coverage built into their base rate. All tiers have access to Emergency Escalation through designated Authorized Contacts, targeting 15-minute engagement with automated workflows.</div></div></div>
+<div class="fi"><button class="fq" onclick="tf(this)">What if we already have an internal IT team?<span class="fic">+</span></button><div class="fa"><div class="fai">Safe Workspace complements internal IT. We manage the cloud desktop infrastructure, security stack, and compliance automation &#8212; freeing your team for business-specific applications and strategic projects. Most clients find we reduce operational burden while elevating what their team can accomplish.</div></div></div>
+<div class="fi"><button class="fq" onclick="tf(this)">Do we lose control of our Azure subscription?<span class="fic">+</span></button><div class="fa"><div class="fai">No. The subscription remains under your tenant. You retain full visibility into consumption, costs, and resources. Trisian manages and optimizes within your environment. We do not profit from your Azure spend.</div></div></div>
+<div class="fi"><button class="fq" onclick="tf(this)">How long does deployment take?<span class="fic">+</span></button><div class="fa"><div class="fai">Standard implementation follows a 90-day plan: Days 1-30 for platform deployment and pilot group, Days 31-60 for full migration and training, Days 61-90 for optimization and compliance validation. Timeline scales with complexity.</div></div></div>
+<div class="fi"><button class="fq" onclick="tf(this)">What happens if we outgrow our tier?<span class="fic">+</span></button><div class="fa"><div class="fai">Tiers are designed to scale. When compliance needs intensify or user counts grow, we upgrade your environment seamlessly. We proactively identify when a tier change would benefit you during quarterly reviews.</div></div></div>
+</div>
+</div></section>
+
+<hr class="pillar-line">
+
+<!-- ===== CTA ===== -->
+<section class="brand cta-section" id="cta"><div class="ctn">
+<p class="lbl">Start with a Conversation</p>
+<h2>Ready for Operational Peace of Mind?</h2>
+<p>One call to map your security, performance, and compliance posture &#8212; and see exactly what Safe Workspace looks like for your organization.</p>
+<div class="cta-btns">
+<a href="mailto:contact@trisian.com?subject=Assessment%20Request" class="btn bw">Schedule Your Assessment &#8594;</a>
+<a href="mailto:contact@trisian.com" class="btn" style="background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.25)">Contact Us Directly</a>
+</div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="ctn">
+<div class="fgrid">
+<div class="fbrand"><div class="nlogo" style="color:#fff;margin-bottom:.5rem">TRISIAN</div><p>The strategic partner that makes compliance invisible and growth inevitable.</p></div>
+<div class="fcol"><h5>Product</h5><a href="#workspace">Safe Workspace</a><a href="#tiers">Core</a><a href="#tiers">Advanced</a><a href="#tiers">Enterprise</a><a href="#services">Professional Services</a></div>
+<div class="fcol"><h5>Industries</h5><a href="#industries">Financial Services</a><a href="#industries">Healthcare</a><a href="#industries">Legal</a><a href="#industries">Growing Businesses</a></div>
+<div class="fcol"><h5>Company</h5><a href="#why">Why Trisian</a><a href="#blog">Insights</a><a href="#cta">Assessment</a><a href="mailto:contact@trisian.com">contact@trisian.com</a></div>
+</div>
+<div class="fbot"><span>&#169; 2026 Trisian (All IT Host Inc). All rights reserved.</span><div><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+</div></footer>
+
+<!-- COMPARISON MODAL -->
+<div class="modal-overlay" id="cmpModal" onclick="if(event.target===this)closeModal()">
+<div class="modal-box">
+<div class="modal-header"><h3>Full Tier Comparison</h3><button class="modal-close" onclick="closeModal()">&#10005;</button></div>
+<div class="modal-body">
+<table class="cmpt"><thead><tr><th>Capability</th><th>Core</th><th>Advanced</th><th>Enterprise</th></tr></thead><tbody>
+<tr class="cat"><td colspan="4">Workspace &amp; Infrastructure</td></tr>
+<tr><td>Microsoft 365 License</td><td>Business Premium</td><td>E3</td><td>E5</td></tr>
+<tr><td>CIS-Hardened Images</td><td class="no">&#8212;</td><td class="ck">&#10003;</td><td class="ck">&#10003;</td></tr>
+<tr><td>Customized Industry Images</td><td class="no">&#8212;</td><td class="no">&#8212;</td><td class="ck">&#10003;</td></tr>
+<tr><td>Multi-Region Infrastructure</td><td class="no">&#8212;</td><td class="no">&#8212;</td><td class="ck">&#10003;</td></tr>
+<tr class="cat"><td colspan="4">Security</td></tr>
+<tr><td>Endpoint Protection</td><td>Standard AV</td><td>Behavioral (P1)</td><td>Full EDR + Hunting (P2)</td></tr>
+<tr><td>Email Security</td><td>Anti-spam</td><td>Advanced anti-phishing</td><td>Attack simulation</td></tr>
+<tr><td>Identity Protection</td><td>MFA + CA</td><td>Risk-based sign-in</td><td>PIM + P2</td></tr>
+<tr><td>Data Loss Prevention</td><td>Basic</td><td>Enhanced</td><td>Advanced + auto-label</td></tr>
+<tr><td>SIEM/SOAR + Zero Trust</td><td class="no">&#8212;</td><td class="no">&#8212;</td><td class="ck">&#10003;</td></tr>
+<tr class="cat"><td colspan="4">Monitoring</td></tr>
+<tr><td>24&#215;7 Platform Monitoring</td><td class="ck">&#10003;</td><td class="ck">&#10003;</td><td class="ck">&#10003;</td></tr>
+<tr><td>User Experience Monitoring</td><td class="no">&#8212;</td><td class="ck">&#10003;</td><td class="ck">&#10003;</td></tr>
+<tr class="cat"><td colspan="4">Compliance</td></tr>
+<tr><td>Audit Log Retention</td><td>180 days</td><td>180 days</td><td>1 year</td></tr>
+<tr><td>eDiscovery</td><td>Standard</td><td>Standard</td><td>Premium</td></tr>
+<tr><td>Automated Compliance Suite</td><td class="no">&#8212;</td><td class="no">&#8212;</td><td class="ck">&#10003;</td></tr>
+<tr class="cat"><td colspan="4">Support &amp; SLA</td></tr>
+<tr><td>Support Window</td><td>Business Hours</td><td>24/7/365</td><td>24/7/365</td></tr>
+<tr><td>P1 Critical Response</td><td>1 hour</td><td>1 hour</td><td>30 minutes</td></tr>
+<tr><td>P2 High Response</td><td>4 hours</td><td>4 hours</td><td>2 hours</td></tr>
+<tr><td>Dedicated Team + TAM</td><td class="no">&#8212;</td><td class="no">&#8212;</td><td class="ck">&#10003;</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+<script>
+function swt(id){document.querySelectorAll('.tcnt').forEach(t=>t.classList.remove('act'));document.querySelectorAll('.stb').forEach(b=>b.classList.remove('act'));document.getElementById('t-'+id).classList.add('act');event.target.classList.add('act')}
+function tf(b){var i=b.closest('.fi'),o=i.classList.contains('open');document.querySelectorAll('.fi').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
+function openModal(){var m=document.getElementById('cmpModal');m.style.display='flex';requestAnimationFrame(()=>requestAnimationFrame(()=>m.classList.add('open')));document.body.style.overflow='hidden'}
+function closeModal(){var m=document.getElementById('cmpModal');m.classList.remove('open');setTimeout(()=>{m.style.display='none';document.body.style.overflow=''},350)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()})
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-70,behavior:'smooth'});document.getElementById('nb').classList.remove('open')})});
+
+/* Scroll animations */
+(function(){
+document.querySelectorAll('.shdr,.pl-intro,.sw-grid,.ba-header,.tier-actions,.ctab,.cta-section .ctn > *,.quad-label').forEach(el=>el.classList.add('anim'));
+['.plgrid','.qstrip','.tgrid','.sgrid','.igrid','.dgrid','.blgrid','.blg-grid','.fl','.bl-notes'].forEach(g=>{document.querySelectorAll(g).forEach(grid=>{Array.from(grid.children).forEach((c,i)=>{c.classList.add('anim','anim-d'+(i<6?i+1:6))})})});
+document.querySelectorAll('.ba-grid,.trust').forEach(c=>c.classList.add('anim'));
+var obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.anim,.tl').forEach(el=>obs.observe(el));
+})();
+
+/* Counter */
+(function(){
+var counted=false,nums=document.querySelectorAll('.hero-stat strong'),targets=[28,9,null,30];
+function go(){if(counted)return;counted=true;nums.forEach((el,i)=>{if(!targets[i])return;var t=targets[i],d=1000,st=null,sm=el.querySelector('small'),sx=sm?sm.textContent:'';function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/d,1),e=1-Math.pow(1-p,3),c=Math.round(e*t);el.innerHTML=c+(sm?'<small>'+sx+'</small>':'');if(p<1)requestAnimationFrame(step)}el.innerHTML='0'+(sm?'<small>'+sx+'</small>':'');requestAnimationFrame(step)})}
+var s=document.querySelector('.hero-stats');if(s){var o=new IntersectionObserver(e=>{if(e[0].isIntersecting){go();o.disconnect()}},{threshold:.5});o.observe(s)}
+})();
+
+/* Nav scroll */
+(function(){
+var nb=document.getElementById('nb'),sections=document.querySelectorAll('section[id]'),links=document.querySelectorAll('.nlinks a[href^="#"]:not(.nav-cta)');
+function update(){
+nb.classList.toggle('scrolled',window.scrollY>80);
+var pos=window.scrollY+120,cur='';
+sections.forEach(s=>{if(s.offsetTop<=pos)cur=s.id});
+links.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+cur)});
+}
+window.addEventListener('scroll',update,{passive:true});update();
+})();
+</script>
+</body>
+</html>
