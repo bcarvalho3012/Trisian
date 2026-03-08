@@ -198,6 +198,24 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between}
 .sw-extra:last-child .sw-extra-icon{background:rgba(81,112,255,.08);color:var(--perf)}
 .sw-extra h4{font-size:.92rem;margin-bottom:.25rem;color:var(--txt)}.sw-extra p{font-size:.84rem;line-height:1.6}
 
+/* BEFORE / AFTER */
+.ba-header{text-align:center;margin-bottom:3rem}
+.ba-header .stat-line{font-family:var(--fH);font-size:.85rem;color:rgba(255,255,255,.4);margin-top:.75rem;line-height:1.6}
+.ba-header .stat-line strong{color:var(--perf);font-weight:700}
+.ba-grid{display:grid;grid-template-columns:1fr 3px 1fr;gap:0;overflow:hidden;border-radius:var(--rL)}
+.ba-divider{background:var(--pillarGrad)}
+.ba-col{padding:2.5rem}
+.ba-col.before{background:rgba(255,255,255,.02)}
+.ba-col.after{background:rgba(0,74,173,.08)}
+.ba-col h3{font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.75rem;display:flex;align-items:center;gap:.6rem;color:#fff}
+.ba-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.ba-col.before .ba-dot{background:#EF4444}
+.ba-col.after .ba-dot{background:var(--ok)}
+.ba-row{padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.ba-row:last-child{border-bottom:none}
+.ba-label{font-family:var(--fH);font-size:.68rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem}
+.ba-text{font-size:.86rem;line-height:1.55;color:rgba(255,255,255,.65)}
+
 /* TIERS */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2rem}
 .tc{border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);overflow:hidden;transition:box-shadow .3s;display:flex;flex-direction:column}
@@ -322,6 +340,7 @@ footer{background:var(--txt);color:rgba(255,255,255,.6);padding:3.5rem 0 2rem}
 .sw-hero{grid-template-columns:1fr}.sw-hero-visual{min-height:240px}
 .qstrip,.igrid{grid-template-columns:repeat(2,1fr)}.sw-inc-grid,.sgrid,.dgrid,.blg-grid{grid-template-columns:repeat(2,1fr)}
 .sw-extras,.bl-extras{grid-template-columns:1fr}
+.ba-grid{grid-template-columns:1fr;border-radius:var(--rL)}.ba-divider{height:2px;width:100%}
 .tl{flex-direction:column;align-items:flex-start;gap:1.25rem;padding-left:40px}
 .tl::before{top:0;bottom:0;left:27px;right:auto;width:3px;height:auto}
 .tls{width:100%;text-align:left;display:flex;gap:1rem;align-items:flex-start}
@@ -549,6 +568,41 @@ nav.open .nlinks a{color:rgba(255,255,255,.7)}nav.open .nlinks a:hover{color:#ff
 </div>
 
 </div></section>
+
+<hr class="pillar-line">
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="dark" id="transform"><div class="ctn">
+<div class="ba-header">
+<p class="lbl">The Transformation</p>
+<h2>What Changes When You Work With Us</h2>
+<p class="stat-line">The average US data breach costs <strong>$10.2M</strong>. <strong>88%</strong> of SMB breaches involve ransomware. Organizations take <strong>241 days</strong> to contain a breach.<br>Fragmented infrastructure isn't just inefficient. It's dangerous.</p>
+</div>
+<div class="ba-grid">
+<div class="ba-col before">
+<h3><span class="ba-dot"></span>Before Safe Workspace</h3>
+<div class="ba-row"><div class="ba-label">Patching</div><div class="ba-text">Manual scheduling, testing, deployment. A recurring drain on IT capacity.</div></div>
+<div class="ba-row"><div class="ba-label">Passwords</div><div class="ba-text">IT handles each request manually. Routine tickets consuming support hours.</div></div>
+<div class="ba-row"><div class="ba-label">Vendors</div><div class="ba-text">Multiple providers, separate contracts, finger-pointing when things break.</div></div>
+<div class="ba-row"><div class="ba-label">Security</div><div class="ba-text">Reactive. Discover issues when users complain or damage is done.</div></div>
+<div class="ba-row"><div class="ba-label">Compliance</div><div class="ba-text">Manual evidence collection. Weeks of preparation before each audit.</div></div>
+<div class="ba-row"><div class="ba-label">Consistency</div><div class="ba-text">Each machine different. Inconsistent policies. Configuration drift.</div></div>
+</div>
+<div class="ba-divider"></div>
+<div class="ba-col after">
+<h3><span class="ba-dot"></span>With Safe Workspace</h3>
+<div class="ba-row"><div class="ba-label">Patching</div><div class="ba-text">Automated. Applied on schedule. Zero intervention.</div></div>
+<div class="ba-row"><div class="ba-label">Passwords</div><div class="ba-text">Self-service reset. Users resolve their own lockouts instantly.</div></div>
+<div class="ba-row"><div class="ba-label">Vendors</div><div class="ba-text">One ticket. One partner. One accountability chain.</div></div>
+<div class="ba-row"><div class="ba-label">Security</div><div class="ba-text">24&#215;7 automated monitoring with auto-remediation before impact.</div></div>
+<div class="ba-row"><div class="ba-label">Compliance</div><div class="ba-text">Automated dashboards. Continuous evidence gathering.*</div></div>
+<div class="ba-row"><div class="ba-label">Consistency</div><div class="ba-text">Golden image. Centrally managed. Universally deployed.</div></div>
+</div>
+</div>
+<p style="font-size:.68rem;color:rgba(255,255,255,.25);text-align:center;margin-top:1.25rem">*Automated compliance dashboards available at Enterprise tier.</p>
+</div></section>
+
+<hr class="pillar-line">
 
 <!-- ===== 5. TIERS ===== -->
 <section id="tiers"><div class="ctn">
@@ -787,7 +841,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
     Array.from(grid.children).forEach((c,i)=>{c.classList.add('anim','anim-d'+(i<6?i+1:6))})
   })});
   /* Tag standalone blocks */
-  document.querySelectorAll('.sw-hero,.ctab,.trust,.ctas .ctn > *').forEach(el=>el.classList.add('anim'));
+  document.querySelectorAll('.sw-hero,.ctab,.trust,.ctas .ctn > *,.ba-header,.ba-grid').forEach(el=>el.classList.add('anim'));
   /* Tag billing extras */
   document.querySelectorAll('#workspace > .ctn > div:last-child').forEach(el=>el.classList.add('anim'));
   /* Tag landscape cards individually */
