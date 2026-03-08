@@ -13,10 +13,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--sec:#004AAD;--perf:#5170FF;--comp:#1800AD;--txt:#212529;--txt2:#495057;--txtL:#6C757D;--bdr:#DEE2E6;--white:#FFF;--light:#F8F9FA;--subtle:#F0F4F8;--blue-t:#EDF2FF;--cta:#004AAD;--ctaH:#003A8C;--ok:#198754;--dark:#181B20;--darkCard:#22262D;--heroDark:#0D1117;--darkSurface:#161B22;--surface:#FAFBFC;--pillarGrad:linear-gradient(135deg,var(--sec),var(--perf),var(--comp));--fH:'Montserrat',sans-serif;--fB:'Open Sans',sans-serif;--r:8px;--rL:12px}
+:root{--sec:#004AAD;--perf:#5170FF;--comp:#1800AD;--txt:#212529;--txt2:#495057;--txtL:#6C757D;--bdr:#DEE2E6;--white:#FFF;--light:#F8F9FA;--subtle:#F0F4F8;--blue-t:#EDF2FF;--cta:#004AAD;--ctaH:#003A8C;--ok:#198754;--dark:#181B20;--darkCard:#22262D;--heroDark:#0D1117;--darkSurface:#161B22;--surface:#FAFBFC;--pillarGrad:linear-gradient(135deg,var(--sec),var(--perf),var(--comp));--fH:'Montserrat',sans-serif;--fB:'Open Sans',sans-serif;--r:8px;--rL:12px;--warn:#F59E0B;--danger:#EF4444;--needLow:#198754;--needMod:#004AAD;--needElev:#F59E0B;--needHigh:#EA580C;--needCrit:#EF4444}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--fB);color:var(--txt);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh}
+body{font-family:var(--fB);color:var(--txt);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
 a{text-decoration:none;color:inherit}
 h1,h2,h3,h4{font-family:var(--fH);font-weight:600;line-height:1.25;color:var(--txt)}
 p{color:var(--txt2)}
@@ -26,7 +26,7 @@ p{color:var(--txt2)}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,17,23,.97);backdrop-filter:blur(12px);padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
 nav .ctn{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
 .nlogo{font-family:var(--fH);font-weight:700;font-size:1.35rem;color:#fff;letter-spacing:.06em}
-.nav-back{font-family:var(--fH);font-size:.85rem;font-weight:500;color:rgba(255,255,255,.6);transition:color .2s;display:flex;align-items:center;gap:.4rem}
+.nav-back{font-family:var(--fH);font-size:.85rem;font-weight:500;color:rgba(255,255,255,.6);transition:color .2s;display:inline-flex;align-items:center;gap:.4rem}
 .nav-back:hover{color:#fff}
 .nav-back svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
@@ -34,26 +34,30 @@ nav .ctn{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-item
 .progress-wrap{position:fixed;top:52px;left:0;right:0;z-index:999;height:4px;background:rgba(0,0,0,.08)}
 .progress-bar{height:100%;width:0;background:var(--pillarGrad);background-size:200% 100%;transition:width .5s cubic-bezier(.4,0,.2,1);border-radius:0 2px 2px 0}
 
-/* WIZARD CONTAINER */
-.wizard{max-width:780px;margin:0 auto;padding:5.5rem 1.5rem 3rem;min-height:100vh;display:flex;flex-direction:column}
+/* WIZARD */
+.wizard{max-width:780px;margin:0 auto;padding:5.5rem 1.5rem 3rem;flex:1;display:flex;flex-direction:column}
 
 /* STEPS */
-.step{display:none;animation:stepIn .45s ease both}
-.step.active{display:block}
+.step{display:none;opacity:0;transform:translateY(24px)}
+.step.active{display:block;animation:stepIn .45s ease forwards}
 @keyframes stepIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
-/* WELCOME STEP */
+/* WELCOME */
 .welcome{text-align:center;padding:3rem 0}
-.welcome h1{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:1rem;color:var(--txt)}
+.welcome h1{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:1rem}
 .welcome h1 span{background:var(--pillarGrad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.welcome .wsub{font-size:1.05rem;line-height:1.8;color:var(--txt2);max-width:600px;margin:0 auto 2.5rem}
-.welcome-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
-.wf{padding:1.25rem;border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);text-align:center}
-.wf-icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
-.wf h4{font-family:var(--fH);font-size:.88rem;font-weight:600;margin-bottom:.2rem;color:var(--txt)}
-.wf p{font-size:.78rem;color:var(--txtL);line-height:1.5}
+.welcome .wsub{font-size:1.05rem;line-height:1.8;color:var(--txt2);max-width:600px;margin:0 auto 2rem}
 .wf-time{font-family:var(--fH);font-size:.82rem;color:var(--txtL);margin-bottom:2rem;display:flex;align-items:center;justify-content:center;gap:.4rem}
 .wf-time svg{width:16px;height:16px;fill:none;stroke:var(--txtL);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.welcome-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+.wf{padding:1.25rem;border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);text-align:center}
+.wf-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .6rem}
+.wf-icon.sec{background:rgba(0,74,173,.08)}.wf-icon.perf{background:rgba(81,112,255,.08)}.wf-icon.comp{background:rgba(24,0,173,.08)}
+.wf-icon svg{width:22px;height:22px;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.wf-icon.sec svg{stroke:var(--sec)}.wf-icon.perf svg{stroke:var(--perf)}.wf-icon.comp svg{stroke:var(--comp)}
+.wf h4{font-family:var(--fH);font-size:.88rem;font-weight:600;margin-bottom:.2rem;color:var(--txt)}
+.wf p{font-size:.78rem;color:var(--txtL);line-height:1.5}
+.welcome .privacy{font-size:.72rem;color:var(--txtL);max-width:440px;margin:1.5rem auto 0;line-height:1.5}
 
 /* STEP HEADER */
 .step-hdr{margin-bottom:2rem}
@@ -65,106 +69,117 @@ nav .ctn{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-item
 .question{margin-bottom:2.25rem}
 .q-label{font-family:var(--fH);font-size:.95rem;font-weight:600;color:var(--txt);margin-bottom:.85rem;display:block}
 .q-label .q-num{color:var(--sec);margin-right:.3rem}
-.q-multi{font-size:.75rem;color:var(--perf);font-weight:500;margin-left:.5rem}
+.q-multi{font-size:.72rem;color:var(--perf);font-weight:500;margin-left:.5rem}
 
 /* OPTION CARDS */
 .options{display:grid;gap:.6rem}
 .opt{display:flex;align-items:center;gap:.85rem;padding:1rem 1.25rem;border:2px solid var(--bdr);border-radius:var(--rL);background:var(--white);cursor:pointer;transition:all .2s;position:relative}
 .opt:hover{border-color:rgba(0,74,173,.3);background:var(--blue-t)}
 .opt.selected{border-color:var(--sec);background:var(--blue-t);box-shadow:0 2px 12px rgba(0,74,173,.1)}
-.opt.selected .opt-radio{border-color:var(--sec);background:var(--sec)}
-.opt.selected .opt-radio::after{opacity:1;transform:scale(1)}
-.opt-radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--bdr);flex-shrink:0;position:relative;transition:all .2s}
-.opt-radio::after{content:'';position:absolute;top:4px;left:4px;width:8px;height:8px;border-radius:50%;background:#fff;opacity:0;transform:scale(0);transition:all .2s}
+.opt.selected .opt-ind{border-color:var(--sec);background:var(--sec)}
+.opt.selected .opt-ind::after{opacity:1;transform:scale(1)}
+.opt:focus-visible{outline:2px solid var(--sec);outline-offset:2px}
+.opt-ind{width:20px;height:20px;border-radius:50%;border:2px solid var(--bdr);flex-shrink:0;position:relative;transition:all .2s}
+.opt-ind::after{content:'';position:absolute;top:4px;left:4px;width:8px;height:8px;border-radius:50%;background:#fff;opacity:0;transform:scale(0);transition:all .2s}
 /* Checkbox variant for multi-select */
-.opt.multi .opt-radio{border-radius:4px}
-.opt.multi .opt-radio::after{border-radius:2px;top:3px;left:3px;width:10px;height:10px}
-.opt.multi.selected .opt-radio::after{background:#fff;clip-path:polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0%,43% 62%);width:10px;height:10px}
+.opt.multi .opt-ind{border-radius:4px}
+.opt.multi.selected .opt-ind::after{top:2px;left:2px;width:12px;height:12px;border-radius:0;background:transparent;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) scale(1);width:10px;height:5px;top:4px;left:3px}
 .opt-text{font-size:.9rem;color:var(--txt);line-height:1.4}
 .opt-text strong{font-weight:600}
 
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fH);font-size:.92rem;font-weight:600;padding:.85rem 2rem;border-radius:var(--r);border:none;cursor:pointer;transition:all .25s}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fH);font-size:.92rem;font-weight:600;padding:.85rem 2rem;border-radius:var(--r);border:none;cursor:pointer;transition:all .25s;text-decoration:none}
 .bp{background:var(--cta);color:#fff}.bp:hover{background:var(--ctaH);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,74,173,.25)}
 .bo{background:transparent;color:var(--cta);border:2px solid var(--cta)}.bo:hover{background:var(--cta);color:#fff}
 .bp:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
 .btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--bdr)}
-.step-nav .btn-back{font-family:var(--fH);font-size:.88rem;font-weight:500;color:var(--txtL);background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:.3rem;transition:color .2s;padding:.5rem 0}
-.step-nav .btn-back:hover{color:var(--txt)}
-.step-nav .btn-back svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-back{font-family:var(--fH);font-size:.88rem;font-weight:500;color:var(--txtL);background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.3rem;transition:color .2s;padding:.5rem 0}
+.btn-back:hover{color:var(--txt)}
+.btn-back svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* ===== RESULTS PAGE ===== */
-.results{text-align:center;padding:2rem 0}
-.results-reveal{animation:revealUp .6s cubic-bezier(.4,0,.2,1) both}
-@keyframes revealUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+/* ===== RESULTS ===== */
+.results{padding:2rem 0}
+.results-intro{text-align:center;margin-bottom:2rem}
+.results-intro .step-num{margin-bottom:.5rem}
 
-.tier-badge{display:inline-block;font-family:var(--fH);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .75rem;border-radius:100px;margin-bottom:.75rem}
+/* Overall risk banner */
+.risk-banner{text-align:center;padding:1rem 1.5rem;border-radius:var(--rL);margin-bottom:2rem;font-family:var(--fH);font-size:.85rem;font-weight:600}
+.risk-banner .risk-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:.15rem;opacity:.7}
+.risk-banner .risk-val{font-size:1.1rem}
+.risk-low{background:rgba(25,135,84,.08);color:var(--needLow);border:1px solid rgba(25,135,84,.15)}
+.risk-mod{background:rgba(0,74,173,.06);color:var(--needMod);border:1px solid rgba(0,74,173,.12)}
+.risk-elev{background:rgba(245,158,11,.08);color:var(--needElev);border:1px solid rgba(245,158,11,.15)}
+.risk-high{background:rgba(234,88,12,.08);color:var(--needHigh);border:1px solid rgba(234,88,12,.15)}
+.risk-crit{background:rgba(239,68,68,.08);color:var(--needCrit);border:1px solid rgba(239,68,68,.15)}
+
+/* Tier card */
+.tier-card{max-width:520px;margin:0 auto 2.5rem;border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.08);opacity:0;animation:revealUp .6s .1s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes revealUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.tc-top{height:5px}
+.tc-top.core{background:var(--perf)}.tc-top.advanced{background:var(--sec)}.tc-top.enterprise{background:var(--comp)}
+.tc-body{padding:2rem}
+.tier-badge{display:inline-block;font-family:var(--fH);font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .65rem;border-radius:100px;margin-bottom:.6rem}
 .tier-badge.core{background:rgba(81,112,255,.1);color:var(--perf)}
 .tier-badge.advanced{background:rgba(0,74,173,.1);color:var(--sec)}
 .tier-badge.enterprise{background:rgba(24,0,173,.1);color:var(--comp)}
+.tc-body h2{font-size:1.5rem;margin-bottom:.15rem}
+.tc-body .tc-tagline{font-size:.88rem;color:var(--txtL);margin-bottom:1rem;font-style:italic}
+.tc-body .tc-summary{font-size:.86rem;line-height:1.7;color:var(--txt2);margin-bottom:1.25rem}
+.tc-specs{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
+.tc-spec{font-family:var(--fH);font-size:.72rem;font-weight:600;color:var(--txt);display:flex;align-items:center;gap:.3rem}
+.tc-spec svg{width:14px;height:14px;fill:none;stroke:var(--ok);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 
-.tier-card{max-width:460px;margin:0 auto 3rem;border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.08);animation:revealUp .6s .15s cubic-bezier(.4,0,.2,1) both}
-.tier-card .tc-top{height:5px}
-.tier-card .tc-top.core{background:var(--perf)}
-.tier-card .tc-top.advanced{background:var(--sec)}
-.tier-card .tc-top.enterprise{background:var(--comp)}
-.tier-card .tc-body{padding:2rem}
-.tier-card h2{font-size:1.6rem;margin-bottom:.25rem}
-.tier-card .tc-tagline{font-size:.92rem;color:var(--txtL);margin-bottom:1.5rem}
-
-/* PILLAR SCORES VISUALIZATION */
-.pillar-scores{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:1rem}
-.pillar-score{text-align:center}
-.ring-wrap{position:relative;width:100px;height:100px;margin:0 auto .6rem}
+/* Pillar scores */
+.pillar-scores{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:480px;margin:0 auto 2.5rem;text-align:center;opacity:0;animation:revealUp .6s .3s cubic-bezier(.4,0,.2,1) forwards}
+.pillar-score{display:flex;flex-direction:column;align-items:center}
+.ring-wrap{position:relative;width:110px;height:110px;margin-bottom:.5rem}
 .ring-wrap svg{width:100%;height:100%;transform:rotate(-90deg)}
-.ring-bg{fill:none;stroke:var(--bdr);stroke-width:6}
-.ring-fill{fill:none;stroke-width:6;stroke-linecap:round;stroke-dasharray:251.3;stroke-dashoffset:251.3;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
-.ring-fill.sec{stroke:var(--sec)}
-.ring-fill.perf{stroke:var(--perf)}
-.ring-fill.comp{stroke:var(--comp)}
-.ring-val{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--fH);font-size:1.3rem;font-weight:700;color:var(--txt)}
-.pillar-score .ps-label{font-family:var(--fH);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--txtL)}
+.ring-bg{fill:none;stroke:var(--bdr);stroke-width:7}
+.ring-fill{fill:none;stroke-width:7;stroke-linecap:round;stroke-dasharray:251.3;stroke-dashoffset:251.3;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1) .5s}
+.ring-val{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--fH);font-size:1.4rem;font-weight:700;color:var(--txt)}
+.ps-name{font-family:var(--fH);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.15rem}
+.ps-name.sec{color:var(--sec)}.ps-name.perf{color:var(--perf)}.ps-name.comp{color:var(--comp)}
+.ps-level{font-size:.68rem;font-weight:600;font-family:var(--fH);padding:.15rem .5rem;border-radius:100px;display:inline-block}
 
-/* KEY FINDINGS */
-.findings{max-width:640px;margin:0 auto 3rem;text-align:left}
-.findings h3{font-family:var(--fH);font-size:1.1rem;font-weight:600;text-align:center;margin-bottom:1.25rem}
-.finding{padding:1.15rem 1.25rem;border-radius:var(--rL);border:1px solid var(--bdr);background:var(--subtle);margin-bottom:.75rem;display:flex;gap:.75rem;align-items:flex-start;animation:revealUp .5s cubic-bezier(.4,0,.2,1) both}
-.finding:nth-child(2){animation-delay:.1s}
-.finding:nth-child(3){animation-delay:.2s}
-.finding:nth-child(4){animation-delay:.3s}
+/* Key findings */
+.findings{max-width:640px;margin:0 auto 2.5rem;text-align:left;opacity:0;animation:revealUp .6s .5s cubic-bezier(.4,0,.2,1) forwards}
+.findings h3{font-family:var(--fH);font-size:1.05rem;font-weight:600;text-align:center;margin-bottom:1.25rem}
+.finding{padding:1.15rem 1.25rem;border-radius:var(--rL);border:1px solid var(--bdr);background:var(--subtle);margin-bottom:.75rem;display:flex;gap:.85rem;align-items:flex-start}
 .finding-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.85rem}
 .finding-icon.warn{background:rgba(239,68,68,.1);color:#EF4444}
 .finding-icon.info{background:rgba(0,74,173,.08);color:var(--sec)}
 .finding-icon.urgent{background:rgba(245,158,11,.1);color:#F59E0B}
-.finding p{font-size:.88rem;line-height:1.6;color:var(--txt2)}
+.finding p{font-size:.86rem;line-height:1.65;color:var(--txt2)}
 .finding strong{color:var(--txt);font-weight:600}
 
-.results-note{font-family:var(--fH);font-size:.82rem;color:var(--txtL);max-width:500px;margin:0 auto 3rem;padding:1rem;border-radius:var(--r);background:var(--light);line-height:1.6}
+/* Assessment note */
+.results-note{font-family:var(--fH);font-size:.8rem;color:var(--txtL);max-width:520px;margin:0 auto 3rem;padding:1rem 1.25rem;border-radius:var(--r);background:var(--light);line-height:1.6;text-align:center}
 
-/* CONTACT FORM */
+/* Contact form */
 .contact-section{max-width:560px;margin:0 auto;text-align:left;padding:2.5rem;border-radius:var(--rL);border:1px solid var(--bdr);background:var(--white);box-shadow:0 4px 20px rgba(0,0,0,.05)}
-.contact-section h3{font-family:var(--fH);font-size:1.15rem;text-align:center;margin-bottom:.25rem}
-.contact-section .cs-sub{font-size:.88rem;color:var(--txtL);text-align:center;margin-bottom:1.75rem}
+.contact-section h3{font-family:var(--fH);font-size:1.1rem;text-align:center;margin-bottom:.25rem}
+.contact-section .cs-sub{font-size:.86rem;color:var(--txtL);text-align:center;margin-bottom:1.75rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
 .form-group{margin-bottom:1rem}
 .form-group label{display:block;font-family:var(--fH);font-size:.78rem;font-weight:600;color:var(--txt);margin-bottom:.3rem}
 .form-group label .optional{font-weight:400;color:var(--txtL)}
-.form-group input,.form-group select,.form-group textarea{width:100%;font-family:var(--fB);font-size:.9rem;padding:.7rem 1rem;border:1px solid var(--bdr);border-radius:var(--r);color:var(--txt);transition:border-color .2s;background:var(--white)}
+.form-group input,.form-group select,.form-group textarea{width:100%;font-family:var(--fB);font-size:.88rem;padding:.65rem .9rem;border:1px solid var(--bdr);border-radius:var(--r);color:var(--txt);transition:border-color .2s,box-shadow .2s;background:var(--white);-webkit-appearance:none}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--sec);box-shadow:0 0 0 3px rgba(0,74,173,.08)}
 .form-group textarea{resize:vertical;min-height:80px}
 .form-submit{width:100%;margin-top:.5rem}
 
-/* SUCCESS STATE */
-.success-state{text-align:center;padding:3rem 0;animation:revealUp .5s ease both}
-.success-icon{width:64px;height:64px;border-radius:50%;background:rgba(25,135,84,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.6rem;color:var(--ok)}
-.success-state h3{font-size:1.25rem;margin-bottom:.5rem}
-.success-state p{font-size:.92rem;color:var(--txt2);margin-bottom:.5rem}
+/* Success */
+.success-state{text-align:center;padding:3rem 0}
+.success-icon{width:64px;height:64px;border-radius:50%;background:rgba(25,135,84,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.success-icon svg{width:28px;height:28px;fill:none;stroke:var(--ok);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.success-state h3{font-size:1.2rem;margin-bottom:.5rem}
+.success-state p{font-size:.9rem;color:var(--txt2);margin-bottom:.5rem}
 .success-state .fallback{font-size:.82rem;color:var(--txtL);margin-top:1.5rem}
 .success-state .fallback a{color:var(--sec);font-weight:600}
 
 /* FOOTER */
-footer{background:var(--txt);color:rgba(255,255,255,.6);padding:2rem 0;text-align:center;margin-top:auto}
+footer{background:var(--txt);color:rgba(255,255,255,.6);padding:2rem 0;text-align:center}
 footer .ctn{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 footer p{font-size:.78rem;color:rgba(255,255,255,.45)}
 footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#fff}
@@ -172,15 +187,15 @@ footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#f
 /* RESPONSIVE */
 @media(max-width:640px){
   .welcome-features{grid-template-columns:1fr}
-  .pillar-scores{grid-template-columns:1fr;max-width:200px;margin-left:auto;margin-right:auto}
+  .pillar-scores{grid-template-columns:1fr;max-width:180px}
   .form-row{grid-template-columns:1fr}
   .contact-section{padding:1.5rem}
   .step-nav{flex-direction:column-reverse;gap:1rem;align-items:stretch}
   .step-nav .btn-back{justify-content:center}
   .step-nav .bp{width:100%;justify-content:center}
+  .tc-specs{flex-direction:column;align-items:center;gap:.5rem}
+  .risk-banner{padding:.85rem 1rem}
 }
-
-/* Reduced motion */
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 :focus-visible{outline:2px solid var(--sec);outline-offset:2px;border-radius:2px}
 </style>
@@ -188,15 +203,15 @@ footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#f
 <body>
 
 <!-- NAV -->
-<nav>
+<nav role="navigation" aria-label="Assessment navigation">
 <div class="ctn">
-<a href="/" class="nlogo">TRISIAN</a>
-<a href="/" class="nav-back"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to Home</a>
+<a href="/" class="nlogo" aria-label="Trisian home">TRISIAN</a>
+<a href="/" class="nav-back" aria-label="Return to main site"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to Home</a>
 </div>
 </nav>
 
 <!-- PROGRESS BAR -->
-<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+<div class="progress-wrap" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Assessment progress"><div class="progress-bar" id="progressBar"></div></div>
 
 <!-- WIZARD -->
 <div class="wizard" id="wizard">
@@ -204,15 +219,16 @@ footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#f
 <!-- STEP 0: WELCOME -->
 <div class="step active" data-step="0">
 <div class="welcome">
-<h1>Your <span>Three-Pillar</span> Snapshot</h1>
-<p class="wsub">Answer 10 questions and get an instant, personalized assessment of your organization's security, performance, and compliance posture — with a Safe Workspace tier recommendation.</p>
-<div class="wf-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Under 2 minutes</div>
+<h1>How Ready Is Your <span>Digital Environment?</span></h1>
+<p class="wsub">Answer 10 quick questions and discover which Safe Workspace tier fits your organization &mdash; with a personalized snapshot of your security, performance, and compliance posture.</p>
+<div class="wf-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Takes about 2 minutes</div>
 <div class="welcome-features">
-<div class="wf"><span class="wf-icon">&#128737;</span><h4>Security Score</h4><p>Evaluate your current posture and identify critical gaps</p></div>
-<div class="wf"><span class="wf-icon">&#9889;</span><h4>Performance Score</h4><p>Assess infrastructure readiness and scalability</p></div>
-<div class="wf"><span class="wf-icon">&#10003;</span><h4>Compliance Score</h4><p>Map regulatory requirements to your current state</p></div>
+<div class="wf"><div class="wf-icon sec"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Security Score</h4><p>Evaluate your current posture and identify critical gaps</p></div>
+<div class="wf"><div class="wf-icon perf"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Performance Score</h4><p>Assess infrastructure readiness and scalability needs</p></div>
+<div class="wf"><div class="wf-icon comp"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h4>Compliance Score</h4><p>Map regulatory requirements to your current state</p></div>
 </div>
-<button class="btn bp" onclick="goTo(1)">Start Assessment <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+<button class="btn bp" onclick="goTo(1)" aria-label="Start the assessment">Start Assessment <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+<p class="privacy">Your responses are used solely to generate your recommendation. No data is stored until you choose to submit your contact information.</p>
 </div>
 </div>
 
@@ -225,43 +241,43 @@ footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#f
 </div>
 
 <div class="question" data-q="1">
-<span class="q-label"><span class="q-num">1.</span> What industry does your organization operate in?</span>
-<div class="options">
-<div class="opt" data-value="Financial Services" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text"><strong>Financial Services</strong></span></div>
-<div class="opt" data-value="Healthcare" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text"><strong>Healthcare</strong></span></div>
-<div class="opt" data-value="Legal Services" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text"><strong>Legal Services</strong></span></div>
-<div class="opt" data-value="Insurance" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text"><strong>Insurance</strong></span></div>
-<div class="opt" data-value="Growing Business / Other" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text"><strong>Growing Business / Other</strong></span></div>
+<label class="q-label" id="q1-label"><span class="q-num">1.</span> What industry does your organization operate in?</label>
+<div class="options" role="radiogroup" aria-labelledby="q1-label">
+<div class="opt" data-value="Financial Services" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text"><strong>Financial Services</strong></span></div>
+<div class="opt" data-value="Healthcare" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text"><strong>Healthcare</strong></span></div>
+<div class="opt" data-value="Legal Services" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text"><strong>Legal Services</strong></span></div>
+<div class="opt" data-value="Insurance" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text"><strong>Insurance</strong></span></div>
+<div class="opt" data-value="Growing Business / Other" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text"><strong>Growing Business / Other</strong></span></div>
 </div>
 </div>
 
 <div class="question" data-q="2">
-<span class="q-label"><span class="q-num">2.</span> How many employees need access to a digital workspace?</span>
-<div class="options">
-<div class="opt" data-value="Under 50" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Under 50</span></div>
-<div class="opt" data-value="50-150" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">50 &ndash; 150</span></div>
-<div class="opt" data-value="151-300" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">151 &ndash; 300</span></div>
-<div class="opt" data-value="301-500" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">301 &ndash; 500</span></div>
-<div class="opt" data-value="500+" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">500+</span></div>
+<label class="q-label" id="q2-label"><span class="q-num">2.</span> How many employees need access to a digital workspace?</label>
+<div class="options" role="radiogroup" aria-labelledby="q2-label">
+<div class="opt" data-value="Under 50" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Under 50</span></div>
+<div class="opt" data-value="50-150" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">50 &ndash; 150</span></div>
+<div class="opt" data-value="151-300" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">151 &ndash; 300</span></div>
+<div class="opt" data-value="301-500" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">301 &ndash; 500</span></div>
+<div class="opt" data-value="500+" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">500+</span></div>
 </div>
 </div>
 
 <div class="question" data-q="3" data-multi="true">
-<span class="q-label"><span class="q-num">3.</span> Which regulatory frameworks apply to your organization?<span class="q-multi">(Select all that apply)</span></span>
-<div class="options">
-<div class="opt multi" data-value="HIPAA" onclick="toggleMulti(this)"><div class="opt-radio"></div><span class="opt-text">HIPAA</span></div>
-<div class="opt multi" data-value="PCI-DSS" onclick="toggleMulti(this)"><div class="opt-radio"></div><span class="opt-text">PCI-DSS</span></div>
-<div class="opt multi" data-value="SOX" onclick="toggleMulti(this)"><div class="opt-radio"></div><span class="opt-text">SOX</span></div>
-<div class="opt multi" data-value="GDPR" onclick="toggleMulti(this)"><div class="opt-radio"></div><span class="opt-text">GDPR</span></div>
-<div class="opt multi" data-value="DORA" onclick="toggleMulti(this)"><div class="opt-radio"></div><span class="opt-text">DORA</span></div>
-<div class="opt multi" data-value="SOC 2" onclick="toggleMulti(this)"><div class="opt-radio"></div><span class="opt-text">SOC 2</span></div>
-<div class="opt multi" data-value="None" onclick="selectNone(this)"><div class="opt-radio"></div><span class="opt-text">None / Not sure</span></div>
+<label class="q-label" id="q3-label"><span class="q-num">3.</span> Which regulatory frameworks apply to your organization?<span class="q-multi">(Select all that apply)</span></label>
+<div class="options" role="group" aria-labelledby="q3-label">
+<div class="opt multi" data-value="HIPAA" onclick="toggleMulti(this)" tabindex="0" role="checkbox" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">HIPAA</span></div>
+<div class="opt multi" data-value="PCI-DSS" onclick="toggleMulti(this)" tabindex="0" role="checkbox" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">PCI-DSS</span></div>
+<div class="opt multi" data-value="SOX" onclick="toggleMulti(this)" tabindex="0" role="checkbox" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">SOX</span></div>
+<div class="opt multi" data-value="GDPR" onclick="toggleMulti(this)" tabindex="0" role="checkbox" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">GDPR</span></div>
+<div class="opt multi" data-value="DORA" onclick="toggleMulti(this)" tabindex="0" role="checkbox" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">DORA</span></div>
+<div class="opt multi" data-value="SOC 2" onclick="toggleMulti(this)" tabindex="0" role="checkbox" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">SOC 2</span></div>
+<div class="opt multi" data-value="None" onclick="selectNone(this)" tabindex="0" role="checkbox" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">None / Not sure</span></div>
 </div>
 </div>
 
 <div class="step-nav">
-<button class="btn-back" onclick="goTo(0)"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
-<button class="btn bp" id="next1" onclick="goTo(2)">Continue <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+<button class="btn-back" onclick="goTo(0)" aria-label="Go back to welcome"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+<button class="btn bp" onclick="goTo(2)">Continue <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
 </div>
 </div>
 
@@ -274,27 +290,27 @@ footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#f
 </div>
 
 <div class="question" data-q="4">
-<span class="q-label"><span class="q-num">4.</span> How would you describe your current cybersecurity approach?</span>
-<div class="options">
-<div class="opt" data-value="no-formal" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">No formal security &mdash; basic antivirus only</span></div>
-<div class="opt" data-value="some-protections" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Some protections (MFA, antivirus) but no centralized monitoring</span></div>
-<div class="opt" data-value="documented" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Documented policies, endpoint protection, and some monitoring</span></div>
-<div class="opt" data-value="full-monitoring" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">24/7 monitoring, threat detection, and incident response plan</span></div>
+<label class="q-label" id="q4-label"><span class="q-num">4.</span> How would you describe your current cybersecurity approach?</label>
+<div class="options" role="radiogroup" aria-labelledby="q4-label">
+<div class="opt" data-value="no-formal" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">No formal security &mdash; basic antivirus only</span></div>
+<div class="opt" data-value="some-protections" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Some protections (MFA, antivirus) but no centralized monitoring</span></div>
+<div class="opt" data-value="documented" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Documented policies, endpoint protection, and some monitoring</span></div>
+<div class="opt" data-value="full-monitoring" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">24/7 monitoring, threat detection, and incident response plan</span></div>
 </div>
 </div>
 
 <div class="question" data-q="5">
-<span class="q-label"><span class="q-num">5.</span> Has your organization experienced a security incident (ransomware, breach, phishing compromise) in the past 3 years?</span>
-<div class="options">
-<div class="opt" data-value="yes" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Yes</span></div>
-<div class="opt" data-value="no" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">No</span></div>
-<div class="opt" data-value="not-sure" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Not sure</span></div>
+<label class="q-label" id="q5-label"><span class="q-num">5.</span> Has your organization experienced a security incident (ransomware, breach, phishing compromise) in the past 3 years?</label>
+<div class="options" role="radiogroup" aria-labelledby="q5-label">
+<div class="opt" data-value="yes" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Yes</span></div>
+<div class="opt" data-value="no" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">No</span></div>
+<div class="opt" data-value="not-sure" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Not sure</span></div>
 </div>
 </div>
 
 <div class="step-nav">
-<button class="btn-back" onclick="goTo(1)"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
-<button class="btn bp" id="next2" onclick="goTo(3)">Continue <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+<button class="btn-back" onclick="goTo(1)" aria-label="Go back to step 1"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+<button class="btn bp" onclick="goTo(3)">Continue <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
 </div>
 </div>
 
@@ -307,28 +323,28 @@ footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#f
 </div>
 
 <div class="question" data-q="6">
-<span class="q-label"><span class="q-num">6.</span> How do employees currently access work applications?</span>
-<div class="options">
-<div class="opt" data-value="individual" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Individual laptops/desktops &mdash; no centralized management</span></div>
-<div class="opt" data-value="mixed" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Mix of cloud tools and local applications</span></div>
-<div class="opt" data-value="vdi" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Virtual desktops (Citrix, VMware, or Azure)</span></div>
-<div class="opt" data-value="cloud" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Fully cloud-based &mdash; everything in the browser</span></div>
+<label class="q-label" id="q6-label"><span class="q-num">6.</span> How do employees currently access work applications?</label>
+<div class="options" role="radiogroup" aria-labelledby="q6-label">
+<div class="opt" data-value="individual" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Individual laptops/desktops &mdash; no centralized management</span></div>
+<div class="opt" data-value="mixed" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Mix of cloud tools and local applications</span></div>
+<div class="opt" data-value="vdi" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Virtual desktops (Citrix, VMware, or Azure)</span></div>
+<div class="opt" data-value="cloud" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Fully cloud-based &mdash; everything in the browser</span></div>
 </div>
 </div>
 
 <div class="question" data-q="7">
-<span class="q-label"><span class="q-num">7.</span> If your systems went down completely, how long could your business operate?</span>
-<div class="options">
-<div class="opt" data-value="minutes" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">We'd be impacted immediately &mdash; even minutes matter</span></div>
-<div class="opt" data-value="hours" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">A few hours, but it would be very costly</span></div>
-<div class="opt" data-value="day" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">We could manage for a day with workarounds</span></div>
-<div class="opt" data-value="not-concerned" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Downtime isn't a major concern</span></div>
+<label class="q-label" id="q7-label"><span class="q-num">7.</span> If your systems went down completely, how long could your business operate?</label>
+<div class="options" role="radiogroup" aria-labelledby="q7-label">
+<div class="opt" data-value="minutes" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">We'd be impacted immediately &mdash; even minutes matter</span></div>
+<div class="opt" data-value="hours" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">A few hours, but it would be very costly</span></div>
+<div class="opt" data-value="day" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">We could manage for a day with workarounds</span></div>
+<div class="opt" data-value="not-concerned" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Downtime isn't a major concern</span></div>
 </div>
 </div>
 
 <div class="step-nav">
-<button class="btn-back" onclick="goTo(2)"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
-<button class="btn bp" id="next3" onclick="goTo(4)">Continue <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+<button class="btn-back" onclick="goTo(2)" aria-label="Go back to step 2"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+<button class="btn bp" onclick="goTo(4)">Continue <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
 </div>
 </div>
 
@@ -341,47 +357,45 @@ footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#f
 </div>
 
 <div class="question" data-q="8">
-<span class="q-label"><span class="q-num">8.</span> What best describes your compliance/audit situation?</span>
-<div class="options">
-<div class="opt" data-value="never" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">We've never had a compliance audit</span></div>
-<div class="opt" data-value="passed" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">We've had audits and passed without issues</span></div>
-<div class="opt" data-value="gaps" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">We've had audits with findings or gaps we need to address</span></div>
-<div class="opt" data-value="upcoming" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">We have an audit coming up within 6 months</span></div>
+<label class="q-label" id="q8-label"><span class="q-num">8.</span> What best describes your compliance/audit situation?</label>
+<div class="options" role="radiogroup" aria-labelledby="q8-label">
+<div class="opt" data-value="never" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">We've never had a compliance audit</span></div>
+<div class="opt" data-value="passed" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">We've had audits and passed without issues</span></div>
+<div class="opt" data-value="gaps" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">We've had audits with findings or gaps we need to address</span></div>
+<div class="opt" data-value="upcoming" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">We have an audit coming up within 6 months</span></div>
 </div>
 </div>
 
 <div class="question" data-q="9">
-<span class="q-label"><span class="q-num">9.</span> How is IT currently managed in your organization?</span>
-<div class="options">
-<div class="opt" data-value="none" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">No dedicated IT &mdash; we figure it out as we go</span></div>
-<div class="opt" data-value="msp" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">External IT provider / MSP</span></div>
-<div class="opt" data-value="small-team" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Small internal IT team</span></div>
-<div class="opt" data-value="full-dept" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Full IT department with specialized roles</span></div>
+<label class="q-label" id="q9-label"><span class="q-num">9.</span> How is IT currently managed in your organization?</label>
+<div class="options" role="radiogroup" aria-labelledby="q9-label">
+<div class="opt" data-value="none" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">No dedicated IT &mdash; we figure it out as we go</span></div>
+<div class="opt" data-value="msp" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">External IT provider / MSP</span></div>
+<div class="opt" data-value="small-team" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Small internal IT team</span></div>
+<div class="opt" data-value="full-dept" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Full IT department with specialized roles</span></div>
 </div>
 </div>
 
 <div class="question" data-q="10">
-<span class="q-label"><span class="q-num">10.</span> What's the primary reason you're exploring this?</span>
-<div class="options">
-<div class="opt" data-value="incident" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">A recent security incident or concern</span></div>
-<div class="opt" data-value="compliance" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Upcoming compliance audit or regulatory requirement</span></div>
-<div class="opt" data-value="growth" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Growth &mdash; current systems can't keep up</span></div>
-<div class="opt" data-value="provider" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">Current provider isn't meeting expectations</span></div>
-<div class="opt" data-value="modernization" onclick="selectOpt(this)"><div class="opt-radio"></div><span class="opt-text">General modernization / we know we need to improve</span></div>
+<label class="q-label" id="q10-label"><span class="q-num">10.</span> What's the primary reason you're exploring this?</label>
+<div class="options" role="radiogroup" aria-labelledby="q10-label">
+<div class="opt" data-value="incident" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">A recent security incident or concern</span></div>
+<div class="opt" data-value="compliance" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Upcoming compliance audit or regulatory requirement</span></div>
+<div class="opt" data-value="growth" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Growth &mdash; current systems can't keep up</span></div>
+<div class="opt" data-value="provider" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">Current provider isn't meeting expectations</span></div>
+<div class="opt" data-value="modernization" onclick="selectOpt(this)" tabindex="0" role="radio" aria-checked="false" onkeydown="optKey(event,this)"><div class="opt-ind"></div><span class="opt-text">General modernization / we know we need to improve</span></div>
 </div>
 </div>
 
 <div class="step-nav">
-<button class="btn-back" onclick="goTo(3)"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
-<button class="btn bp" id="next4" onclick="showResults()">See My Results <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+<button class="btn-back" onclick="goTo(3)" aria-label="Go back to step 3"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+<button class="btn bp" onclick="showResults()">See My Results <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
 </div>
 </div>
 
 <!-- STEP 5: RESULTS -->
 <div class="step" data-step="5">
-<div class="results" id="resultsContent">
-<!-- Populated by JS -->
-</div>
+<div class="results" id="resultsContent"></div>
 </div>
 
 </div><!-- /wizard -->
@@ -393,29 +407,35 @@ footer a{color:rgba(255,255,255,.6);transition:color .2s}footer a:hover{color:#f
 var answers = {};
 var multiAnswers = { 3: [] };
 var currentStep = 0;
-var totalSteps = 5; /* 0=welcome, 1-4=questions, 5=results */
+var totalSteps = 5;
 
 /* ===== NAVIGATION ===== */
 function goTo(step) {
-  /* Validate current step before advancing */
   if (step > currentStep && !validateStep(currentStep)) return;
-  var steps = document.querySelectorAll('.step');
-  steps.forEach(function(s) { s.classList.remove('active'); });
+  document.querySelectorAll('.step').forEach(function(s) { s.classList.remove('active'); });
   var target = document.querySelector('[data-step="' + step + '"]');
-  if (target) target.classList.add('active');
+  if (target) { target.classList.add('active'); }
   currentStep = step;
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  /* Focus management */
+  setTimeout(function() {
+    var heading = target.querySelector('h1, h2');
+    if (heading) heading.focus({ preventScroll: true });
+  }, 100);
 }
 
 function updateProgress() {
   var pct = currentStep === 0 ? 0 : (currentStep / totalSteps) * 100;
-  document.getElementById('progressBar').style.width = pct + '%';
+  var bar = document.getElementById('progressBar');
+  bar.style.width = pct + '%';
+  bar.parentElement.setAttribute('aria-valuenow', Math.round(pct));
 }
 
 function validateStep(step) {
   if (step === 0) return true;
   var stepEl = document.querySelector('[data-step="' + step + '"]');
+  if (!stepEl) return true;
   var questions = stepEl.querySelectorAll('.question');
   var valid = true;
   questions.forEach(function(q) {
@@ -434,36 +454,59 @@ function validateStep(step) {
 function selectOpt(el) {
   var q = el.closest('.question');
   var qNum = q.getAttribute('data-q');
-  q.querySelectorAll('.opt').forEach(function(o) { o.classList.remove('selected'); });
+  q.querySelectorAll('.opt').forEach(function(o) {
+    o.classList.remove('selected');
+    o.setAttribute('aria-checked', 'false');
+  });
   el.classList.add('selected');
+  el.setAttribute('aria-checked', 'true');
   answers[qNum] = el.getAttribute('data-value');
 }
 
 function toggleMulti(el) {
   var q = el.closest('.question');
   var qNum = q.getAttribute('data-q');
+  /* Deselect "None" if selecting a framework */
   var noneOpt = q.querySelector('[data-value="None"]');
-  if (noneOpt) noneOpt.classList.remove('selected');
+  if (noneOpt) { noneOpt.classList.remove('selected'); noneOpt.setAttribute('aria-checked', 'false'); }
   if (!multiAnswers[qNum]) multiAnswers[qNum] = [];
-  el.classList.toggle('selected');
+  /* Remove "None" from array */
+  var ni = multiAnswers[qNum].indexOf('None');
+  if (ni > -1) multiAnswers[qNum].splice(ni, 1);
+
   var val = el.getAttribute('data-value');
-  var idx = multiAnswers[qNum].indexOf(val);
-  if (idx > -1) { multiAnswers[qNum].splice(idx, 1); }
-  else { multiAnswers[qNum].push(val); }
-  /* Also set answers for validation */
+  var isSelected = el.classList.contains('selected');
+  if (isSelected) {
+    el.classList.remove('selected');
+    el.setAttribute('aria-checked', 'false');
+    var idx = multiAnswers[qNum].indexOf(val);
+    if (idx > -1) multiAnswers[qNum].splice(idx, 1);
+  } else {
+    el.classList.add('selected');
+    el.setAttribute('aria-checked', 'true');
+    multiAnswers[qNum].push(val);
+  }
   answers[qNum] = multiAnswers[qNum].length > 0 ? multiAnswers[qNum].join(',') : undefined;
 }
 
 function selectNone(el) {
   var q = el.closest('.question');
   var qNum = q.getAttribute('data-q');
-  q.querySelectorAll('.opt').forEach(function(o) { o.classList.remove('selected'); });
+  q.querySelectorAll('.opt').forEach(function(o) {
+    o.classList.remove('selected');
+    o.setAttribute('aria-checked', 'false');
+  });
   el.classList.add('selected');
+  el.setAttribute('aria-checked', 'true');
   multiAnswers[qNum] = ['None'];
   answers[qNum] = 'None';
 }
 
-/* ===== SCORING ===== */
+function optKey(e, el) {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+}
+
+/* ===== SCORING (v2 — gap/need based) ===== */
 function calculateScores() {
   var scores = { security: 0, performance: 0, compliance: 0 };
   var flags = [];
@@ -482,7 +525,7 @@ function calculateScores() {
   else if (users === '301-500') { scores.performance += 20; flags.push('ENTERPRISE_CANDIDATE'); }
   else if (users === '500+') { scores.performance += 30; flags.push('ENTERPRISE'); }
 
-  /* Q3 — Regulatory Frameworks (multi) */
+  /* Q3 — Regulatory Frameworks (multi-select) */
   var frameworks = multiAnswers['3'] || [];
   frameworks.forEach(function(f) {
     if (f === 'HIPAA') { scores.compliance += 25; flags.push('HIPAA_REQUIRED'); }
@@ -493,46 +536,46 @@ function calculateScores() {
     else if (f === 'SOC 2') { scores.compliance += 15; }
   });
 
-  /* Q4 — Security Posture */
+  /* Q4 — Security Posture (INVERTED: low maturity = high gap score) */
   var sec = answers['4'] || '';
-  if (sec === 'no-formal') scores.security = 15;
-  else if (sec === 'some-protections') scores.security = 35;
-  else if (sec === 'documented') scores.security = 55;
-  else if (sec === 'full-monitoring') scores.security = 75;
+  if (sec === 'no-formal') scores.security = 60;
+  else if (sec === 'some-protections') scores.security = 40;
+  else if (sec === 'documented') scores.security = 25;
+  else if (sec === 'full-monitoring') scores.security = 10;
 
-  /* Q5 — Incident History */
+  /* Q5 — Incident History (flags only) */
   var incident = answers['5'] || '';
   if (incident === 'yes') flags.push('INCIDENT_HISTORY');
   else if (incident === 'not-sure') flags.push('VISIBILITY_GAP');
 
-  /* Q6 — Infrastructure Type */
+  /* Q6 — Infrastructure Type (INVERTED: less centralized = higher gap) */
   var infra = answers['6'] || '';
-  if (infra === 'individual') scores.performance += 20;
-  else if (infra === 'mixed') scores.performance += 35;
-  else if (infra === 'vdi') { scores.performance += 55; flags.push('VDI_MIGRATION'); }
-  else if (infra === 'cloud') scores.performance += 45;
+  if (infra === 'individual') scores.performance += 50;
+  else if (infra === 'mixed') scores.performance += 30;
+  else if (infra === 'vdi') { scores.performance += 15; flags.push('VDI_MIGRATION'); }
+  else if (infra === 'cloud') scores.performance += 20;
 
   /* Q7 — Downtime Tolerance */
   var downtime = answers['7'] || '';
   if (downtime === 'minutes') { scores.performance += 30; flags.push('ENTERPRISE_REQUIRED'); }
   else if (downtime === 'hours') scores.performance += 20;
   else if (downtime === 'day') scores.performance += 10;
+  /* not-concerned: +0 */
 
-  /* Q8 — Compliance Audit Status */
+  /* Q8 — Compliance Audit Status (gap-based) */
   var audit = answers['8'] || '';
-  if (audit === 'never') scores.compliance += 15;
-  else if (audit === 'passed') scores.compliance += 60;
-  else if (audit === 'gaps') { scores.compliance += 30; flags.push('COMPLIANCE_GAPS'); }
+  if (audit === 'never') scores.compliance += 10;
+  else if (audit === 'passed') scores.compliance += 5;
+  else if (audit === 'gaps') { scores.compliance += 40; flags.push('COMPLIANCE_GAPS'); }
   else if (audit === 'upcoming') { scores.compliance += 35; flags.push('AUDIT_URGENT'); }
 
-  /* Q9 — IT Support Model */
+  /* Q9 — IT Support Model (context, minimal score impact) */
   var it = answers['9'] || '';
-  if (it === 'none') { scores.security += 5; scores.performance += 5; scores.compliance += 5; }
-  else if (it === 'msp') { scores.security += 10; scores.performance += 10; scores.compliance += 10; }
-  else if (it === 'small-team') { scores.security += 15; scores.performance += 15; scores.compliance += 15; }
-  else if (it === 'full-dept') { scores.security += 20; scores.performance += 20; scores.compliance += 20; }
+  if (it === 'small-team') { scores.security += 5; scores.performance += 5; scores.compliance += 5; }
+  else if (it === 'full-dept') { scores.security += 10; scores.performance += 10; scores.compliance += 10; }
+  /* none and msp: +0 */
 
-  /* Q10 — Driver (flags only) */
+  /* Q10 — Driver (flags only, no scoring) */
   var driver = answers['10'] || '';
   if (driver === 'incident') flags.push('INCIDENT_DRIVER');
   else if (driver === 'compliance') flags.push('COMPLIANCE_DRIVER');
@@ -551,151 +594,226 @@ function calculateScores() {
   return { scores: scores, flags: flags, industry: industry };
 }
 
+/* ===== TIER DETERMINATION ===== */
 function determineTier(scores, flags, industry) {
+  /* Override triggers */
   var forceEnterprise = flags.some(function(f) {
-    return ['HIPAA_REQUIRED', 'PCI_REQUIRED', 'SOX_REQUIRED', 'DORA_REQUIRED',
-            'ENTERPRISE', 'ENTERPRISE_REQUIRED'].indexOf(f) > -1;
+    return ['HIPAA_REQUIRED','PCI_REQUIRED','SOX_REQUIRED','DORA_REQUIRED',
+            'ENTERPRISE','ENTERPRISE_REQUIRED'].indexOf(f) > -1;
   });
-
   var forceAdvanced = flags.some(function(f) {
-    return ['FSS_CANDIDATE', 'INCIDENT_HISTORY', 'AUDIT_URGENT',
+    return ['FSS_CANDIDATE','INCIDENT_HISTORY','AUDIT_URGENT',
             'ENTERPRISE_CANDIDATE'].indexOf(f) > -1;
-  }) || ['Financial Services', 'Healthcare', 'Legal Services'].indexOf(industry) > -1;
+  }) || ['Financial Services','Healthcare','Legal Services'].indexOf(industry) > -1;
 
+  /* Score-based: Core <=50, Advanced 51-75, Enterprise >75 */
+  var maxScore = Math.max(scores.security, scores.performance, scores.compliance);
   var scoreTier = 'Core';
-  if (scores.security > 65 || scores.performance > 65 || scores.compliance > 65) {
-    scoreTier = 'Enterprise';
-  } else if (scores.security > 40 || scores.performance > 40 || scores.compliance > 40) {
-    scoreTier = 'Advanced';
-  }
+  if (maxScore > 75) scoreTier = 'Enterprise';
+  else if (maxScore > 50) scoreTier = 'Advanced';
 
-  if (forceEnterprise) return 'Enterprise';
-  if (forceAdvanced && scoreTier === 'Core') return 'Advanced';
-  return scoreTier;
+  var tierRank = { Core: 1, Advanced: 2, Enterprise: 3 };
+  var finalTier = scoreTier;
+  if (forceEnterprise) finalTier = 'Enterprise';
+  else if (forceAdvanced && tierRank[scoreTier] < 2) finalTier = 'Advanced';
+  return finalTier;
+}
+
+/* ===== NEED LEVEL & RISK ===== */
+function needLevel(score) {
+  if (score <= 20) return { label: 'Low Need', color: 'var(--needLow)', cls: 'low' };
+  if (score <= 40) return { label: 'Moderate Need', color: 'var(--needMod)', cls: 'mod' };
+  if (score <= 60) return { label: 'Elevated Need', color: 'var(--needElev)', cls: 'elev' };
+  if (score <= 80) return { label: 'High Need', color: 'var(--needHigh)', cls: 'high' };
+  return { label: 'Critical Need', color: 'var(--needCrit)', cls: 'crit' };
+}
+
+function overallRisk(scores) {
+  var avg = Math.round((scores.security + scores.performance + scores.compliance) / 3);
+  if (avg <= 20) return { label: 'Low Risk', cls: 'risk-low' };
+  if (avg <= 40) return { label: 'Moderate Risk', cls: 'risk-mod' };
+  if (avg <= 60) return { label: 'Elevated Risk', cls: 'risk-elev' };
+  if (avg <= 80) return { label: 'High Risk', cls: 'risk-high' };
+  return { label: 'Critical Risk', cls: 'risk-crit' };
+}
+
+function ringColor(score) {
+  if (score <= 20) return 'var(--needLow)';
+  if (score <= 40) return 'var(--needMod)';
+  if (score <= 60) return 'var(--needElev)';
+  if (score <= 80) return 'var(--needHigh)';
+  return 'var(--needCrit)';
 }
 
 /* ===== KEY FINDINGS ===== */
-function generateFindings(flags, tier) {
-  var findings = [];
-  var findingMap = {
-    'HIPAA_REQUIRED': { icon: 'urgent', text: '<strong>HIPAA compliance is required</strong> for your organization. Protected health information (PHI) demands audit trails, encryption, and access controls — capabilities built into the Enterprise tier with automated compliance controls.' },
-    'PCI_REQUIRED': { icon: 'urgent', text: '<strong>PCI-DSS compliance applies.</strong> Payment card data requires strict access controls, network segmentation, and continuous monitoring. Our Enterprise tier includes pre-built PCI controls and automated evidence collection.' },
-    'SOX_REQUIRED': { icon: 'urgent', text: '<strong>SOX compliance requirements detected.</strong> Financial reporting controls need immutable audit trails and automated governance — integrated into the Enterprise tier.' },
-    'DORA_REQUIRED': { icon: 'urgent', text: '<strong>DORA compliance is required.</strong> The Digital Operational Resilience Act demands ICT risk management, incident reporting, and third-party oversight — all built into our Enterprise tier.' },
-    'INCIDENT_HISTORY': { icon: 'warn', text: '<strong>Prior security incident identified.</strong> With a breach in your recent history, proactive 24/7 monitoring and threat detection are critical. Our assessment will evaluate current gaps and the fastest path to resilience.' },
-    'VISIBILITY_GAP': { icon: 'warn', text: '<strong>Visibility gap detected.</strong> Not being certain about past incidents suggests monitoring gaps. Enhanced visibility and centralized logging would significantly strengthen your security posture.' },
-    'ENTERPRISE_REQUIRED': { icon: 'info', text: '<strong>Mission-critical uptime requirements.</strong> When minutes of downtime matter, you need 99.99% SLA guarantees, multi-region failover, and 30-minute critical response — available in the Enterprise tier.' },
-    'AUDIT_URGENT': { icon: 'urgent', text: '<strong>Audit approaching within 6 months.</strong> Time is critical. Our Safe Workspace includes pre-built controls and automated evidence collection that can accelerate your audit preparation significantly.' },
-    'COMPLIANCE_GAPS': { icon: 'warn', text: '<strong>Previous audit gaps identified.</strong> Addressing findings before the next audit is essential. Automated governance and continuous compliance monitoring help close gaps systematically.' },
-    'VDI_MIGRATION': { icon: 'info', text: '<strong>Existing virtual desktop infrastructure.</strong> Your organization already uses VDI, which positions you well for a smooth migration to Safe Workspace with potentially enhanced security and cost optimization.' },
-    'FSS_CANDIDATE': { icon: 'info', text: '<strong>Financial services organizations</strong> face unique regulatory and security demands. Our 28 years of experience in this sector informs every aspect of the Safe Workspace platform.' },
-    'INCIDENT_DRIVER': { icon: 'warn', text: '<strong>Security concerns are driving this evaluation.</strong> A proactive approach — predictive threat intelligence, zero-trust architecture, and 24/7 monitoring — fundamentally changes your risk profile.' },
-    'COMPLIANCE_DRIVER': { icon: 'info', text: '<strong>Compliance is driving this evaluation.</strong> Regulatory requirements don\'t have to be a burden. With the right platform, audit readiness becomes a continuous, automated state.' },
-    'GROWTH_DRIVER': { icon: 'info', text: '<strong>Growth is driving this evaluation.</strong> Scaling infrastructure should accelerate your business, not hold it back. Elastic auto-scaling and intelligent load balancing ensure your platform grows with you.' },
-    'PROVIDER_DRIVER': { icon: 'warn', text: '<strong>Your current provider isn\'t meeting expectations.</strong> When multiple vendors point fingers, nothing gets resolved. A single accountable partner with end-to-end responsibility changes the dynamic entirely.' }
+function generateFindings(flags) {
+  var map = {
+    HIPAA_REQUIRED: { icon: 'urgent', text: '<strong>Your organization handles protected health information (PHI).</strong> HIPAA compliance requires audit trails, encryption, and access controls that go beyond standard security. Our full assessment will map your current PHI safeguards against regulatory requirements.' },
+    PCI_REQUIRED: { icon: 'urgent', text: '<strong>PCI-DSS compliance demands network segmentation,</strong> cardholder data encryption, and ongoing vulnerability management. Our assessment evaluates your current cardholder data environment and identifies the controls needed for compliance.' },
+    SOX_REQUIRED: { icon: 'urgent', text: '<strong>SOX compliance requires IT General Controls,</strong> segregation of duties, and comprehensive audit trails for financial data. Our assessment will evaluate your current control environment against SOX requirements.' },
+    DORA_REQUIRED: { icon: 'urgent', text: '<strong>The Digital Operational Resilience Act</strong> requires ICT risk management frameworks, incident classification, and resilience testing. Our assessment will evaluate your DORA readiness and identify gaps.' },
+    INCIDENT_HISTORY: { icon: 'warn', text: '<strong>With a security incident in your recent history,</strong> proactive 24/7 monitoring and threat detection are essential &mdash; not optional. Our assessment will evaluate your current detection gaps and identify the fastest path to resilience.' },
+    AUDIT_URGENT: { icon: 'urgent', text: '<strong>With an audit approaching in the next 6 months,</strong> time is critical. Safe Workspace includes pre-built controls and automated evidence collection that can transform audit preparation from a project into a routine process.' },
+    ENTERPRISE_REQUIRED: { icon: 'info', text: '<strong>Your organization requires near-zero downtime.</strong> Enterprise tier delivers 30-minute critical response SLAs, multi-region infrastructure, and automatic failover to keep you operational.' },
+    ENTERPRISE: { icon: 'info', text: '<strong>At 500+ users,</strong> you need infrastructure that scales without redesign and a dedicated support team that knows your environment. Our assessment will scope the right Safe Workspace configuration for your scale.' },
+    VISIBILITY_GAP: { icon: 'warn', text: '<strong>Not being certain whether you\'ve experienced a security incident</strong> is itself a significant finding &mdash; it suggests a gap in threat visibility. Our security assessment will evaluate your detection and monitoring capabilities closely.' },
+    COMPLIANCE_GAPS: { icon: 'warn', text: '<strong>Previous audit findings indicate compliance gaps</strong> that need structured remediation. Our full assessment will map these gaps to specific controls and prioritize the remediation roadmap.' },
+    FSS_CANDIDATE: { icon: 'info', text: '<strong>Financial services organizations</strong> face some of the strictest regulatory requirements across DORA, SOX, GLBA, and PCI-DSS. Our assessment is specifically calibrated for the financial sector\'s compliance landscape.' },
+    VDI_MIGRATION: { icon: 'info', text: '<strong>You\'re already using virtual desktops</strong> &mdash; that\'s a strong foundation. Our assessment will evaluate your current VDI platform and design an optimized migration path to Safe Workspace with zero downtime.' },
+    ENTERPRISE_CANDIDATE: { icon: 'info', text: '<strong>At your organization\'s size,</strong> centralized management, advanced security, and 24/7 support become operational necessities rather than nice-to-haves. Our assessment will determine the exact tier configuration for your needs.' },
+    GROWTH_DRIVER: { icon: 'info', text: '<strong>When growth outpaces infrastructure,</strong> the risk isn\'t just poor performance &mdash; it\'s security gaps and compliance exposure that scale with you. Our assessment maps your growth trajectory to the right Safe Workspace tier.' },
+    INCIDENT_DRIVER: { icon: 'warn', text: '<strong>Evaluating infrastructure after a security concern</strong> is exactly the right move. Our assessment provides a structured gap analysis across security, performance, and compliance so you can act with clarity.' },
+    COMPLIANCE_DRIVER: { icon: 'info', text: '<strong>Regulatory requirements are best addressed systematically,</strong> not reactively. Our assessment maps your specific compliance landscape to the controls and capabilities you need &mdash; before the auditors arrive.' },
+    PROVIDER_DRIVER: { icon: 'warn', text: '<strong>Switching providers is a significant decision.</strong> Our assessment gives you a clear, data-driven picture of what your environment actually needs &mdash; so you can evaluate any partner against objective criteria, including us.' },
+    MODERNIZATION_DRIVER: { icon: 'info', text: '<strong>Modernization works best with a clear baseline.</strong> Our assessment scores your current environment across security, performance, and compliance &mdash; giving you a prioritized roadmap rather than a wish list.' }
   };
 
-  /* Priority order for findings */
-  var priority = ['HIPAA_REQUIRED', 'PCI_REQUIRED', 'SOX_REQUIRED', 'DORA_REQUIRED', 'INCIDENT_HISTORY',
-    'AUDIT_URGENT', 'ENTERPRISE_REQUIRED', 'COMPLIANCE_GAPS', 'VISIBILITY_GAP', 'INCIDENT_DRIVER',
-    'PROVIDER_DRIVER', 'VDI_MIGRATION', 'FSS_CANDIDATE', 'COMPLIANCE_DRIVER', 'GROWTH_DRIVER'];
+  var priority = ['HIPAA_REQUIRED','PCI_REQUIRED','SOX_REQUIRED','DORA_REQUIRED','INCIDENT_HISTORY',
+    'AUDIT_URGENT','ENTERPRISE_REQUIRED','ENTERPRISE','VISIBILITY_GAP','COMPLIANCE_GAPS',
+    'FSS_CANDIDATE','VDI_MIGRATION','ENTERPRISE_CANDIDATE','GROWTH_DRIVER','INCIDENT_DRIVER',
+    'COMPLIANCE_DRIVER','PROVIDER_DRIVER','MODERNIZATION_DRIVER'];
 
+  var findings = [];
   priority.forEach(function(key) {
-    if (flags.indexOf(key) > -1 && findingMap[key] && findings.length < 3) {
-      findings.push(findingMap[key]);
+    if (flags.indexOf(key) > -1 && map[key] && findings.length < 3) {
+      findings.push(map[key]);
     }
   });
-
-  /* Default finding if none triggered */
   if (findings.length === 0) {
-    findings.push({ icon: 'info', text: '<strong>Solid foundation detected.</strong> Your organization has a good starting point. The full Three-Pillar Assessment will identify specific optimizations to strengthen your environment further.' });
+    findings.push({ icon: 'info', text: '<strong>Solid foundation detected.</strong> Based on your responses, your organization has a stable foundation. Our full Three-Pillar Assessment will identify specific optimization opportunities and confirm the right Safe Workspace configuration for your goals.' });
   }
-
   return findings;
 }
 
-/* ===== RESULTS RENDER ===== */
+/* ===== READABLE ANSWER LABELS ===== */
+var answerLabels = {
+  '4': { 'no-formal': 'No formal security — basic antivirus only', 'some-protections': 'Some protections (MFA, antivirus) but no centralized monitoring', 'documented': 'Documented policies, endpoint protection, and some monitoring', 'full-monitoring': '24/7 monitoring, threat detection, and incident response plan' },
+  '5': { 'yes': 'Yes', 'no': 'No', 'not-sure': 'Not sure' },
+  '6': { 'individual': 'Individual laptops/desktops — no centralized management', 'mixed': 'Mix of cloud tools and local applications', 'vdi': 'Virtual desktops (Citrix, VMware, or Azure)', 'cloud': 'Fully cloud-based — everything in the browser' },
+  '7': { 'minutes': 'Impacted immediately — even minutes matter', 'hours': 'A few hours, but very costly', 'day': 'Could manage for a day with workarounds', 'not-concerned': 'Downtime isn\'t a major concern' },
+  '8': { 'never': 'Never had a compliance audit', 'passed': 'Passed audits without issues', 'gaps': 'Audits with findings or gaps', 'upcoming': 'Audit coming up within 6 months' },
+  '9': { 'none': 'No dedicated IT', 'msp': 'External IT provider / MSP', 'small-team': 'Small internal IT team', 'full-dept': 'Full IT department with specialists' },
+  '10': { 'incident': 'Security incident or concern', 'compliance': 'Upcoming compliance audit or regulation', 'growth': 'Growth — current systems can\'t keep up', 'provider': 'Current provider not meeting expectations', 'modernization': 'General modernization' }
+};
+
+/* ===== RENDER RESULTS ===== */
 function showResults() {
   if (!validateStep(4)) return;
   goTo(5);
 
   var result = calculateScores();
   var tier = determineTier(result.scores, result.flags, result.industry);
-  var findings = generateFindings(result.flags, tier);
+  var findings = generateFindings(result.flags);
+  var risk = overallRisk(result.scores);
 
   var tierClass = tier.toLowerCase();
-  var tierBadgeLabels = { 'Core': 'Foundation', 'Advanced': 'Most Selected', 'Enterprise': 'Maximum Protection' };
-  var tierTaglines = {
-    'Core': 'A solid foundation for secure cloud desktops.',
-    'Advanced': 'Enhanced security and full traceability for growing organizations.',
-    'Enterprise': 'Built for regulated industries with dedicated support and compliance automation.'
+  var badgeLabels = { Core: 'Foundation', Advanced: 'Most Selected', Enterprise: 'Maximum Protection' };
+  var taglines = {
+    Core: 'Professional-grade security for small and mid-sized businesses',
+    Advanced: 'Proactive defense with 24/7 resilience',
+    Enterprise: 'Full compliance automation for regulated industries'
+  };
+  var summaries = {
+    Core: 'Safe Workspace Core provides the essential foundation for secure cloud desktops &mdash; automated patching, 24/7 platform monitoring, MFA, and Microsoft 365 Business Premium included. Business hours support with structured SLAs.',
+    Advanced: 'Safe Workspace Advanced adds CIS-hardened images, behavioral threat detection, advanced email protection, user experience monitoring, and 24/7/365 support. Built for organizations that need enhanced security and full operational traceability.',
+    Enterprise: 'Safe Workspace Enterprise delivers the complete security and compliance stack &mdash; Zero Trust architecture, SIEM/SOAR, AI-driven threat hunting, DLP with auto-labeling, automated compliance suite, multi-region infrastructure, and a dedicated support team with named Technical Account Manager.'
+  };
+  var specs = {
+    Core: ['Up to 300 users','Business hours support','1-hour critical response'],
+    Advanced: ['Unlimited users','24/7/365 support','1-hour critical response'],
+    Enterprise: ['Unlimited users','24/7 priority support','30-minute critical response']
   };
 
-  var html = '';
-  html += '<div class="results-reveal">';
-  html += '<p style="font-family:var(--fH);font-size:.82rem;color:var(--txtL);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem">Your Recommended Tier</p>';
-  html += '<div class="tier-card"><div class="tc-top ' + tierClass + '"></div><div class="tc-body">';
-  html += '<span class="tier-badge ' + tierClass + '">' + tierBadgeLabels[tier] + '</span>';
-  html += '<h2>' + tier + '</h2>';
-  html += '<p class="tc-tagline">' + tierTaglines[tier] + '</p>';
-  html += '<div class="pillar-scores">';
+  var h = '';
 
-  /* Security ring */
-  html += '<div class="pillar-score"><div class="ring-wrap"><svg viewBox="0 0 86 86"><circle class="ring-bg" cx="43" cy="43" r="40"/><circle class="ring-fill sec" cx="43" cy="43" r="40" data-score="' + result.scores.security + '"/></svg><span class="ring-val">' + result.scores.security + '</span></div><span class="ps-label">Security</span></div>';
-  /* Performance ring */
-  html += '<div class="pillar-score"><div class="ring-wrap"><svg viewBox="0 0 86 86"><circle class="ring-bg" cx="43" cy="43" r="40"/><circle class="ring-fill perf" cx="43" cy="43" r="40" data-score="' + result.scores.performance + '"/></svg><span class="ring-val">' + result.scores.performance + '</span></div><span class="ps-label">Performance</span></div>';
-  /* Compliance ring */
-  html += '<div class="pillar-score"><div class="ring-wrap"><svg viewBox="0 0 86 86"><circle class="ring-bg" cx="43" cy="43" r="40"/><circle class="ring-fill comp" cx="43" cy="43" r="40" data-score="' + result.scores.compliance + '"/></svg><span class="ring-val">' + result.scores.compliance + '</span></div><span class="ps-label">Compliance</span></div>';
+  /* Results intro */
+  h += '<div class="results-intro"><div class="step-num">Your Results</div>';
+  h += '<h2 style="margin-bottom:.25rem;font-size:clamp(1.4rem,2.5vw,1.8rem)">Your Three-Pillar Snapshot</h2>';
+  h += '<p style="color:var(--txtL);font-size:.9rem">Based on your 10 responses, here\'s where your organization stands.</p></div>';
 
-  html += '</div></div></div>';
+  /* Overall risk banner */
+  h += '<div class="risk-banner ' + risk.cls + '"><span class="risk-label">Overall Assessment</span><span class="risk-val">' + risk.label + '</span></div>';
 
-  /* Findings */
-  html += '<div class="findings"><h3>Key Findings</h3>';
-  findings.forEach(function(f) {
-    var iconChar = f.icon === 'warn' ? '&#9888;' : f.icon === 'urgent' ? '&#9201;' : '&#8505;';
-    html += '<div class="finding"><div class="finding-icon ' + f.icon + '">' + iconChar + '</div><p>' + f.text + '</p></div>';
+  /* Tier card */
+  h += '<div class="tier-card"><div class="tc-top ' + tierClass + '"></div><div class="tc-body">';
+  h += '<span class="tier-badge ' + tierClass + '">' + badgeLabels[tier] + '</span>';
+  h += '<h2>Recommended: ' + tier + '</h2>';
+  h += '<p class="tc-tagline">' + taglines[tier] + '</p>';
+  h += '<p class="tc-summary">' + summaries[tier] + '</p>';
+  h += '<div class="tc-specs">';
+  specs[tier].forEach(function(s) {
+    h += '<span class="tc-spec"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>' + s + '</span>';
   });
-  html += '</div>';
+  h += '</div></div></div>';
 
-  html += '<div class="results-note">This is a preliminary assessment based on 10 questions. Schedule your full Three-Pillar Assessment for a comprehensive analysis with actionable recommendations.</div>';
+  /* Pillar scores */
+  h += '<div class="pillar-scores">';
+  var pillars = [
+    { key: 'security', name: 'Security', cls: 'sec' },
+    { key: 'performance', name: 'Performance', cls: 'perf' },
+    { key: 'compliance', name: 'Compliance', cls: 'comp' }
+  ];
+  pillars.forEach(function(p) {
+    var score = result.scores[p.key];
+    var need = needLevel(score);
+    h += '<div class="pillar-score">';
+    h += '<div class="ring-wrap"><svg viewBox="0 0 86 86">';
+    h += '<circle class="ring-bg" cx="43" cy="43" r="40"/>';
+    h += '<circle class="ring-fill" cx="43" cy="43" r="40" data-score="' + score + '" style="stroke:' + ringColor(score) + '"/>';
+    h += '</svg><span class="ring-val">' + score + '</span></div>';
+    h += '<span class="ps-name ' + p.cls + '">' + p.name + '</span>';
+    h += '<span class="ps-level" style="background:' + need.color + '15;color:' + need.color + '">' + need.label + '</span>';
+    h += '</div>';
+  });
+  h += '</div>';
+
+  /* Key findings */
+  h += '<div class="findings"><h3>Key Findings</h3>';
+  findings.forEach(function(f) {
+    var ic = f.icon === 'warn' ? '&#9888;' : f.icon === 'urgent' ? '&#9201;' : '&#8505;';
+    h += '<div class="finding"><div class="finding-icon ' + f.icon + '">' + ic + '</div><p>' + f.text + '</p></div>';
+  });
+  h += '</div>';
+
+  /* Note */
+  h += '<div class="results-note">This is a preliminary assessment. Schedule your full Three-Pillar Assessment for a comprehensive analysis with our team.</div>';
 
   /* Contact form */
-  html += '<div class="contact-section" id="contactForm">';
-  html += '<h3>Send My Results &amp; Schedule Assessment</h3>';
-  html += '<p class="cs-sub">Our team will review your snapshot and reach out within 1 business day.</p>';
-  html += '<div class="form-row"><div class="form-group"><label>First Name</label><input type="text" id="fname" required></div>';
-  html += '<div class="form-group"><label>Last Name</label><input type="text" id="lname" required></div></div>';
-  html += '<div class="form-group"><label>Email</label><input type="email" id="email" required></div>';
-  html += '<div class="form-row"><div class="form-group"><label>Company Name</label><input type="text" id="company" required></div>';
-  html += '<div class="form-group"><label>Phone <span class="optional">(optional)</span></label><input type="tel" id="phone"></div></div>';
-  html += '<div class="form-group"><label>Preferred Contact Method</label><select id="contactMethod"><option value="email">Email</option><option value="phone">Phone</option></select></div>';
-  html += '<div class="form-group"><label>Message <span class="optional">(optional)</span></label><textarea id="message" placeholder="Any additional context about your needs..."></textarea></div>';
-  html += '<button class="btn bp form-submit" onclick="submitForm()">Send My Results &amp; Schedule Assessment <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>';
-  html += '</div>';
+  h += '<div class="contact-section" id="contactForm">';
+  h += '<h3>Send My Results &amp; Schedule Assessment</h3>';
+  h += '<p class="cs-sub">Our team will review your snapshot and reach out within 1 business day.</p>';
+  h += '<form onsubmit="submitForm(event)" novalidate>';
+  h += '<div class="form-row"><div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" required autocomplete="given-name"></div>';
+  h += '<div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" required autocomplete="family-name"></div></div>';
+  h += '<div class="form-group"><label for="email">Email</label><input type="email" id="email" required autocomplete="email"></div>';
+  h += '<div class="form-row"><div class="form-group"><label for="company">Company Name</label><input type="text" id="company" required autocomplete="organization"></div>';
+  h += '<div class="form-group"><label for="phone">Phone <span class="optional">(optional)</span></label><input type="tel" id="phone" autocomplete="tel"></div></div>';
+  h += '<div class="form-group"><label for="contactMethod">Preferred Contact Method</label><select id="contactMethod"><option value="email">Email</option><option value="phone">Phone</option></select></div>';
+  h += '<div class="form-group"><label for="message">Message <span class="optional">(optional)</span></label><textarea id="message" placeholder="Any additional context about your needs..."></textarea></div>';
+  h += '<button type="submit" class="btn bp form-submit">Send My Results &amp; Schedule Assessment <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>';
+  h += '</form></div>';
 
-  html += '</div>';
+  document.getElementById('resultsContent').innerHTML = h;
 
-  document.getElementById('resultsContent').innerHTML = html;
+  /* Store for form */
+  window._result = result;
+  window._tier = tier;
+  window._risk = risk;
+  window._findings = findings;
 
-  /* Store results for form submission */
-  window._assessmentResult = result;
-  window._assessmentTier = tier;
-
-  /* Animate rings after a short delay */
-  setTimeout(animateRings, 300);
-}
-
-function animateRings() {
-  var circumference = 2 * Math.PI * 40; /* r=40 */
-  document.querySelectorAll('.ring-fill').forEach(function(ring) {
-    var score = parseInt(ring.getAttribute('data-score'));
-    var offset = circumference - (score / 100) * circumference;
-    ring.style.strokeDashoffset = offset;
-  });
+  /* Animate rings */
+  setTimeout(function() {
+    var circ = 2 * Math.PI * 40;
+    document.querySelectorAll('.ring-fill').forEach(function(ring) {
+      var score = parseInt(ring.getAttribute('data-score'));
+      ring.style.strokeDashoffset = circ - (score / 100) * circ;
+    });
+  }, 300);
 }
 
 /* ===== FORM SUBMISSION ===== */
-function submitForm() {
+function submitForm(e) {
+  e.preventDefault();
   var fname = document.getElementById('fname').value.trim();
   var lname = document.getElementById('lname').value.trim();
   var email = document.getElementById('email').value.trim();
@@ -705,14 +823,19 @@ function submitForm() {
     alert('Please fill in all required fields.');
     return;
   }
-
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     alert('Please enter a valid email address.');
     return;
   }
 
+  var r = window._result;
+  var findingTexts = window._findings.map(function(f) {
+    return f.text.replace(/<\/?[^>]+(>|$)/g, '').replace(/&mdash;/g, '—').replace(/&amp;/g, '&');
+  });
+
   var payload = {
+    source: 'trisian-quick-assessment',
+    timestamp: new Date().toISOString(),
     contact: {
       firstName: fname,
       lastName: lname,
@@ -723,36 +846,41 @@ function submitForm() {
       message: document.getElementById('message').value.trim()
     },
     assessment: {
-      answers: answers,
-      multiAnswers: multiAnswers,
-      scores: window._assessmentResult.scores,
-      flags: window._assessmentResult.flags,
-      industry: window._assessmentResult.industry,
-      recommendedTier: window._assessmentTier
-    },
-    submittedAt: new Date().toISOString()
+      answers: {
+        industry: answers['1'] || '',
+        userCount: answers['2'] || '',
+        regulatoryFrameworks: (multiAnswers['3'] || []).filter(function(f) { return f !== 'None'; }),
+        securityPosture: answerLabels['4'][answers['4']] || answers['4'] || '',
+        securityIncident: answerLabels['5'][answers['5']] || answers['5'] || '',
+        infrastructureType: answerLabels['6'][answers['6']] || answers['6'] || '',
+        downtimeTolerance: answerLabels['7'][answers['7']] || answers['7'] || '',
+        complianceStatus: answerLabels['8'][answers['8']] || answers['8'] || '',
+        itManagement: answerLabels['9'][answers['9']] || answers['9'] || '',
+        primaryDriver: answerLabels['10'][answers['10']] || answers['10'] || ''
+      },
+      scores: r.scores,
+      recommendedTier: window._tier,
+      overallRisk: window._risk.label,
+      flags: r.flags,
+      keyFindings: findingTexts
+    }
   };
 
   var btn = document.querySelector('.form-submit');
   btn.disabled = true;
-  btn.textContent = 'Sending...';
+  btn.innerHTML = 'Sending...';
 
   fetch('https://YOUR-N8N-WEBHOOK-URL/webhook/trisian-assessment', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
-  }).then(function() {
-    showSuccess();
-  }).catch(function() {
-    /* Show success anyway — webhook URL is a placeholder */
-    showSuccess();
-  });
+  }).then(function() { showSuccess(); }).catch(function() { showSuccess(); });
 }
 
 function showSuccess() {
-  var form = document.getElementById('contactForm');
-  form.innerHTML = '<div class="success-state">' +
-    '<div class="success-icon">&#10003;</div>' +
+  document.getElementById('contactForm').innerHTML =
+    '<div class="success-state">' +
+    '<div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>' +
     '<h3>Thank You!</h3>' +
     '<p>Our team will review your assessment and reach out within 1 business day.</p>' +
     '<p class="fallback">Or email us directly at <a href="mailto:contact@trisian.com">contact@trisian.com</a></p>' +
