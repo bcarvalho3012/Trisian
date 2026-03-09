@@ -414,6 +414,12 @@ section [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!impor
 .ic-hdr svg{width:22px;height:22px;fill:none;stroke:var(--sec);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .blc-ico{width:44px;height:44px;border-radius:var(--r);background:var(--blue-t);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
 .blc-ico svg{width:22px;height:22px;fill:none;stroke:var(--sec);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.bgd .blc{background:var(--darkCard);border-color:rgba(255,255,255,.06)}
+.bgd .blc h4{color:var(--perf)}
+.bgd .blc p{color:rgba(255,255,255,.65)}
+.bgd .blc:hover{border-color:rgba(255,255,255,.12);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.bgd .blc-ico{background:rgba(81,112,255,.15)}
+.bgd .blc-ico svg{stroke:var(--perf)}
 .tld svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .cmpt .ck svg{width:16px;height:16px;fill:none;stroke:var(--ok);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .cmpt .no svg{width:16px;height:16px;fill:none;stroke:var(--txtL);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.5}
@@ -741,7 +747,7 @@ section [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!impor
 </div></section>
 
 <!-- ===== 10. TRANSPARENT BY DESIGN ===== -->
-<section id="billing"><div class="ctn">
+<section class="bgd" id="billing"><div class="ctn">
 <div class="shdr"><p class="lbl">Transparent by Design</p><h2>Three Components. No Surprises.</h2>
 <p class="sub">Our billing structure has three distinct components, each with defined scope &#8212; so you always know what you are paying for, what is included, and what is billable before any work begins.</p></div>
 <div class="blgrid">
