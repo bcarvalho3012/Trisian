@@ -459,7 +459,7 @@ section [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!impor
 <p class="hero-belief">&ldquo;The best technology is the kind you never think about.&rdquo; &#8212; Technology becomes <em>invisible</em> so business becomes <em>visible</em>.</p>
 <div class="hero-stats">
 <div class="hero-stat"><div class="sn">28<small>+</small></div><div class="sl">Years of Experience</div></div>
-<div class="hero-stat"><div class="sn">10<small>&#8211;</small>10K</div><div class="sl">Users Supported</div></div>
+<div class="hero-stat"><div class="sn" style="font-size:1.4rem">Unlimited</div><div class="sl">Users &#8212; No Redesign</div></div>
 <div class="hero-stat"><div class="sn">24/7</div><div class="sl">Platform Monitoring</div></div>
 <div class="hero-stat"><div class="sn">30<small>min</small></div><div class="sl">Critical Response SLA</div></div>
 </div>
@@ -815,7 +815,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 (function(){
   var counted=false;
   var nums=document.querySelectorAll('.sn');
-  var targets=[28,9,null,30]; /* 24/7 is text, skip */
+  var targets=[28,null,null,30]; /* Unlimited and 24/7 are text, skip */
   var suffixes=['+','+','','min'];
 
   function animateCounters(){
