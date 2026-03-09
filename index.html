@@ -274,12 +274,7 @@ nav .ctn{display:flex;align-items:center;justify-content:space-between}
 .sc{padding:1.25rem;border-radius:var(--r);border:1px solid var(--bdr);background:var(--white)}.sc h4{font-size:.88rem;margin-bottom:.25rem}.sc p{font-size:.8rem;line-height:1.55}
 
 /* INDUSTRIES */
-.igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
-.ic{padding:1.25rem;border-radius:var(--rL);background:var(--white);border:1px solid var(--bdr);transition:box-shadow .3s}.ic:hover{box-shadow:0 4px 16px rgba(0,0,0,.06)}
-.ic h4{margin-bottom:.35rem;font-size:.95rem}
-.ibdgs{display:flex;flex-wrap:wrap;gap:.25rem;margin-bottom:.75rem}
 .ibdg{font-family:var(--fH);font-size:.6rem;font-weight:600;padding:.18rem .4rem;border-radius:4px;background:rgba(0,74,173,.07);color:var(--sec);letter-spacing:.04em}
-.ic p{font-size:.82rem;line-height:1.55}
 
 /* BILLING */
 .blgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
@@ -334,7 +329,7 @@ footer{background:var(--txt);color:rgba(255,255,255,.6);padding:3.5rem 0 2rem}
 .hero-stats{grid-template-columns:repeat(4,1fr)}
 .plgrid,.tgrid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
 .sw-hero{grid-template-columns:1fr}.sw-hero-visual{min-height:240px}
-.qstrip,.igrid{grid-template-columns:repeat(2,1fr)}.sw-inc-grid,.sgrid,.dgrid,.blg-grid{grid-template-columns:repeat(2,1fr)!important}
+.qstrip{grid-template-columns:repeat(2,1fr)}.sw-inc-grid,.sgrid,.dgrid,.blg-grid{grid-template-columns:repeat(2,1fr)!important}
 .sw-extras,.bl-extras{grid-template-columns:1fr}
 .ba-grid{grid-template-columns:1fr;border-radius:var(--rL)}.ba-divider{height:2px;width:100%}
 .tl{flex-direction:column;align-items:flex-start;gap:1.25rem;padding-left:40px}
@@ -351,7 +346,7 @@ nav.open .nlinks a{color:rgba(255,255,255,.7)}nav.open .nlinks a:hover{color:#ff
 .hero{min-height:auto;padding:7rem 0 3rem}
 .hero-stats{grid-template-columns:repeat(2,1fr)}
 .hero-btns{flex-direction:column}.hero-btns .btn{width:100%;justify-content:center}
-.pgrid,.blgrid,.igrid,.sgrid,.dgrid,.qstrip,.sw-inc-grid,.blg-grid{grid-template-columns:1fr!important}
+.pgrid,.blgrid,.sgrid,.dgrid,.qstrip,.sw-inc-grid,.blg-grid{grid-template-columns:1fr!important}
 .sw-stat-row{grid-template-columns:1fr}
 .trust-items{gap:.75rem}.trust-label{width:100%;text-align:center}
 .fgrid{grid-template-columns:1fr;gap:1.25rem}.fbot{flex-direction:column;gap:.5rem}
@@ -379,8 +374,8 @@ section [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!impor
 .tl.vis .tls:nth-child(5){opacity:1;transform:translateY(0);transition-delay:1.2s}
 
 /* 5. Micro-interactions hover */
-.plcol,.qi,.tc,.sc,.ic,.dc,.blg-card,.sw-inc-item{transition:transform .25s ease,box-shadow .25s ease}
-.plcol:hover,.qi:hover,.ic:hover,.dc:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,74,173,.1)}
+.plcol,.qi,.tc,.sc,.dc,.blg-card,.sw-inc-item{transition:transform .25s ease,box-shadow .25s ease}
+.plcol:hover,.qi:hover,.dc:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,74,173,.1)}
 .tc:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1)}
 .tc.feat:hover{box-shadow:0 12px 36px rgba(0,74,173,.18)}
 .sc:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
@@ -405,8 +400,6 @@ section [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!impor
 .btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .stb svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-right:.4rem}
 .stb{display:inline-flex;align-items:center}
-.ic-hdr{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
-.ic-hdr svg{width:22px;height:22px;fill:none;stroke:var(--sec);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .blc-ico{width:44px;height:44px;border-radius:var(--r);background:var(--blue-t);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
 .blc-ico svg{width:22px;height:22px;fill:none;stroke:var(--sec);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .bgd .blc{background:var(--darkCard);border-color:rgba(255,255,255,.06)}
@@ -661,17 +654,6 @@ section [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!impor
 </div>
 </div></div>
 
-<!-- ===== 9. INDUSTRIES ===== -->
-<section class="bgl" id="industries"><div class="ctn">
-<div class="shdr"><p class="lbl">Industries We Serve</p><h2>Purpose-Built for Regulated Sectors</h2>
-<p class="sub">Every Safe Workspace is configured for your industry's regulatory landscape and operational requirements.</p></div>
-<div class="igrid">
-<div class="ic"><div class="ic-hdr"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><h4>Growing Businesses</h4></div><div class="ibdgs"><span class="ibdg">SOC 2</span><span class="ibdg">GDPR</span><span class="ibdg">ISO 27001</span></div><p>You don&#8217;t need a regulation to tell you your data matters. Enterprise-grade protection scaled to your stage &#8212; start with Core and grow as your requirements evolve.</p></div>
-<div class="ic"><div class="ic-hdr"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><h4>Healthcare</h4></div><div class="ibdgs"><span class="ibdg">HIPAA</span><span class="ibdg">HITECH</span></div><p>Compliant environments for patient data protection. PHI safeguards, audit trails with 6-7 year retention, and BAA-ready infrastructure.</p></div>
-<div class="ic"><div class="ic-hdr"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><h4>Financial Services</h4></div><div class="ibdgs"><span class="ibdg">DORA</span><span class="ibdg">SOX</span><span class="ibdg">PCI-DSS</span><span class="ibdg">GLBA</span></div><p>Audit-ready infrastructure for regulated capital. PIM for segregation of duties, 7-year record retention, and trading-grade performance.</p></div>
-<div class="ic"><div class="ic-hdr"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><h4>Legal Services</h4></div><div class="ibdgs"><span class="ibdg">SOC 2</span><span class="ibdg">GDPR</span></div><p>Secure workspaces for privileged communications. Client matter segregation, premium eDiscovery, and DLP for sensitive data.</p></div>
-</div>
-</div></section>
 
 <!-- ===== 10. TRANSPARENT BY DESIGN ===== -->
 <section class="bgd" id="billing"><div class="ctn">
@@ -791,7 +773,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
   /* Tag story block */
   document.querySelectorAll('.pl-story').forEach(el=>el.classList.add('anim'));
   /* Tag grid children with stagger delays */
-  var grids=['.plgrid','.pgrid','.qstrip','.tgrid','.sgrid','.igrid','.dgrid','.blgrid','.blg-grid','.sw-inc-grid','.fl'];
+  var grids=['.plgrid','.pgrid','.qstrip','.tgrid','.sgrid','.dgrid','.blgrid','.blg-grid','.sw-inc-grid','.fl'];
   grids.forEach(g=>{document.querySelectorAll(g).forEach(grid=>{
     Array.from(grid.children).forEach((c,i)=>{c.classList.add('anim','anim-d'+(i<6?i+1:6))})
   })});
